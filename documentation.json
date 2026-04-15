@@ -54,49 +54,67 @@
                 "icon": "circle"
               },
               {
-                "title": "Token Identity",
-                "path": "inky-token/overview",
-                "icon": "tag"
+                "group": "Token",
+                "icon": "tag",
+                "pages": [
+                  {
+                    "title": "Token Identity",
+                    "path": "inky-token/overview",
+                    "icon": "tag"
+                  },
+                  {
+                    "title": "Supply",
+                    "path": "inky-token/supply",
+                    "icon": "bar-chart-2"
+                  },
+                  {
+                    "title": "Distribution",
+                    "path": "inky-token/distribution",
+                    "icon": "pie-chart"
+                  }
+                ]
               },
               {
-                "title": "Supply",
-                "path": "inky-token/supply",
-                "icon": "bar-chart-2"
+                "group": "Mechanics",
+                "icon": "trending-up",
+                "pages": [
+                  {
+                    "title": "Emission",
+                    "path": "inky-token/emission",
+                    "icon": "trending-up"
+                  },
+                  {
+                    "title": "On-chain Fees",
+                    "path": "inky-token/fees",
+                    "icon": "percent"
+                  },
+                  {
+                    "title": "Liquidity",
+                    "path": "inky-token/liquidity",
+                    "icon": "droplet"
+                  }
+                ]
               },
               {
-                "title": "Distribution",
-                "path": "inky-token/distribution",
-                "icon": "pie-chart"
-              },
-              {
-                "title": "Emission",
-                "path": "inky-token/emission",
-                "icon": "trending-up"
-              },
-              {
-                "title": "On-chain Fees",
-                "path": "inky-token/fees",
-                "icon": "percent"
-              },
-              {
-                "title": "Liquidity",
-                "path": "inky-token/liquidity",
-                "icon": "droplet"
-              },
-              {
-                "title": "Security",
-                "path": "inky-token/security",
-                "icon": "shield"
-              },
-              {
-                "title": "Contracts",
-                "path": "inky-token/contracts",
-                "icon": "file-text"
-              },
-              {
-                "title": "Changelog",
-                "path": "inky-token/changelog",
-                "icon": "clock"
+                "group": "Technical",
+                "icon": "code",
+                "pages": [
+                  {
+                    "title": "Security",
+                    "path": "inky-token/security",
+                    "icon": "shield"
+                  },
+                  {
+                    "title": "Contracts",
+                    "path": "inky-token/contracts",
+                    "icon": "file-text"
+                  },
+                  {
+                    "title": "Changelog",
+                    "path": "inky-token/changelog",
+                    "icon": "clock"
+                  }
+                ]
               }
             ]
           },
