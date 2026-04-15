@@ -115,10 +115,14 @@
                 "icon": "wallet"
               },
               {
-                "title": "Staking",
-                "path": "products/staking/index",
+                "group": "Staking",
                 "icon": "trending-up",
                 "pages": [
+                  {
+                    "title": "Overview",
+                    "path": "products/staking/index",
+                    "icon": "grid"
+                  },
                   {
                     "title": "INKY Pool",
                     "path": "products/staking/inky-pool",
