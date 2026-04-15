@@ -3,7 +3,7 @@ title: Supply
 description: Hard cap of 200M INKY, initial mint of 10M, current circulating supply snapshot, top holders, and known system addresses.
 ---
 
-<!-- IMAGE SUGGESTION: Donut chart showing supply distribution: circulating vs staked vs vaults vs liquidity pool. Use brand colors on dark background. -->
+{/* IMAGE SUGGESTION: Donut chart showing supply distribution: circulating vs staked vs vaults vs liquidity pool. Use brand colors on dark background. */}
 
 ## Hard cap
 
@@ -43,7 +43,7 @@ Total holders: **188**.
   **Note on holder distribution**: Inkryptus is a custodial platform. Most user balances are held inside platform contracts (Wallet, Products Vault, ConversionVault), which is why a small number of contract addresses concentrate a large share of the supply. Individual user balances exist within those contracts but are not visible as separate holders on BscScan. The PancakeSwap pool is public, so some users also hold INKY outside the platform.
 </Callout>
 
-Live value: `[rtd_inky type="total_supply"]` <!-- RTD widget mock, replace with real shortcode when available -->
+Live value: `[rtd_inky type="total_supply"]` {/* RTD widget mock, replace with real shortcode when available */}
 
 To verify current supply on-chain: call `totalSupply()` on the [INKY contract](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#readContract) and subtract balances held in known system contracts (Initial Mintage Vault, Staking Pool, Products Vault, Inkryptus Vault).
 
