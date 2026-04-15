@@ -2,7 +2,6 @@
 title: Fees
 description: Reference documentation for all platform fees charged by Inkryptus.
 ---
-
 Reference documentation for all platform fees charged by Inkryptus.
 
 **Last Updated:** April 15, 2026
@@ -15,40 +14,44 @@ For details on how fees are distributed to the IBO network, see [Commissions](/p
 
 ## Fee Schedule
 
-| Category | Applies To | Amount |
-| --- | --- | --- |
-| **Performance fee** | Net profit from staking/farming | 25% of daily profit |
-| **Withdrawal fee** | Withdrawing funds from the platform | US$3/operation |
-| **Swap fee** | Exchanging between assets | US$3/operation |
-| **Harvest fee** | Collecting accumulated rewards | US$3/operation |
-| **IBO Subscription** | IBO Program access | US$24/month |
+| Category             | Applies To                          | Amount              |
+| -------------------- | ----------------------------------- | ------------------- |
+| **Performance fee**  | Net profit from staking/farming     | 25% of daily profit |
+| **Withdrawal fee**   | Withdrawing funds from the platform | US$3/operation      |
+| **Swap fee**         | Exchanging between assets           | US$3/operation      |
+| **Harvest fee**      | Collecting accumulated rewards      | US$3/operation      |
+| **IBO Subscription** | IBO Program access                  | US$24/month         |
 
 ## Withdrawal Limits
 
 Withdrawal capacity is tiered by KYC verification status:
 
-| Tier | KYC Status | Monthly Limit | Reset |
-| --- | --- | --- | --- |
-| **Bronze** | Inactive | US$500/month | 1st of month, 00:00:01 UTC |
-| **Silver** | Active | US$500,000/month | 1st of month, 00:00:01 UTC |
+| Tier       | KYC Status | Monthly Limit | Reset                      |
+| ---------- | ---------- | ------------- | -------------------------- |
+| **Bronze** | Inactive   | US$500        | 1st of month, 00:00:01 UTC |
+| **Silver** | Active     | US$500,000    | 1st of month, 00:00:01 UTC |
 
-<Callout kind="tip">
+<Callout kind="tip" collapsed="false">
   To upgrade from Bronze to Silver, complete KYC in `Profile > Account > KYC`. Current limits are visible in `Profile > Account > Fees`.
 </Callout>
 
 ## Documentation
 
 <Columns cols="2">
-  <Card title="Fee Table" icon="table" href="/fees/fee-table" horizontal={true}>
+  <Card title="Fee Table" href="/fees/fee-table" icon="table" horizontal="true">
     Complete fee schedule and withdrawal limits.
   </Card>
-  <Card title="Subscription" icon="credit-card" href="/fees/subscription" horizontal={true}>
+
+  <Card title="Subscription" href="/fees/subscription" icon="credit-card" horizontal="true">
     Monthly IBO Program fee details.
   </Card>
-  <Card title="Transaction" icon="repeat" href="/fees/transaction" horizontal={true}>
+
+  <Card title="Transaction" href="/fees/transaction" icon="repeat" horizontal="true">
     Fee on Withdraw, Swap, Harvest operations.
   </Card>
-  <Card title="Performance" icon="trending-up" href="/fees/performance" horizontal={true}>
+
+  <Card title="Performance" href="/fees/performance" icon="trending-up" horizontal="true">
     Performance fee on staking/farming profits.
   </Card>
 </Columns>
+
