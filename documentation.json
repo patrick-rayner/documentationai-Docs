@@ -2,10 +2,14 @@
   "name": "Inkryptus",
   "colors": {
     "light": {
-      "brand": "#E09F34"
+      "brand": "#fbb03c",
+      "heading": "#1a1a1a",
+      "text": "#374151"
     },
     "dark": {
-      "brand": "#E6BD7A"
+      "brand": "#ffc875",
+      "heading": "#f2f2f2",
+      "text": "#c1c1c1"
     }
   },
   "navigation": {
@@ -120,5 +124,16 @@
         ]
       }
     ]
+  },
+  "template": "atlas",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776264980193-qf4h5smd8y-isotype-inkryptus-negative.png?fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776264991875-7yigttwuo4m-isotype-inkryptus.png?fm=auto&auto=compress%2Cformat",
+  "favicon": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
+  "initialRoute": "quickstart",
+  "seo": {
+    "robots:index": false,
+    "robots:follow": false,
+    "sitemap:enabled": false,
+    "llms-txt:enabled": false
   }
 }
