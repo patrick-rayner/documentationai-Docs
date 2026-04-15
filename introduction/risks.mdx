@@ -1,0 +1,88 @@
+---
+title: Risks
+description: Key risks for users and partners — price volatility, staking variability, custodial exposure, smart contract security, liquidity, and regulatory considerations.
+---
+This document outlines the key risks users and partners should understand before using the Inkryptus platform.
+
+## Price volatility
+
+Cryptocurrency assets are subject to rapid and significant price fluctuations. The value of INKY, USDT, BTC, ETH, BNB, CAKE, and all other digital assets can increase or decrease substantially within short periods.
+
+- Users may lose part or all of their invested capital.
+- Platform-quoted prices may change between quote generation and transaction execution.
+- External market conditions (exchange listings, regulatory announcements, macroeconomic factors) can cause sharp price movements.
+
+## Staking risks
+
+### APR projections are not guaranteed
+
+The displayed APR is calculated from the current daily yield and serves as an informational projection only. It is not a guarantee of future returns. Key factors affecting APR:
+
+- **Daily yield is variable**: The platform emits a fixed amount of INKY per day (capped at 10,000 INKY), but total emission depends on total staked volume. As total staked volume increases, the per-participant daily yield decreases proportionally.
+- **Emission parameters are configurable**: The daily cap (10,000 INKY) and the emission rate (1% of total staked) are parameters in the staking contract. The platform retains the ability to adjust these values through contract upgrades.
+- **External conditions change**: Regulatory changes, market conditions, or platform decisions may affect staking product availability.
+
+**What counts as effective return**: Only actual daily rewards claimed or harvested constitute effective return. Claimed rewards are taxable in most jurisdictions and subject to the platform's 25% performance fee.
+
+## Custodial risk
+
+Inkryptus operates as a custodian of user funds. Users do not control private keys or seedphrases. This model introduces custodial risk:
+
+- **Security depends on platform**: The platform manages all keys through a multisig wallet arrangement. If the platform's security infrastructure is compromised, user funds may be at risk.
+- **No key recovery**: Users cannot recover funds independently if the platform becomes insolvent or ceases operations.
+- **Regulatory exposure**: In some jurisdictions, custodial platforms face additional regulatory requirements or restrictions.
+- **Third-party dependency**: Users depend entirely on the platform's continued operation and good standing.
+
+The platform employs multisig architecture and security best practices, but this architecture is not immune to all threats. See [Architecture](./architecture.mdx) for details on the security model.
+
+## Smart contract risk
+
+All staking, games, and on-chain operations depend on smart contract code. While Inkryptus contracts are public and verifiable on BscScan:
+
+- **No formal third-party audit exists**: Contracts have not undergone formal third-party security audit by a recognized firm.
+- **Code review by public**: The contracts are available for review by security researchers and the crypto community.
+- **Unforeseen bugs are possible**: Even well-reviewed code may contain logical errors, edge cases, or vulnerabilities that manifest under unexpected conditions.
+- **BNB Smart Chain risk**: Smart contracts depend on BNB Smart Chain infrastructure. Issues with the blockchain itself (consensus failures, security incidents) could affect Inkryptus contracts.
+
+Users should review the contract code on BscScan before staking or transacting significant amounts. See [Contracts](../inky-token/contracts.mdx) for all contract addresses.
+
+## Liquidity risk
+
+INKY maintains liquidity on PancakeSwap v2 in the INKY/USDT pair, but liquidity depth is variable:
+
+- **Pool depth changes**: Liquidity providers can add or withdraw liquidity at any time, affecting pool depth.
+- **Slippage on large trades**: Large buy or sell orders relative to pool depth will experience slippage, resulting in worse execution prices.
+- **No guarantee of liquidity**: The platform does not guarantee perpetual liquidity at any level. If liquidity is removed, trading may become difficult or impossible.
+- **Trading fees apply**: All trades on PancakeSwap incur 0.25% swap fees, plus gas costs.
+
+See [Liquidity](../inky-token/liquidity.mdx) for current pool depth and historical information.
+
+## Regulatory risk
+
+Cryptocurrency regulation varies significantly by jurisdiction and is rapidly evolving:
+
+- **Regulatory changes**: New regulations or enforcement actions by government agencies in any jurisdiction could restrict platform access, require changes to operations, or impact the value of INKY.
+- **Classification uncertainty**: Jurisdictions differ on whether INKY and staking rewards constitute securities, commodities, or other regulated assets.
+- **Geographic restrictions**: The platform may be unavailable in certain jurisdictions due to regulatory requirements.
+- **Tax implications**: Users are responsible for understanding and complying with tax obligations in their jurisdiction.
+
+Inkryptus is not responsible for regulatory changes or user tax obligations. Users should seek independent legal and tax advice.
+
+## Emission risk
+
+The staking contract's emission schedule is driven by two parameters:
+
+1. **Emission rate**: 1% of total INKY staked across all plans
+2. **Daily cap**: 10,000 INKY maximum per day
+
+Both are configurable values in the contract, not hard-coded immutable constants. The platform may adjust these parameters through contract updates. Changes to either parameter would affect the realized APR for all stakers.
+
+Additionally, the INKY token itself has a hard cap on total supply (200,000,000 INKY). As the token approaches this cap, emission will slow or stop entirely, regardless of staked volume.
+
+## Not investment advice
+
+This documentation is informational only and does not constitute investment advice, financial advice, or a recommendation to buy, sell, or hold INKY or any other asset.
+
+The Inkryptus platform and all associated products carry inherent financial risk. Users are solely responsible for understanding these risks and making independent investment decisions. Before using the platform, users should conduct independent due diligence, consult with financial advisors, and review the platform's terms of service.
+
+<!-- IMAGE SUGGESTION: A risk matrix diagram showing Risk (Y-axis) vs. Impact (X-axis) with boxes for each risk category: volatility, staking, custodial, smart contract, liquidity, regulatory, emission. Style: clean, grayscale, technical. -->

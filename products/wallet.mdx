@@ -1,0 +1,100 @@
+---
+title: Wallet
+description: Custodial wallet on BNB Smart Chain — supported assets, deposit and withdrawal flows, multisig security model, and what users cannot do.
+---
+The Inkryptus wallet is a custodial wallet on BNB Smart Chain. Each user receives their own wallet address, managed by the platform's main multisig wallet. Users interact with their assets through the mobile app without generating or storing private keys.
+
+## Custodial model
+
+Inkryptus operates a custodial wallet service:
+
+- **Individual user wallets**: Each user has a dedicated wallet address on-chain, generated at account creation.
+- **Main multisig management**: All user wallet keys are managed by the platform's main multisig wallet. The specific signature scheme is not publicly disclosed.
+- **No private key exposure**: Users never generate, export, or view private keys or seedphrases.
+- **Simplified onboarding**: Users create an account and can deposit immediately without key management.
+
+The custodial model removes the burden of key recovery but requires users to trust Inkryptus to secure the multisig infrastructure.
+
+## Supported assets
+
+The wallet supports multiple cryptocurrencies on BNB Smart Chain:
+
+| Asset | Network | Purpose |
+| --- | --- | --- |
+| INKY | BNB Smart Chain | Native token, staking, Arena, buy/sell |
+| USDT | BNB Smart Chain | Staking, buy/sell |
+| BTC | BNB Smart Chain | Trading, user holdings |
+| ETH | BNB Smart Chain | Trading, user holdings |
+| CAKE | BNB Smart Chain | Staking (PancakeSwap) |
+| BNB | BNB Smart Chain | Trading, user holdings |
+| RDNT | BNB Smart Chain | Trading, user holdings |
+| SHIB | BNB Smart Chain | Trading, user holdings |
+| BNX | BNB Smart Chain | Trading, user holdings |
+
+Each user's wallet address can receive deposits of any BEP-20 standard token, though only listed assets are supported for staking and trading within the app.
+
+## Deposit flow
+
+### Crypto deposit
+
+1. User initiates a deposit request in the app (specifying asset and amount)
+2. App displays a platform-controlled deposit address on BNB Smart Chain
+3. User sends crypto from their external wallet to the displayed address
+4. Platform monitors the address and detects the incoming transaction
+5. Platform credits the user's account balance once the transaction is confirmed on-chain
+
+### Fiat-to-crypto deposit (USDT on-ramp)
+
+1. User selects buy amount and fiat payment method
+2. Platform provides a quote and payment instructions
+3. User completes the fiat payment (bank transfer, card, etc.)
+4. Platform confirms receipt and executes a buy order
+5. Crypto is credited to the user's wallet on-chain
+6. User's app balance is updated
+
+Fiat deposits are subject to KYC verification and regulatory compliance.
+
+## Withdrawal flow
+
+1. User initiates a withdrawal request (specifying asset, amount, and external address)
+2. Platform validates the request (KYC limits, balance, address format)
+3. Platform constructs a multisig transaction authorizing the transfer from the user's managed wallet
+4. Withdrawal is signed and broadcast to BNB Smart Chain
+5. Transaction is confirmed on-chain, and crypto arrives at the user's external address
+6. User's app balance is debited
+
+Withdrawals may be subject to daily limits, KYC tier restrictions, and processing delays.
+
+## Security model
+
+### Multisig arrangement
+
+The platform uses a multisig wallet to control user funds. The specific signature scheme (e.g., 2-of-3, 3-of-5) is not publicly disclosed. This design:
+
+- Requires multiple signers to approve large transactions, reducing the risk of a single compromised key
+- Distributes trust across multiple signing parties
+- Allows key rotation without interrupting service
+
+### Additional security measures
+
+- **Two-factor authentication (2FA)**: Users can enable 2FA on their account to prevent unauthorized access
+- **Rate limiting**: Withdrawal amounts may be limited per day or per transaction
+- **Address whitelisting**: Users may be able to register withdrawal addresses to prevent accidental transfers to wrong addresses
+- **Monitoring**: The platform monitors for suspicious account activity and may block transactions or require additional verification
+
+### What users cannot do
+
+Because the wallet is custodial:
+
+- Users cannot export or recover private keys
+- Users cannot sign transactions directly
+- Users cannot use the wallet with external wallet software
+- Users cannot take unilateral possession of their funds
+
+If a user loses access to their account (forgotten password, lost device), they must use the platform's account recovery process, which may require identity verification.
+
+## Asset transactions on-chain
+
+All transactions involving user deposits, withdrawals, and staking are recorded on BNB Smart Chain and are publicly viewable on BscScan. Users can track their transaction history by wallet address or transaction hash.
+
+<!-- IMAGE SUGGESTION: Diagram showing the custodial wallet architecture: main multisig wallet managing individual user wallet addresses on BNB Smart Chain. Show deposit flow (external -> user wallet), withdrawal flow (user wallet -> external), and staking flow (user wallet -> staking contract). Clean, light background. -->

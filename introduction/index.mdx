@@ -1,0 +1,49 @@
+---
+title: Introduction
+description: High-level overview of the Inkryptus platform — what it is, who it is for, and what you will find in this documentation.
+---
+> **Audience**: partners, integrators, investors, auditors, security researchers.
+> **Indexed in SEO**: no (GitBook with robots blocked).
+> **Source of truth for**: platform architecture, custodial model, smart contract addresses, system design.
+
+## What is Inkryptus
+
+Inkryptus is a custodial cryptocurrency platform deployed on BNB Smart Chain. Users manage crypto assets and earn staking rewards through a mobile application without handling private keys or seedphrases. The platform infrastructure consists of three layers: a mobile frontend, backend API, and on-chain smart contracts centered around the INKY token (BEP-20 standard).
+
+The platform launched in May 2023 and operates a custodial wallet architecture where a main multisig wallet manages individual user wallets, each with its own address. All staking pools, token mechanics, and liquidity arrangements are maintained on-chain and publicly verifiable on BscScan.
+
+## Who this documentation is for
+
+This technical documentation serves:
+
+- **Partners and integrators** who need to understand the API, contract interaction points, or wallet mechanics
+- **Investors and auditors** who require factual data on token supply, emission, smart contract code, and fee structures
+- **Technical users** seeking detailed information about system architecture and on-chain processes
+- **Security researchers** examining contract code, multisig arrangements, and threat models
+- **Journalists and analysts** verifying claims about the platform
+
+## What you will find here
+
+This section is organized as follows:
+
+- [How Inkryptus works](./how-it-works.mdx) - Custodial model, product suite, deposit flow, and reward mechanisms
+- [Platform architecture](./architecture.mdx) - System layers, wallet design, smart contracts, and security model
+
+For detailed information about the INKY token, see the [INKY Token](../inky-token/) section. For product specifics like staking pools, buy/sell mechanics, and games, see the [Products](../products/) section.
+
+## Key facts
+
+| Aspect | Value |
+|--------|-------|
+| Platform type | Custodial crypto platform, BEP-20 token (INKY) |
+| Blockchain | BNB Smart Chain |
+| Key token | INKY (BEP-20), live since May 2023 |
+| Products | Staking (INKY, USDT, CAKE), buy/sell, games |
+| Wallet model | Main multisig manages individual user wallets, no seedphrase exposure |
+| Verification | All contracts public and verifiable on BscScan |
+
+## Important disclaimer
+
+This documentation reflects the state of smart contracts and platform operations as of the date of publication. No audit claims are made. Contract security is subject to third-party scanner results and public code review on BscScan. Users and partners should perform their own technical due diligence.
+
+<!-- IMAGE SUGGESTION: Inkryptus ecosystem diagram showing the relationship between app, BNB Smart Chain, PancakeSwap, and the user. Style: clean, minimal, dark background. -->

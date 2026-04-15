@@ -1,0 +1,36 @@
+---
+title: Staking
+description: Staking products on BNB Smart Chain — INKY Pool, USDT Farm, and CAKE Farm — with common rules, fees, and contract references.
+---
+<!-- IMAGE SUGGESTION: Comparison table visual or infographic showing the 3 staking products side by side (INKY Pool, USDT, CAKE) with key differences: asset, source of rewards, lock-up options. Clean cards layout. -->
+
+Inkryptus offers staking products across multiple assets on BNB Smart Chain. Users deposit tokens into smart contracts and receive daily rewards based on the specific product's mechanics.
+
+## Available products
+
+| Product | Assets | Format | Rewards | Contract |
+| ------- | ------ | ------ | ------- | -------- |
+| [INKY Pool](./inky-pool.mdx) | INKY | Flexible, 12 months, 36 months | Daily, in INKY (emission-based) | [`0x9b8eC6ac...`](https://bscscan.com/address/0x9b8eC6ac014b926201f085e53A0d0540F7C510c5#code) |
+| [USDT Stablecoin Farm](./other-assets.mdx#usdt) | USDT | Flexible | Daily, in USDT | Managed via Products Vault |
+| [CAKE Smart Farm](./other-assets.mdx#cake) | CAKE | Flexible | Daily, in CAKE | Managed via Products Vault |
+
+BSW (Biswap) staking has been discontinued.
+
+## Common rules
+
+All staking products share these properties:
+
+- **Performance fee**: 25% on profit only. No profit, no fee. The fee never applies to the principal.
+- **Harvest fee**: flat US$ 3 per operation (same as Swap and Withdraw).
+- **Harvest availability**: 24 hours after contract activation.
+- **Network**: BNB Smart Chain.
+- **Custody**: Inkryptus is a custodial platform. User balances are managed inside platform contracts.
+
+## Related sections
+
+- [INKY Pool](./inky-pool.mdx): plans, emission formula, worked examples
+- [Harvest flow](./harvest.mdx): how reward collection works
+- [Lock-up model](./lock-up.mdx): lock-up periods, maturity, early exit
+- [Other assets](./other-assets.mdx): USDT and CAKE staking details
+- [INKY Token emission](../../inky-token/emission.mdx): underlying token emission mechanics
+- [Fees & Commissions](../../fees/index.mdx): full fee schedule

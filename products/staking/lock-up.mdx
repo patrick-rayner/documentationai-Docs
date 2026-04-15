@@ -1,0 +1,37 @@
+---
+title: Lock-up Plans
+description: Flexible, 12-month, and 36-month staking plans — principal access rules, maturity behavior, early exit policy, and discontinued plan handling.
+---
+Staking plans on Inkryptus can be either flexible (no lock-up) or term-based (with lock-up of principal).
+
+## Plans and lock-up periods
+
+| Plan | Lock-up | Principal access | Profit access |
+| ---- | ------- | ---------------- | ------------- |
+| Flexible (Unlocked) | None | Withdraw anytime | Harvest anytime (after 24h) |
+| 12 months | 12 months from activation | At maturity only | Harvest anytime (after 24h) |
+| 36 months | 36 months from activation | At maturity only | Harvest anytime (after 24h) |
+
+## Key rules
+
+**During lock-up:**
+- The staked principal cannot be withdrawn before the term ends.
+- There is no early unstake mechanism. The contract runs until maturity.
+- Profit can be harvested at any time after the first 24 hours.
+
+**At maturity:**
+- The full principal is released to the user's free wallet balance.
+- Any remaining unharvested profit is also released.
+- The contract is closed.
+
+**Flexible plan:**
+- No lock-up. The user can close the contract and withdraw the principal at any time.
+- Rewards are still credited daily while the contract is active.
+
+## Discontinued plans
+
+The 6-month and 24-month lock-up plans were discontinued in V2.8.0 for new contracts. Existing contracts on those terms continue running normally until their maturity date.
+
+## USDT and CAKE staking
+
+USDT and CAKE staking products operate exclusively in Flexible format (no lock-up). See [Other assets](./other-assets.mdx).

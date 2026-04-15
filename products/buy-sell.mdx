@@ -1,0 +1,90 @@
+---
+title: Buy and Sell
+description: Fiat on/off-ramps, in-app crypto swaps, and external trading on PancakeSwap — mechanics, KYC requirements, fees, and supported assets.
+---
+The Inkryptus platform enables users to purchase and sell cryptocurrency in multiple ways: through in-app fiat on/off-ramps, internal swaps, and external trading on PancakeSwap.
+
+## In-app fiat on-ramps (USDT purchase)
+
+Users can purchase USDT directly with fiat payment methods through the Inkryptus app:
+
+1. User selects buy amount and payment method (bank transfer, card, etc.)
+2. Platform generates a quote showing the fiat amount and USDT to be received
+3. User completes the fiat payment
+4. Platform confirms payment receipt and executes the USDT transfer to the user's wallet
+5. USDT balance is credited in the app
+
+This flow is subject to:
+
+- **KYC verification**: Users must complete identity verification to use fiat on-ramps
+- **Daily and monthly limits**: Limits vary by KYC tier
+- **Processing time**: Fiat payment processing may take hours or days depending on the payment method
+- **Regulatory compliance**: Fiat on-ramps are subject to jurisdiction-specific restrictions
+
+### Fiat off-ramps (USDT sale)
+
+The reverse flow is available for selling USDT to fiat:
+
+1. User initiates a sell request specifying USDT amount and withdrawal method
+2. Platform generates a quote
+3. User confirms the transaction
+4. Platform processes the USDT withdrawal from the user's wallet and initiates fiat payout
+5. Fiat is transferred to the user's bank or payment method
+
+Processing times and daily limits apply.
+
+## In-app crypto swaps
+
+Users can swap between supported assets within the app. The primary swap pair is INKY/USDT, though other pairs may be available.
+
+- **Quote-based pricing**: The platform provides a quote before execution
+- **Direct execution**: Swaps are executed by the platform at the quoted price
+- **Fee structure**: See [Fees and Commissions](../fees/) for swap fee rates
+
+Example: A user with 1,000 INKY can receive a quote to swap to USDT, approve, and receive USDT in their wallet immediately.
+
+## External trading on PancakeSwap
+
+Users who wish to trade INKY outside the Inkryptus app can use their custodial wallet balance to interact with PancakeSwap v2:
+
+- **INKY/USDT pair**: The primary liquidity pool on PancakeSwap where INKY trades against USDT
+- **Permissionless**: Any user can send INKY from their Inkryptus wallet to PancakeSwap and receive USDT (or vice versa)
+- **PancakeSwap fees apply**: All trades incur a 0.25% swap fee, plus gas costs on BNB Smart Chain
+- **Slippage**: Large trades relative to pool depth may experience slippage
+
+Users must have BNB in their wallet to cover gas fees for external swaps.
+
+Current liquidity pool depth is published in [Liquidity](../inky-token/liquidity.mdx).
+
+## Supported assets for trading
+
+| Asset | Available for buy | Available for sell | Swap pairs |
+|-------|------|-------|-----------|
+| USDT | Yes (fiat on-ramp) | Yes (fiat off-ramp) | INKY/USDT |
+| INKY | Yes (from USDT swap) | Yes (to USDT swap) | INKY/USDT, others on PancakeSwap |
+| BTC | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
+| ETH | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
+| BNB | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
+| CAKE | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
+
+## Fee structure
+
+All buy, sell, and swap operations are subject to fees. See [Fees and Commissions](../fees/) for details on:
+
+- Fiat on/off-ramp fees
+- In-app swap fees
+- PancakeSwap trading fees (external)
+- Network gas fees (for external transactions)
+
+## Price quoting
+
+The platform provides real-time price quotes based on:
+
+- **Current market price**: Derived from INKY/USDT liquidity pool or external market data
+- **Slippage estimates**: For large trades relative to available liquidity
+- **Fee deduction**: Quotes are net of applicable fees
+- **Quote validity window**: Quotes are typically valid for a short time (seconds to minutes) before expiring
+
+Users must confirm a quote before execution. If the market moves significantly, a new quote is required.
+
+<!-- IMAGE SUGGESTION: A flow diagram showing the three trading paths: (1) User -> USDT fiat on-ramp -> USDT in wallet, (2) User -> In-app swap (INKY<>USDT) -> Updated wallet, (3) User wallet -> PancakeSwap v2 liquidity pool -> Output asset. Use different colors for each path. -->

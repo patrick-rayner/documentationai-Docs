@@ -1,0 +1,32 @@
+---
+title: Token Identity
+description: Contract address, on-chain parameters, deployer, holder count, and independent verification methods for the INKY token.
+---
+## Token identity
+
+| Field           | Value                                                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Name            | INKY                                                                                                                        |
+| Standard        | BEP-20                                                                                                                      |
+| Network         | BNB Smart Chain                                                                                                             |
+| Decimals        | 18                                                                                                                          |
+| Contract        | [`0x75a320c97205dd2e70e09085d1408c73a73d4d8f`](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code) |
+| Source verified | Yes (BscScan)                                                                                                               |
+| Live since      | May 11, 2023                                                                                                                |
+| Deploy tx       | [`0xbb7cd490...`](https://bscscan.com/tx/0xbb7cd490a16dc51af47263b6e7ad5960ff9fa2da6ef7a3a16cbfcd974907e04c)                |
+| Deploy block    | 28,122,305                                                                                                                  |
+| Deployer        | [`0xe67e551D...`](https://bscscan.com/address/0xe67e551de1d62d0976c9b92b0b137d3e5eb46d71) (Inkryptus: Deployer)             |
+| Holders         | ~188 (live count on [BscScan](https://bscscan.com/token/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#balances))               |
+
+## Purpose
+
+INKY is the utility token of the Inkryptus ecosystem. It serves five core functions inside the platform: staking activation, internal fee settlement, game asset, swap pair with USDT on PancakeSwap, and product access gating. Every interaction between the user and the platform's DeFi products passes through INKY in some capacity.
+
+## How to verify
+
+Anyone can independently verify the facts in this section:
+
+1. Open the [INKY contract on BscScan](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code) and confirm the source code is verified.
+2. Check the `Read Contract` tab for supply parameters: `totalSupply`, `cap`, `decimals`, `name`, `symbol`.
+3. Use [Token Sniffer](https://tokensniffer.com/) to get an automated risk score.
+4. View real-time price and liquidity on [GeckoTerminal](https://www.geckoterminal.com/bsc/pools/0xe3a00d1a031c505446b028956edc9e0768a11376) or [DEX Screener](https://dexscreener.com/bsc/0xe3a00d1a031c505446b028956edc9e0768a11376).

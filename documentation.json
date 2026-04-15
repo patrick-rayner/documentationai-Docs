@@ -23,117 +23,360 @@
             "icon": "rocket",
             "pages": [
               {
-                "title": "Introduction",
-                "path": "introduction",
+                "title": "Welcome",
+                "path": "introduction/index",
                 "icon": "home"
               },
               {
-                "title": "Quickstart",
-                "path": "quickstart",
+                "title": "How Inkryptus Works",
+                "path": "introduction/how-it-works",
                 "icon": "zap"
+              },
+              {
+                "title": "Platform Architecture",
+                "path": "introduction/architecture",
+                "icon": "layers"
+              },
+              {
+                "title": "Risks",
+                "path": "introduction/risks",
+                "icon": "alert-triangle"
               }
             ]
           },
           {
-            "group": "Core Concepts",
-            "icon": "layers",
+            "group": "INKY Token",
+            "icon": "coins",
             "pages": [
               {
-                "title": "Features",
-                "path": "features",
-                "icon": "star"
+                "title": "Overview",
+                "path": "inky-token/index",
+                "icon": "circle"
+              },
+              {
+                "title": "Token Identity",
+                "path": "inky-token/overview",
+                "icon": "tag"
+              },
+              {
+                "title": "Supply",
+                "path": "inky-token/supply",
+                "icon": "bar-chart-2"
+              },
+              {
+                "title": "Distribution",
+                "path": "inky-token/distribution",
+                "icon": "pie-chart"
+              },
+              {
+                "title": "Emission",
+                "path": "inky-token/emission",
+                "icon": "trending-up"
+              },
+              {
+                "title": "On-chain Fees",
+                "path": "inky-token/fees",
+                "icon": "percent"
+              },
+              {
+                "title": "Liquidity",
+                "path": "inky-token/liquidity",
+                "icon": "droplet"
+              },
+              {
+                "title": "Security",
+                "path": "inky-token/security",
+                "icon": "shield"
+              },
+              {
+                "title": "Contracts",
+                "path": "inky-token/contracts",
+                "icon": "file-text"
+              },
+              {
+                "title": "Changelog",
+                "path": "inky-token/changelog",
+                "icon": "clock"
               }
             ]
           },
           {
-            "group": "Guides",
-            "icon": "compass",
+            "group": "Products",
+            "icon": "box",
             "pages": [
               {
-                "title": "Authentication",
-                "path": "authentication",
+                "title": "Overview",
+                "path": "products/index",
+                "icon": "grid"
+              },
+              {
+                "title": "Wallet",
+                "path": "products/wallet",
+                "icon": "wallet"
+              },
+              {
+                "title": "Staking",
+                "path": "products/staking/index",
+                "icon": "trending-up"
+              },
+              {
+                "title": "INKY Pool",
+                "path": "products/staking/inky-pool",
+                "icon": "circle"
+              },
+              {
+                "title": "USDT and CAKE",
+                "path": "products/staking/other-assets",
+                "icon": "dollar-sign"
+              },
+              {
+                "title": "Harvest",
+                "path": "products/staking/harvest",
+                "icon": "download"
+              },
+              {
+                "title": "Lock-up Plans",
+                "path": "products/staking/lock-up",
                 "icon": "lock"
+              },
+              {
+                "title": "Buy and Sell",
+                "path": "products/buy-sell",
+                "icon": "repeat"
+              },
+              {
+                "title": "Arena",
+                "path": "products/arena",
+                "icon": "target"
               }
             ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "icon": "code",
-        "groups": [
+          },
           {
-            "group": "Endpoints",
-            "openapi": "api-reference/openapi.yaml"
+            "group": "Partner Program",
+            "icon": "users",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "partner-program/index",
+                "icon": "info"
+              },
+              {
+                "title": "How It Works",
+                "path": "partner-program/how-it-works",
+                "icon": "settings"
+              },
+              {
+                "title": "Commissions",
+                "path": "partner-program/commissions",
+                "icon": "dollar-sign"
+              },
+              {
+                "title": "Compliance",
+                "path": "partner-program/compliance",
+                "icon": "check-circle"
+              },
+              {
+                "title": "Operational Rules",
+                "path": "partner-program/operational-rules",
+                "icon": "list"
+              },
+              {
+                "title": "FAQ",
+                "path": "partner-program/faq",
+                "icon": "help-circle"
+              }
+            ]
+          },
+          {
+            "group": "Fees",
+            "icon": "percent",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "fees/index",
+                "icon": "info"
+              },
+              {
+                "title": "Fee Table",
+                "path": "fees/fee-table",
+                "icon": "table"
+              },
+              {
+                "title": "Subscription",
+                "path": "fees/subscription",
+                "icon": "credit-card"
+              },
+              {
+                "title": "Transaction",
+                "path": "fees/transaction",
+                "icon": "repeat"
+              },
+              {
+                "title": "Performance",
+                "path": "fees/performance",
+                "icon": "trending-up"
+              }
+            ]
+          },
+          {
+            "group": "Campaigns",
+            "icon": "gift",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "campaigns/index",
+                "icon": "megaphone"
+              },
+              {
+                "title": "Staking Referral",
+                "path": "campaigns/staking-referral",
+                "icon": "award"
+              }
+            ]
           }
         ]
       },
       {
         "tab": "Help Center",
         "icon": "help-circle",
-        "pages": [
+        "groups": [
           {
-            "title": "Help Center",
-            "path": "help-center",
-            "icon": "home"
-          },
-          {
-            "group": "FAQs",
+            "group": "FAQ",
             "icon": "help-circle",
-            "expandable": false,
             "pages": [
               {
-                "title": "Getting Started FAQ",
-                "path": "help-center/faq/getting-started"
+                "title": "Platform",
+                "path": "help-center/faq/platform"
+              },
+              {
+                "title": "Account and Security",
+                "path": "help-center/faq/account-security"
+              },
+              {
+                "title": "Network and Assets",
+                "path": "help-center/faq/network-assets"
+              },
+              {
+                "title": "Deposits",
+                "path": "help-center/faq/deposits"
+              },
+              {
+                "title": "Buy, Sell, and Send",
+                "path": "help-center/faq/buy-sell-send"
+              },
+              {
+                "title": "Staking",
+                "path": "help-center/faq/staking"
+              },
+              {
+                "title": "Partner Program",
+                "path": "help-center/faq/ibo"
+              },
+              {
+                "title": "Coin Flip",
+                "path": "help-center/faq/coin-flip"
+              },
+              {
+                "title": "Fees and Limits",
+                "path": "help-center/faq/fees-limits"
+              },
+              {
+                "title": "Support and Legal",
+                "path": "help-center/faq/support-legal"
               }
             ]
           },
           {
-            "group": "Troubleshooting",
-            "icon": "alert-triangle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Cannot Access Wallet",
-                "path": "help-center/troubleshooting/cannot-access-wallet"
-              }
-            ]
-          },
-          {
-            "group": "Guides",
+            "group": "Tutorials",
             "icon": "book-open",
-            "expandable": false,
             "pages": [
               {
-                "title": "Create New Wallet",
-                "path": "help-center/guides/create-new-wallet"
+                "title": "Account",
+                "path": "help-center/tutorials/account"
+              },
+              {
+                "title": "Network and Assets",
+                "path": "help-center/tutorials/network"
+              },
+              {
+                "title": "Deposits",
+                "path": "help-center/tutorials/deposits"
+              },
+              {
+                "title": "Wallet",
+                "path": "help-center/tutorials/wallet"
+              },
+              {
+                "title": "Buy and Sell",
+                "path": "help-center/tutorials/buy-sell"
+              },
+              {
+                "title": "Withdrawals",
+                "path": "help-center/tutorials/withdrawals"
+              },
+              {
+                "title": "Account Statement",
+                "path": "help-center/tutorials/statement"
+              },
+              {
+                "title": "Staking",
+                "path": "help-center/tutorials/staking"
+              },
+              {
+                "title": "Partner Program",
+                "path": "help-center/tutorials/ibo"
+              },
+              {
+                "title": "Coin Flip",
+                "path": "help-center/tutorials/coin-flip"
+              },
+              {
+                "title": "Support",
+                "path": "help-center/tutorials/support"
               }
             ]
           }
         ]
       },
       {
-        "tab": "Changelog",
-        "icon": "clock",
-        "pages": [
+        "tab": "Legal",
+        "icon": "scale",
+        "groups": [
           {
-            "title": "Release History",
-            "path": "changelog",
-            "icon": "history"
+            "group": "Legal",
+            "icon": "file-text",
+            "pages": [
+              {
+                "title": "Terms of Service",
+                "path": "legal/terms"
+              },
+              {
+                "title": "Privacy Policy",
+                "path": "legal/privacy"
+              },
+              {
+                "title": "Disclaimers",
+                "path": "legal/disclaimers"
+              },
+              {
+                "title": "Contact",
+                "path": "legal/contact"
+              }
+            ]
           }
         ]
       }
     ]
   },
   "template": "atlas",
-  "initialRoute": "quickstart",
+  "initialRoute": "introduction/index",
   "seo": {
     "robots:index": false,
     "robots:follow": false,
     "sitemap:enabled": false,
     "llms-txt:enabled": false
   },
-  "description": "Inkryptus documentational website.",
+  "description": "Inkryptus documentation — platform, products, fees, and partner program reference.",
   "logo-dark": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
   "logo-light": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
   "favicon": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat"

@@ -1,0 +1,42 @@
+---
+title: Emission
+description: Daily emission formula — 1% of total staked or 10,000 INKY cap (whichever is lower) — worked examples, performance fee, and parameter governance.
+---
+## How new INKY tokens enter circulation
+
+All new INKY tokens are created through the staking mechanism. There is no other emission source. The staking pool contract ([`0x9b8eC6ac...`](https://bscscan.com/address/0x9b8eC6ac014b926201f085e53A0d0540F7C510c5#code)) handles emission. It currently holds **~6,775,754 INKY** in staked tokens and uses the **TokenMinter** ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)) to call the INKY contract's mint function.
+
+<!-- IMAGE SUGGESTION: Flowchart showing emission logic: "Total staked INKY" → "Calculate 1%" → "Compare with 10K cap" → "Emit lower value" → "Distribute proportionally to stakers". Clean diagram, dark theme. -->
+
+## Emission formula
+
+The daily emission follows two rules applied simultaneously:
+
+1. **Rate**: 1% of the total INKY currently staked across all plans.
+2. **Cap**: maximum of 10,000 INKY per day, regardless of staked volume.
+
+Whichever value is lower applies. The emitted tokens are distributed proportionally among all staking participants based on their individual share of the total staked amount.
+
+### Worked example
+
+If 500,000 INKY are staked across all plans:
+
+- 1% of 500,000 = 5,000 INKY (below the 10K cap)
+- Daily emission: 5,000 INKY, split proportionally among stakers
+
+If 2,000,000 INKY are staked:
+
+- 1% of 2,000,000 = 20,000 INKY (exceeds the 10K cap)
+- Daily emission: 10,000 INKY (cap applies), split proportionally among stakers
+
+## Performance fee
+
+A **25% performance fee** is applied on staking profits. This fee is collected by the platform from the rewards distributed to each participant.
+
+## Parameter governance
+
+The emission rate (1%) and daily cap (10,000 INKY) are configurable functions in the staking contract. Changes to these parameters require on-chain execution by the contract owner.
+
+A **TokenMinter** contract ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)) manages which addresses can call the mint function. The Initial Mintage Vault uses a Gnosis Safe (multisig) for fund movements. See [Contracts](./contracts.mdx) for the full admin architecture.
+
+No emission parameter has been changed since deploy.
