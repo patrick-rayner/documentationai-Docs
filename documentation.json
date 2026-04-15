@@ -135,5 +135,6 @@
     "robots:follow": false,
     "sitemap:enabled": false,
     "llms-txt:enabled": false
-  }
+  },
+  "description": "Inkryptus documentational website."
 }
