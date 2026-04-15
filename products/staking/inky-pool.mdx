@@ -2,7 +2,8 @@
 title: INKY Pool
 description: INKY staking contract — flexible, 12-month, and 36-month plans, daily emission formula, performance fee, and contract architecture.
 ---
-{/* IMAGE SUGGESTION: Diagram showing staking flow: User deposits INKY → Staking Contract → Daily emission (1% or 10K cap) → Rewards distributed proportionally → User harvests to wallet. Show 25% performance fee deduction. */}
+
+<!-- IMAGE SUGGESTION: Diagram showing staking flow: User deposits INKY → Staking Contract → Daily emission (1% or 10K cap) → Rewards distributed proportionally → User harvests to wallet. Show 25% performance fee deduction. -->
 
 The INKY Pool is the primary staking product of the Inkryptus platform. Users deposit INKY tokens into the staking contract and receive daily rewards generated through scheduled token emission.
 
@@ -26,11 +27,15 @@ The INKY Pool is the primary staking product of the Inkryptus platform. Users de
 | 6 months | Yes | - | - | Discontinued (V2.8.0) |
 | 24 months | Yes | - | - | Discontinued (V2.8.0) |
 
-Plans discontinued in V2.8.0 are no longer available for new contracts. Existing contracts on those terms continue running until maturity.
+<Callout kind="info">
+  Plans discontinued in V2.8.0 are no longer available for new contracts. Existing contracts on those terms continue running until maturity.
+</Callout>
 
 APRs are dynamic: they depend on total staked volume and emission conditions. They are displayed in real time in the app.
 
-**Why APR, not APY**: staking rewards do not auto-compound. Users must manually harvest their profit and reinvest it into a new contract if they want to compound. The displayed rate is therefore APR (Annual Percentage Rate), not APY.
+<Callout kind="tip">
+  **Why APR, not APY**: staking rewards do not auto-compound. Users must manually harvest their profit and reinvest it into a new contract if they want to compound. The displayed rate is therefore APR (Annual Percentage Rate), not APY.
+</Callout>
 
 ## Emission formula
 
@@ -49,17 +54,30 @@ The platform adjusts the allocation between tiers so that longer plans can susta
 
 ### Worked examples
 
-**Example 1** (below cap): 500,000 INKY staked total.
+<Tabs>
+  <Tab title="Below cap" icon="arrow-down">
+    **500,000 INKY** staked total:
 
-- 1% of 500,000 = 5,000 INKY. Below the 10K cap.
-- Daily emission: **5,000 INKY**, split proportionally.
+    | Step | Calculation |
+    |------|-------------|
+    | 1% of staked | 500,000 x 1% = **5,000 INKY** |
+    | Compare with cap | 5,000 < 10,000 |
+    | Daily emission | **5,000 INKY**, split proportionally |
 
-**Example 2** (cap applies): 2,000,000 INKY staked total.
+    **Implication**: smaller pools yield a higher proportional share per staker.
+  </Tab>
+  <Tab title="Cap applies" icon="arrow-up">
+    **2,000,000 INKY** staked total:
 
-- 1% of 2,000,000 = 20,000 INKY. Exceeds the 10K cap.
-- Daily emission: **10,000 INKY** (cap applies), split proportionally.
+    | Step | Calculation |
+    |------|-------------|
+    | 1% of staked | 2,000,000 x 1% = **20,000 INKY** |
+    | Compare with cap | 20,000 > 10,000 |
+    | Daily emission | **10,000 INKY** (cap applies), split proportionally |
 
-**Implication**: as total staked volume grows, the effective daily rate per INKY decreases. Early participants in smaller pools receive a higher proportional share.
+    **Implication**: as total staked volume grows, the effective daily rate per INKY decreases.
+  </Tab>
+</Tabs>
 
 ## Performance fee
 
@@ -74,10 +92,12 @@ A **25% performance fee** is applied on staking profit. The fee is collected at 
 
 The emission rate (1%) and daily cap (10,000 INKY) are configurable functions in the staking contract. No emission parameter has been changed since deploy.
 
-The token's hard cap of 200,000,000 INKY is immutable. Even with daily emission, the total supply cannot exceed this cap.
+<Callout kind="alert">
+  The token's hard cap of 200,000,000 INKY is immutable. Even with daily emission, the total supply cannot exceed this cap.
+</Callout>
 
-See [INKY Token emission](../../inky-token/emission.mdx) for the full token-level documentation.
+See [INKY Token emission](/inky-token/emission) for the full token-level documentation.
 
 ## Contract architecture
 
-The staking pool contract interacts with the INKY token through the **TokenMinter** ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)), which manages the whitelist of addresses authorized to call the mint function. See [INKY Token contracts](../../inky-token/contracts.mdx) for the full architecture.
+The staking pool contract interacts with the INKY token through the **TokenMinter** ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)), which manages the whitelist of addresses authorized to call the mint function. See [INKY Token contracts](/inky-token/contracts) for the full architecture.

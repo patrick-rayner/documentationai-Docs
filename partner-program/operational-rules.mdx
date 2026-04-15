@@ -2,6 +2,7 @@
 title: Operational Rules
 description: 30-day sponsor window, subscription payment and renewal terms, contact sharing opt-in settings, network timeline updates, and IBO wallet sub-wallets.
 ---
+
 These rules define how the Partner Program operates. All IBOs must comply with these requirements to maintain active status and receive commissions.
 
 ## 30-Day Sponsor Window
@@ -10,7 +11,10 @@ Users who register without an IBO sponsor have exactly 30 days (from account cre
 
 - **Path:** `Profile > Account > Sponsor`
 - **After 30 days:** No sponsor can be added; the account remains unlinked.
-- **Commission treatment:** Commissions generated before sponsor linkage are **not retroactive**. They remain with Inkryptus and are not credited to the IBO.
+
+<Callout kind="alert">
+  Commissions generated before sponsor linkage are **not retroactive**. They remain with Inkryptus and are not credited to the IBO.
+</Callout>
 
 This window provides flexibility for users to identify and link to an IBO after account creation while preventing indefinite retroactive claims.
 
@@ -18,8 +22,10 @@ This window provides flexibility for users to identify and link to an IBO after 
 
 ### Pricing
 
-- **First 30 days:** free trial with full dashboard access.
-- **After trial:** US$ 24/month to maintain active IBO status.
+| Period | Cost |
+|--------|------|
+| First 30 days | Free trial with full dashboard access |
+| After trial | US$24/month to maintain active IBO status |
 
 ### Payment method
 
@@ -27,27 +33,29 @@ The subscription is paid in **USDT**, directly from the IBO dashboard in the app
 
 ### Renewal
 
-Renewal is **manual**. The IBO must actively renew each month through the dashboard. There is no automatic recurring charge. Automatic renewal is planned for a future release.
+<Callout kind="info">
+  Renewal is **manual**. The IBO must actively renew each month through the dashboard. There is no automatic recurring charge. Automatic renewal is planned for a future release.
+</Callout>
 
 ### Active subscription requirement
 
 An IBO's subscription must be active for new users to be added to their network.
 
 - New user registration via an IBO's link is only effective if the IBO has an **active, paid subscription** at the moment of registration.
-- IBOs with inactive subscriptions (lapsed payment) do not receive new network members.
+- IBOs with inactive subscriptions do not receive new network members.
 - Reactivating a subscription does not retroactively credit previously registered users during the inactive period.
 
 ## Contact Sharing (Opt-in)
 
 The **username** of the sponsor is always shared with referred users and cannot be disabled.
 
-Additional contact data (name, email, phone) is opt-in and disabled by default:
+Additional contact data is opt-in and disabled by default:
 
-- **Name:** opt-in
-- **Email:** opt-in
-- **Phone:** opt-in
-
-**Path:** `Profile > Account > Sponsor`
+| Field | Default | Path |
+|-------|---------|------|
+| Name | Opt-in (off) | `Profile > Account > Sponsor` |
+| Email | Opt-in (off) | `Profile > Account > Sponsor` |
+| Phone | Opt-in (off) | `Profile > Account > Sponsor` |
 
 IBOs can enable any combination or keep all contact data private. Users referred can see which contact fields the sponsor has enabled.
 
@@ -55,17 +63,21 @@ IBOs can enable any combination or keep all contact data private. Users referred
 
 The Partner Program dashboard displays network activity in two modes:
 
-### Network Timeline (Real-time)
-Sections like `IBO > Network` show new user registrations in **real time**. This reflects live signup activity without delay.
+<Tabs>
+  <Tab title="Network Timeline" icon="activity">
+    **Real-time updates**
 
-### Earnings Updates (Daily)
-The `IBO > Earnings` section updates once daily at **00:30 UTC**. This covers:
+    Sections like `IBO > Network` show new user registrations in **real time**. This reflects live signup activity without delay.
+  </Tab>
 
-- Commission accruals
-- Staking Referral bonuses
-- Historical earnings summary
+  <Tab title="Earnings Updates" icon="clock">
+    **Daily at 00:30 UTC**
 
-Users may see new network members appear instantly but should expect a 24-hour delay before earnings reflect from those members' activity.
+    The `IBO > Earnings` section updates once daily and covers: commission accruals, Staking Referral bonuses, and historical earnings summary.
+
+    Users may see new network members appear instantly but should expect a 24-hour delay before earnings reflect from those members' activity.
+  </Tab>
+</Tabs>
 
 ## IBO Wallet Structure
 
@@ -76,8 +88,6 @@ Users may see new network members appear instantly but should expect a 24-hour d
 - These wallets are distinct and require explicit transfer actions.
 
 ### Sub-wallets
-
-The IBO Wallet is split into two sub-wallets based on commission type:
 
 | Sub-wallet | Receives | Transfer to User Wallet |
 | --- | --- | --- |
@@ -90,6 +100,6 @@ The IBO Wallet is split into two sub-wallets based on commission type:
 - **From Transfer sub-wallet:** No fee. Immediate.
 - **Purpose:** Move IBO earnings to the user wallet to spend, stake, or withdraw.
 
-### Why Separation?
-
-This structure clarifies the origin of funds, protects against accidental spending of earned commissions, and allows IBOs to track earnings independently from personal assets.
+<Callout kind="tip">
+  This structure clarifies the origin of funds, protects against accidental spending of earned commissions, and allows IBOs to track earnings independently from personal assets.
+</Callout>

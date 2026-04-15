@@ -2,13 +2,16 @@
 title: Supply
 description: Hard cap of 200M INKY, initial mint of 10M, current circulating supply snapshot, top holders, and known system addresses.
 ---
-{/* IMAGE SUGGESTION: Donut chart showing supply distribution: circulating vs staked vs vaults vs liquidity pool. Use brand colors on dark background. */}
+
+<!-- IMAGE SUGGESTION: Donut chart showing supply distribution: circulating vs staked vs vaults vs liquidity pool. Use brand colors on dark background. -->
 
 ## Hard cap
 
 The maximum supply of INKY that can ever exist is **200,000,000** tokens. This cap is enforced at the smart contract level and is immutable: no function exists in the contract to increase it.
 
-To verify: open the [INKY contract on BscScan](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#readContract), call the `cap()` function.
+<Callout kind="tip">
+  To verify: open the [INKY contract on BscScan](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#readContract), call the `cap()` function.
+</Callout>
 
 ## Initial mint
 
@@ -36,9 +39,11 @@ As of April 13, 2026 (GoPlus API): **16,884,192.35 INKY** total supply. This num
 
 Total holders: **188**.
 
-> **Note on holder distribution**: Inkryptus is a custodial platform. Most user balances are held inside platform contracts (Wallet, Products Vault, ConversionVault), which is why a small number of contract addresses concentrate a large share of the supply. Individual user balances exist within those contracts but are not visible as separate holders on BscScan. The PancakeSwap pool is public, so some users also hold INKY outside the platform.
+<Callout kind="info">
+  **Note on holder distribution**: Inkryptus is a custodial platform. Most user balances are held inside platform contracts (Wallet, Products Vault, ConversionVault), which is why a small number of contract addresses concentrate a large share of the supply. Individual user balances exist within those contracts but are not visible as separate holders on BscScan. The PancakeSwap pool is public, so some users also hold INKY outside the platform.
+</Callout>
 
-Live value: `[rtd_inky type="total_supply"]` {/* RTD widget mock, replace with real shortcode when available */}
+Live value: `[rtd_inky type="total_supply"]` <!-- RTD widget mock, replace with real shortcode when available -->
 
 To verify current supply on-chain: call `totalSupply()` on the [INKY contract](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#readContract) and subtract balances held in known system contracts (Initial Mintage Vault, Staking Pool, Products Vault, Inkryptus Vault).
 
@@ -51,4 +56,4 @@ To verify current supply on-chain: call `totalSupply()` on the [INKY contract](h
 | [`0xa307cf9e...`](https://bscscan.com/address/0xa307cf9e07692e7a31d0b42b970c180f3a2296ee) | Products Vault        |
 | [`0x2606F6eD...`](https://bscscan.com/address/0x2606F6eD697280BCA6deF66da390E4FeeE5b4F06) | Inkryptus Vault       |
 
-See [Contracts](./contracts.mdx) for the full list of addresses and their roles.
+See [Contracts](/inky-token/contracts) for the full list of addresses and their roles.

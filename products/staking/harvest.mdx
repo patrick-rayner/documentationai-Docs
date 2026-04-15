@@ -2,35 +2,60 @@
 title: Harvest Flow
 description: How to collect staking rewards — 24h availability window, US$3 flat fee, principal stays invested, and options for harvested profit.
 ---
+
 Harvest is the process of collecting accumulated staking rewards from an active contract. Only the profit is transferred to the user's free wallet balance. The staked principal remains in the contract.
 
 ## How it works
 
-1. User opens the staking dashboard in the Inkryptus app.
-2. Accumulated profit is displayed for each active contract.
-3. User taps "Harvest" on the desired contract.
-4. The fee (US$ 3 flat) is displayed before confirmation.
-5. Upon confirmation, the profit is moved to the free balance in the user's Inkryptus wallet.
+<Steps>
+  <Step title="Open staking dashboard" icon="bar-chart-2" title-type="p">
+    User opens the staking dashboard in the Inkryptus app.
+  </Step>
+  <Step title="View accumulated profit" icon="trending-up" title-type="p">
+    Accumulated profit is displayed for each active contract.
+  </Step>
+  <Step title="Tap Harvest" icon="download" title-type="p">
+    User taps "Harvest" on the desired contract.
+  </Step>
+  <Step title="Confirm fee" icon="credit-card" title-type="p">
+    The fee (US$3 flat) is displayed before confirmation.
+  </Step>
+  <Step title="Profit collected" icon="check-circle" title-type="p">
+    Upon confirmation, the profit is moved to the free balance in the user's Inkryptus wallet.
+  </Step>
+</Steps>
 
 ## Rules
 
 | Rule | Detail |
 | ---- | ------ |
 | Availability | 24 hours after contract activation |
-| Fee | US$ 3 flat per operation |
+| Fee | US$3 flat per operation |
 | What moves | Profit only (principal stays invested) |
 | Frequency | Can be performed as often as desired after the initial 24h |
 | Compound option | User can manually reinvest harvested profit into new contracts |
 
 ## What users can do with harvested profit
 
-- **Reinvest (compound)**: create a new staking contract with the harvested amount.
-- **Convert**: use the integrated Buy/Sell flow to swap into other assets (INKY, USDT, BTCB, ETH, CAKE).
-- **Withdraw**: transfer to an external wallet (standard withdrawal fee applies).
-- **Use in ecosystem**: games, swaps, or other platform products.
+<Columns cols="2">
+  <Card title="Reinvest (compound)" icon="refresh-cw" href="/products/staking/index" horizontal={true}>
+    Create a new staking contract with the harvested amount.
+  </Card>
+  <Card title="Convert" icon="repeat" href="/products/buy-sell" horizontal={true}>
+    Swap into other assets (INKY, USDT, BTC, ETH, CAKE).
+  </Card>
+  <Card title="Withdraw" icon="upload" href="/products/wallet" horizontal={true}>
+    Transfer to an external wallet (standard withdrawal fee applies).
+  </Card>
+  <Card title="Use in ecosystem" icon="target" href="/products/arena" horizontal={true}>
+    Use in Arena games, swaps, or other platform products.
+  </Card>
+</Columns>
 
 ## Fee context
 
-The US$ 3 Harvest fee is the same flat fee applied to Swap and Withdraw operations. It covers the on-chain gas cost and platform processing. The fee is always displayed in the app before the user confirms the operation.
+<Callout kind="info">
+  The US$3 Harvest fee is the same flat fee applied to Swap and Withdraw operations. It covers the on-chain gas cost and platform processing. The fee is always displayed in the app before the user confirms the operation.
+</Callout>
 
-See [Fees & Commissions](../../fees/index.mdx) for the complete fee schedule.
+See [Fees](/fees/index) for the complete fee schedule.

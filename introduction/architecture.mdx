@@ -2,36 +2,29 @@
 title: Platform Architecture
 description: Three-layer architecture covering the mobile app, backend API, and BNB Smart Chain — custodial wallet design, smart contract interaction, and security model.
 ---
+
 This page describes the technical architecture of Inkryptus across three layers: mobile application (frontend), backend API, and blockchain infrastructure.
 
 ## Three-layer architecture
 
-```text
-┌─────────────────────────────────────────┐
-│   Layer 1: Mobile App (iOS/Android)     │
-│   - Account creation                    │
-│   - Wallet display and management       │
-│   - Staking interface                   │
-│   - Buy/sell flow                       │
-│   - Games (Coin Flip)                   │
-└──────────────┬──────────────────────────┘
-               │ HTTPS API
-┌──────────────▼──────────────────────────┐
-│   Layer 2: Backend API                  │
-│   - User authentication & KYC           │
-│   - Balance management (off-chain)      │
-│   - Reward calculation                  │
-│   - Fiat payment processing             │
-│   - Multisig transaction coordination   │
-└──────────────┬──────────────────────────┘
-               │ JSON-RPC / Web3 calls
-┌──────────────▼──────────────────────────┐
-│   Layer 3: BNB Smart Chain               │
-│   - INKY Token contract                 │
-│   - Staking pool contracts              │
-│   - Reward emission                     │
-│   - PancakeSwap liquidity               │
-└─────────────────────────────────────────┘
+```mermaid
+graph TD
+    A["Layer 1: Mobile App (iOS/Android)"] -->|HTTPS API| B["Layer 2: Backend API"]
+    B -->|"JSON-RPC / Web3"| C["Layer 3: BNB Smart Chain"]
+    A -.- A1["Account creation"]
+    A -.- A2["Wallet display"]
+    A -.- A3["Staking interface"]
+    A -.- A4["Buy/sell flow"]
+    A -.- A5["Arena (Coin Flip)"]
+    B -.- B1["User auth & KYC"]
+    B -.- B2["Balance management"]
+    B -.- B3["Reward calculation"]
+    B -.- B4["Fiat payment processing"]
+    B -.- B5["Multisig coordination"]
+    C -.- C1["INKY Token contract"]
+    C -.- C2["Staking pool contracts"]
+    C -.- C3["Reward emission"]
+    C -.- C4["PancakeSwap liquidity"]
 ```
 
 ## Layer 1: Mobile application
@@ -42,25 +35,31 @@ The Inkryptus app runs on iOS and Android. Users interact with:
 - **Wallet view**: See custodial wallet balance, transaction history, and asset breakdown.
 - **Staking interface**: Deposit into INKY, USDT, or CAKE pools, view accrued rewards, claim or compound.
 - **Buy and sell**: Purchase crypto with fiat or sell crypto for cash via ACH/bank transfer.
-- **Games**: Participate in Coin Flip game, place bets, view results.
+- **Arena**: Participate in Coin Flip game, place bets, view results.
 - **Profile and settings**: Update KYC info, manage 2FA, view account security.
 
-The app communicates exclusively with the backend API via HTTPS. No direct blockchain interaction happens from the client.
+<Callout kind="info">
+  The app communicates exclusively with the backend API via HTTPS. No direct blockchain interaction happens from the client.
+</Callout>
 
 ## Layer 2: Backend API
 
 The backend handles all business logic:
 
-- **Authentication**: User login, session management, 2FA verification.
-- **KYC and compliance**: Identity verification, sanction checks, AML screening.
-- **Balance ledger**: Off-chain tracking of user balances. All user funds are recorded in a database, with the on-chain multisig wallet serving as the backing store.
-- **Reward calculation**: Tracks staking rewards accrual per user per pool. Calculations are derived from on-chain data but managed off-chain for performance.
-- **Deposit processing**: Monitors incoming blockchain transactions and credits user balances.
-- **Withdrawal requests**: Validates withdrawal requests against user KYC and limits, then triggers multisig transactions.
-- **Fiat payment**: Integrates with payment processors for buy/sell flows (ACH, card processors, etc.).
-- **Multisig coordination**: When a withdrawal is requested, the backend constructs a multisig transaction and submits it to signing authorities.
+| Function | Description |
+|----------|-------------|
+| **Authentication** | User login, session management, 2FA verification |
+| **KYC and compliance** | Identity verification, sanction checks, AML screening |
+| **Balance ledger** | Off-chain tracking of user balances, backed by on-chain multisig wallet |
+| **Reward calculation** | Tracks staking rewards accrual per user per pool |
+| **Deposit processing** | Monitors incoming blockchain transactions, credits user balances |
+| **Withdrawal requests** | Validates against KYC and limits, triggers multisig transactions |
+| **Fiat payment** | Integrates with payment processors for buy/sell flows |
+| **Multisig coordination** | Constructs and submits multisig transactions to signing authorities |
 
-The backend is not fully decentralized; it is operated by Inkryptus and serves as the single source of truth for user balances and account state.
+<Callout kind="alert">
+  The backend is not fully decentralized; it is operated by Inkryptus and serves as the single source of truth for user balances and account state.
+</Callout>
 
 ## Layer 3: Blockchain (BNB Smart Chain)
 
@@ -68,12 +67,20 @@ All token mechanics and staking logic is on-chain and publicly verifiable.
 
 ### Custodial wallet architecture
 
-Each user has their own wallet address on-chain, managed within a main multisig wallet structure:
-
-1. When a user creates an account, the platform generates an individual wallet address for them.
-2. The keys for all user wallets are managed by the platform's main multisig wallet.
-3. Each user's wallet address is unique and can receive deposits directly.
-4. When a user withdraws, the backend constructs a multisig transaction to authorize the transfer from the user's managed wallet to their external address.
+<Steps>
+  <Step title="Account creation" icon="user-plus" title-type="p">
+    When a user creates an account, the platform generates an individual wallet address for them.
+  </Step>
+  <Step title="Key management" icon="key" title-type="p">
+    The keys for all user wallets are managed by the platform's main multisig wallet.
+  </Step>
+  <Step title="Deposit routing" icon="download" title-type="p">
+    Each user's wallet address is unique and can receive deposits directly.
+  </Step>
+  <Step title="Withdrawal authorization" icon="shield" title-type="p">
+    When a user withdraws, the backend constructs a multisig transaction to authorize the transfer from the user's managed wallet to their external address.
+  </Step>
+</Steps>
 
 This model means:
 
@@ -84,8 +91,6 @@ This model means:
 - Users must trust the platform as a custodian; the main multisig controls all wallet keys.
 
 ### Smart contracts
-
-The main contracts on BNB Smart Chain are:
 
 #### INKY Token (BEP-20)
 
@@ -102,7 +107,7 @@ The INKY token is a standard BEP-20 contract with administrative functions for m
 
 #### Staking Pool (INKY)
 
-The INKY staking pool contract accepts INKY deposits and allocates rewards. Users deposit INKY, earn INKY rewards from the TokenMinter, and can claim or auto-compound. Pool mechanics and parameters are detailed in [Staking](../products/staking/inky-pool.mdx).
+The INKY staking pool contract accepts INKY deposits and allocates rewards. Users deposit INKY, earn INKY rewards from the TokenMinter, and can claim or auto-compound. Pool mechanics and parameters are detailed in [Staking](/products/staking/inky-pool).
 
 #### TokenMinter
 
@@ -114,13 +119,13 @@ Similar pool contracts exist for USDT and CAKE staking. These contracts interact
 
 #### Game contract (Coin Flip)
 
-The Coin Flip game contract manages bets, outcomes, and payouts. Details are in [Arena](../products/arena.mdx).
+The Coin Flip game contract manages bets, outcomes, and payouts. Details are in [Arena](/products/arena).
 
-All contract source code is viewable on BscScan.
+<Callout kind="tip">
+  All contract source code is viewable on BscScan. See [Contracts](/inky-token/contracts) for all addresses.
+</Callout>
 
 ### Liquidity and trading
-
-INKY maintains a liquidity pool on PancakeSwap v2:
 
 | Pool | Pair | Platform | Fee |
 |------|------|----------|-----|
@@ -132,20 +137,17 @@ This pool allows users and arbitrageurs to trade INKY against USDT at market rat
 
 ### Key separation
 
-- **User-facing keys**: None. Users authenticate via email or phone + 2FA.
-- **Multisig keys**: Held by infrastructure providers or platform operators in a multisig arrangement. No single entity holds all keys.
-- **Smart contract keys**: Contract owner and admin functions are controlled via multisig.
+| Key type | Holder | Purpose |
+|----------|--------|---------|
+| **User-facing keys** | None | Users authenticate via email or phone + 2FA |
+| **Multisig keys** | Infrastructure providers / platform operators | No single entity holds all keys |
+| **Smart contract keys** | Contract owner via multisig | Admin functions controlled by multisig |
 
 This model eliminates seedphrase exposure but requires users to trust the platform's key management practices.
 
 ### On-chain verification
 
-All contract code, balances, and transactions are public on BscScan. Partners and auditors can verify:
-
-- Token supply and holder balances
-- Staking pool deposits and reward rates
-- Liquidity on PancakeSwap
-- Transaction history and gas costs
+All contract code, balances, and transactions are public on BscScan. Partners and auditors can verify: token supply and holder balances, staking pool deposits and reward rates, liquidity on PancakeSwap, and transaction history and gas costs.
 
 ### Third-party security tools
 
@@ -162,31 +164,53 @@ The platform implements:
 
 ## Data flow example: User stakes INKY
 
-1. User opens Inkryptus app and selects "Stake INKY"
-2. User approves staking action in the app
-3. App sends HTTPS request to backend: `POST /staking/inky/deposit` with amount and user auth token
-4. Backend validates user balance (off-chain ledger), checks KYC status
-5. Backend constructs a blockchain transaction: transfer INKY from the user's managed wallet to staking pool contract
-6. Backend signs the transaction using multisig authorization
-7. Transaction is broadcast to BNB Smart Chain and confirmed
-8. Backend monitors the on-chain staking pool contract and confirms the deposit was recorded
-9. Backend updates the user's balance ledger to reflect the INKY moved to staking
-10. Backend begins tracking reward accrual for that user in the staking pool
-11. App shows "INKY staked" and displays accrued rewards in real time (fetched from backend)
+<Steps>
+  <Step title="Open staking" icon="circle" title-type="p">
+    User opens Inkryptus app and selects "Stake INKY".
+  </Step>
+  <Step title="Approve action" icon="check" title-type="p">
+    User approves staking action in the app.
+  </Step>
+  <Step title="API request" icon="send" title-type="p">
+    App sends HTTPS request to backend: `POST /staking/inky/deposit` with amount and user auth token.
+  </Step>
+  <Step title="Backend validation" icon="shield" title-type="p">
+    Backend validates user balance (off-chain ledger) and checks KYC status.
+  </Step>
+  <Step title="Transaction construction" icon="code" title-type="p">
+    Backend constructs a blockchain transaction: transfer INKY from the user's managed wallet to the staking pool contract.
+  </Step>
+  <Step title="Multisig signing" icon="key" title-type="p">
+    Backend signs the transaction using multisig authorization.
+  </Step>
+  <Step title="Broadcast" icon="radio" title-type="p">
+    Transaction is broadcast to BNB Smart Chain and confirmed.
+  </Step>
+  <Step title="On-chain confirmation" icon="check-circle" title-type="p">
+    Backend monitors the on-chain staking pool contract and confirms the deposit was recorded.
+  </Step>
+  <Step title="Ledger update" icon="database" title-type="p">
+    Backend updates the user's balance ledger to reflect the INKY moved to staking.
+  </Step>
+  <Step title="Reward tracking" icon="trending-up" title-type="p">
+    Backend begins tracking reward accrual for that user in the staking pool.
+  </Step>
+  <Step title="Confirmation displayed" icon="monitor" title-type="p">
+    App shows "INKY staked" and displays accrued rewards in real time (fetched from backend).
+  </Step>
+</Steps>
 
 ## Infrastructure summary
 
 | Component | Responsibility | Custodial | Public |
-|-----------|-----------------|-----------|--------|
+|-----------|---------------|-----------|--------|
 | Mobile app | UI/UX, user input | No | Yes (app store) |
 | Backend API | Balance management, KYC, multisig | Yes | No |
-| INKY token | ERC-20 supply, transfers | No | Yes (BscScan) |
+| INKY token | BEP-20 supply, transfers | No | Yes (BscScan) |
 | Staking pools | Reward accrual, claims | No | Yes (BscScan) |
-| Main multisig | Manage keys for all user wallets | Yes | Partially (user wallet addresses public, key management private) |
+| Main multisig | Manage keys for all user wallets | Yes | Partially |
 | Multisig | Authorize withdrawals | Yes | Yes (transactions public) |
 
-{/* IMAGE SUGGESTION: Three-layer architecture diagram showing mobile app, API layer, and blockchain layer with arrows showing data flow. */}
+<!-- IMAGE SUGGESTION: Three-layer architecture diagram showing mobile app, API layer, and blockchain layer with arrows showing data flow. -->
 
-{/* IMAGE SUGGESTION: Custodial wallet architecture diagram showing main multisig wallet managing individual user wallet addresses, with deposit and withdrawal flows per user. */}
-
-{/* IMAGE SUGGESTION: Smart contract interaction diagram showing INKY token, staking pool, TokenMinter, and PancakeSwap liquidity pool with labeled interactions. */}
+<!-- IMAGE SUGGESTION: Custodial wallet architecture diagram showing main multisig wallet managing individual user wallet addresses, with deposit and withdrawal flows per user. -->

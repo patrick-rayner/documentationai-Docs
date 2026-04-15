@@ -2,18 +2,28 @@
 title: On-Chain Fees
 description: The INKY token contract applies no buy, sell, or transfer tax. All platform fees are separate from the token contract itself.
 ---
+
 ## On-chain token fees
 
-The INKY token contract does **not** apply any fee on buy, sell, or transfer operations. When a user buys, sells, or transfers INKY, the only cost is the standard BNB Smart Chain gas fee.
+<Callout kind="success">
+  The INKY token contract does **not** apply any fee on buy, sell, or transfer operations. When a user buys, sells, or transfers INKY, the only cost is the standard BNB Smart Chain gas fee.
+</Callout>
 
 There is no buy tax, sell tax, or transfer tax embedded in the token contract.
 
 ## Platform fees
 
-Fees charged by the Inkryptus platform (swap spreads, staking performance fees, product access fees) are separate from the token contract and are documented in the [Fees & Commissions](../fees/index.mdx) section.
+Fees charged by the Inkryptus platform (swap spreads, staking performance fees, product access fees) are separate from the token contract and are documented in the [Fees](/fees/index) section.
 
-The staking performance fee (25% on profit) is applied at the product level by the staking contract, not at the token transfer level. See [Emission](./emission.mdx) for details.
+The staking performance fee (25% on profit) is applied at the product level by the staking contract, not at the token transfer level. See [Emission](/inky-token/emission) for details.
 
 ## How to verify
 
-Open the [INKY contract source on BscScan](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code) and inspect the `transfer` and `transferFrom` functions. No fee logic is present in the token contract itself.
+<Steps>
+  <Step title="Open contract source" icon="code" title-type="p">
+    Open the [INKY contract source on BscScan](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code).
+  </Step>
+  <Step title="Inspect transfer functions" icon="search" title-type="p">
+    Inspect the `transfer` and `transferFrom` functions. No fee logic is present in the token contract itself.
+  </Step>
+</Steps>

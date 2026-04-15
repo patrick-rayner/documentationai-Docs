@@ -2,22 +2,21 @@
 title: Wallet
 description: Custodial wallet on BNB Smart Chain — supported assets, deposit and withdrawal flows, multisig security model, and what users cannot do.
 ---
+
 The Inkryptus wallet is a custodial wallet on BNB Smart Chain. Each user receives their own wallet address, managed by the platform's main multisig wallet. Users interact with their assets through the mobile app without generating or storing private keys.
 
 ## Custodial model
-
-Inkryptus operates a custodial wallet service:
 
 - **Individual user wallets**: Each user has a dedicated wallet address on-chain, generated at account creation.
 - **Main multisig management**: All user wallet keys are managed by the platform's main multisig wallet. The specific signature scheme is not publicly disclosed.
 - **No private key exposure**: Users never generate, export, or view private keys or seedphrases.
 - **Simplified onboarding**: Users create an account and can deposit immediately without key management.
 
-The custodial model removes the burden of key recovery but requires users to trust Inkryptus to secure the multisig infrastructure.
+<Callout kind="info">
+  The custodial model removes the burden of key recovery but requires users to trust Inkryptus to secure the multisig infrastructure.
+</Callout>
 
 ## Supported assets
-
-The wallet supports multiple cryptocurrencies on BNB Smart Chain:
 
 | Asset | Network | Purpose |
 | --- | --- | --- |
@@ -33,37 +32,77 @@ The wallet supports multiple cryptocurrencies on BNB Smart Chain:
 
 Each user's wallet address can receive deposits of any BEP-20 standard token, though only listed assets are supported for staking and trading within the app.
 
-## Deposit flow
+## Deposit and withdrawal flows
 
-### Crypto deposit
+<Tabs>
+  <Tab title="Crypto deposit" icon="download">
+    <Steps>
+      <Step title="Initiate deposit" icon="circle" title-type="p">
+        User initiates a deposit request in the app, specifying asset and amount.
+      </Step>
+      <Step title="Receive address" icon="copy" title-type="p">
+        App displays a platform-controlled deposit address on BNB Smart Chain.
+      </Step>
+      <Step title="Send crypto" icon="send" title-type="p">
+        User sends crypto from their external wallet to the displayed address.
+      </Step>
+      <Step title="On-chain detection" icon="search" title-type="p">
+        Platform monitors the address and detects the incoming transaction.
+      </Step>
+      <Step title="Balance credited" icon="check-circle" title-type="p">
+        Platform credits the user's account balance once the transaction is confirmed on-chain.
+      </Step>
+    </Steps>
+  </Tab>
 
-1. User initiates a deposit request in the app (specifying asset and amount)
-2. App displays a platform-controlled deposit address on BNB Smart Chain
-3. User sends crypto from their external wallet to the displayed address
-4. Platform monitors the address and detects the incoming transaction
-5. Platform credits the user's account balance once the transaction is confirmed on-chain
+  <Tab title="Fiat-to-crypto" icon="credit-card">
+    <Steps>
+      <Step title="Select amount" icon="circle" title-type="p">
+        User selects buy amount and fiat payment method.
+      </Step>
+      <Step title="Receive quote" icon="file-text" title-type="p">
+        Platform provides a quote and payment instructions.
+      </Step>
+      <Step title="Complete payment" icon="credit-card" title-type="p">
+        User completes the fiat payment (bank transfer, card, etc.).
+      </Step>
+      <Step title="Payment confirmed" icon="check" title-type="p">
+        Platform confirms receipt and executes a buy order.
+      </Step>
+      <Step title="Crypto credited" icon="wallet" title-type="p">
+        Crypto is credited to the user's wallet on-chain and app balance is updated.
+      </Step>
+    </Steps>
 
-### Fiat-to-crypto deposit (USDT on-ramp)
+    <Callout kind="alert">
+      Fiat deposits are subject to KYC verification and regulatory compliance.
+    </Callout>
+  </Tab>
 
-1. User selects buy amount and fiat payment method
-2. Platform provides a quote and payment instructions
-3. User completes the fiat payment (bank transfer, card, etc.)
-4. Platform confirms receipt and executes a buy order
-5. Crypto is credited to the user's wallet on-chain
-6. User's app balance is updated
+  <Tab title="Withdrawal" icon="upload">
+    <Steps>
+      <Step title="Request withdrawal" icon="circle" title-type="p">
+        User initiates a withdrawal request, specifying asset, amount, and external address.
+      </Step>
+      <Step title="Validation" icon="shield" title-type="p">
+        Platform validates the request (KYC limits, balance, address format).
+      </Step>
+      <Step title="Multisig signing" icon="key" title-type="p">
+        Platform constructs a multisig transaction authorizing the transfer from the user's managed wallet.
+      </Step>
+      <Step title="Broadcast" icon="send" title-type="p">
+        Withdrawal is signed and broadcast to BNB Smart Chain.
+      </Step>
+      <Step title="Confirmation" icon="check-circle" title-type="p">
+        Transaction is confirmed on-chain, crypto arrives at the user's external address, and app balance is debited.
+      </Step>
+    </Steps>
 
-Fiat deposits are subject to KYC verification and regulatory compliance.
-
-## Withdrawal flow
-
-1. User initiates a withdrawal request (specifying asset, amount, and external address)
-2. Platform validates the request (KYC limits, balance, address format)
-3. Platform constructs a multisig transaction authorizing the transfer from the user's managed wallet
-4. Withdrawal is signed and broadcast to BNB Smart Chain
-5. Transaction is confirmed on-chain, and crypto arrives at the user's external address
-6. User's app balance is debited
-
-Withdrawals may be subject to daily limits, KYC tier restrictions, and processing delays.
+    <Callout kind="info">
+      Withdrawals may be subject to daily limits, KYC tier restrictions, and processing delays.
+    </Callout>
+  </Tab>
+</Tabs>
 
 ## Security model
 
@@ -77,24 +116,21 @@ The platform uses a multisig wallet to control user funds. The specific signatur
 
 ### Additional security measures
 
-- **Two-factor authentication (2FA)**: Users can enable 2FA on their account to prevent unauthorized access
-- **Rate limiting**: Withdrawal amounts may be limited per day or per transaction
-- **Address whitelisting**: Users may be able to register withdrawal addresses to prevent accidental transfers to wrong addresses
-- **Monitoring**: The platform monitors for suspicious account activity and may block transactions or require additional verification
+| Measure | Description |
+|---------|-------------|
+| **Two-factor authentication (2FA)** | Users can enable 2FA on their account to prevent unauthorized access |
+| **Rate limiting** | Withdrawal amounts may be limited per day or per transaction |
+| **Address whitelisting** | Users may register withdrawal addresses to prevent accidental transfers |
+| **Monitoring** | Platform monitors for suspicious activity and may block transactions or require additional verification |
 
 ### What users cannot do
 
-Because the wallet is custodial:
-
-- Users cannot export or recover private keys
-- Users cannot sign transactions directly
-- Users cannot use the wallet with external wallet software
-- Users cannot take unilateral possession of their funds
-
-If a user loses access to their account (forgotten password, lost device), they must use the platform's account recovery process, which may require identity verification.
+<Callout kind="alert">
+  Because the wallet is custodial, users cannot export or recover private keys, sign transactions directly, use the wallet with external wallet software, or take unilateral possession of their funds. If a user loses access to their account, they must use the platform's account recovery process, which may require identity verification.
+</Callout>
 
 ## Asset transactions on-chain
 
 All transactions involving user deposits, withdrawals, and staking are recorded on BNB Smart Chain and are publicly viewable on BscScan. Users can track their transaction history by wallet address or transaction hash.
 
-{/* IMAGE SUGGESTION: Diagram showing the custodial wallet architecture: main multisig wallet managing individual user wallet addresses on BNB Smart Chain. Show deposit flow (external -> user wallet), withdrawal flow (user wallet -> external), and staking flow (user wallet -> staking contract). Clean, light background. */}
+<!-- IMAGE SUGGESTION: Diagram showing the custodial wallet architecture: main multisig wallet managing individual user wallet addresses on BNB Smart Chain. Show deposit flow (external -> user wallet), withdrawal flow (user wallet -> external), and staking flow (user wallet -> staking contract). Clean, light background. -->

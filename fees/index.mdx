@@ -2,6 +2,7 @@
 title: Fees
 description: Reference documentation for all platform fees charged by Inkryptus.
 ---
+
 Reference documentation for all platform fees charged by Inkryptus.
 
 **Last Updated:** April 15, 2026
@@ -10,7 +11,7 @@ Reference documentation for all platform fees charged by Inkryptus.
 
 Fees are platform charges levied on user operations. They fund infrastructure, development, liquidity, and the Partner Program commission pool.
 
-For details on how fees are distributed to the IBO network, see [Commissions](../partner-program/commissions.mdx).
+For details on how fees are distributed to the IBO network, see [Commissions](/partner-program/commissions).
 
 ## Fee Schedule
 
@@ -31,13 +32,23 @@ Withdrawal capacity is tiered by KYC verification status:
 | **Bronze** | Inactive | US$500/month | 1st of month, 00:00:01 UTC |
 | **Silver** | Active | US$500,000/month | 1st of month, 00:00:01 UTC |
 
-To upgrade from Bronze to Silver, complete KYC in `Profile > Account > KYC`.
-
-Current limits are visible in `Profile > Account > Fees`.
+<Callout kind="tip">
+  To upgrade from Bronze to Silver, complete KYC in `Profile > Account > KYC`. Current limits are visible in `Profile > Account > Fees`.
+</Callout>
 
 ## Documentation
 
-- [Fee Table](fee-table.mdx) — Complete fee schedule and withdrawal limits
-- [Subscription](subscription.mdx) — Monthly IBO Program fee
-- [Transaction](transaction.mdx) — Fee on Withdraw, Swap, Harvest
-- [Performance](performance.mdx) — Performance fee on staking/farming profits
+<Columns cols="2">
+  <Card title="Fee Table" icon="table" href="/fees/fee-table" horizontal={true}>
+    Complete fee schedule and withdrawal limits.
+  </Card>
+  <Card title="Subscription" icon="credit-card" href="/fees/subscription" horizontal={true}>
+    Monthly IBO Program fee details.
+  </Card>
+  <Card title="Transaction" icon="repeat" href="/fees/transaction" horizontal={true}>
+    Fee on Withdraw, Swap, Harvest operations.
+  </Card>
+  <Card title="Performance" icon="trending-up" href="/fees/performance" horizontal={true}>
+    Performance fee on staking/farming profits.
+  </Card>
+</Columns>

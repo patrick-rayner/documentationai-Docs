@@ -2,22 +2,19 @@
 title: INKY Token
 description: Technical reference for the INKY BEP-20 token on BNB Smart Chain — supply, emission, fees, liquidity, security, and contract architecture.
 ---
-> **Audience**: advanced IBOs, partners, investors, journalists, auditors.
-> **Indexed in SEO**: no (GitBook with robots blocked).
-> **Source of truth for**: contract parameters, supply math, emission formulas, fees, liquidity data, security status, changelog.
+
+<Callout kind="info">
+  **Audience**: advanced partners, investors, journalists, auditors.
+  This documentation is not indexed in SEO and serves as the technical source of truth for contract parameters, supply math, emission formulas, fees, liquidity data, security status, and changelog.
+</Callout>
 
 ## Overview
 
 INKY is the utility token of the Inkryptus ecosystem. It runs on BNB Smart Chain under the BEP-20 standard and has been live since May 2023. This documentation is the technical source of truth for everything related to INKY: supply, emission, fees, liquidity, security, and contract architecture.
 
-All commercial narrative and educational material lives elsewhere:
+All commercial narrative and educational material lives elsewhere: commercial pages at `/inky-token/` and `/inky-token/tokenomics/`, educational hub at `/learn/tokenomics/` and related `/learn/` articles. This section focuses exclusively on verifiable, on-chain facts and technical parameters.
 
-- Commercial pages: `/inky-token/` and `/inky-token/tokenomics/`
-- Educational hub: `/learn/tokenomics/` and related `/learn/` articles
-
-This section focuses exclusively on verifiable, on-chain facts and technical parameters.
-
-{/* IMAGE SUGGESTION: INKY token logo + BNB Smart Chain badge. Clean, centered, dark background. Used as page header visual. */}
+<!-- IMAGE SUGGESTION: INKY token logo + BNB Smart Chain badge. Clean, centered, dark background. Used as page header visual. -->
 
 ## Quick facts
 
@@ -33,14 +30,34 @@ This section focuses exclusively on verifiable, on-chain facts and technical par
 | Deploy tx  | [`0xbb7cd490...`](https://bscscan.com/tx/0xbb7cd490a16dc51af47263b6e7ad5960ff9fa2da6ef7a3a16cbfcd974907e04c) |
 | Explorer   | [BscScan](https://bscscan.com/token/0x75a320c97205dd2e70e09085d1408c73a73d4d8f)                              |
 
-## Sections in this documentation
+## Sections
 
-- [Overview](./overview.mdx), basic facts and identity
-- [Supply](./supply.mdx), hard cap, circulating, reserved
-- [Distribution](./distribution.mdx), allocation breakdown
-- [Emission](./emission.mdx), how new tokens enter circulation
-- [Fees](./fees.mdx), on-chain fees applied by the contract
-- [Liquidity](./liquidity.mdx), pool details, pair, depth
-- [Security](./security.mdx), audit status, scanner reports, incident history
-- [Contracts](./contracts.mdx), contract architecture, functions, administration
-- [Changelog](./changelog.mdx), record of relevant updates
+<Columns cols="3">
+  <Card title="Token Identity" icon="tag" href="/inky-token/overview">
+    Contract address, on-chain parameters, and verification methods.
+  </Card>
+  <Card title="Supply" icon="bar-chart-2" href="/inky-token/supply">
+    Hard cap, circulating supply, top holders, system addresses.
+  </Card>
+  <Card title="Distribution" icon="pie-chart" href="/inky-token/distribution">
+    Initial allocation and current on-chain distribution.
+  </Card>
+  <Card title="Emission" icon="trending-up" href="/inky-token/emission">
+    Daily emission formula, worked examples, parameter governance.
+  </Card>
+  <Card title="On-chain Fees" icon="percent" href="/inky-token/fees">
+    Token-level fees (none) vs. platform-level fees.
+  </Card>
+  <Card title="Liquidity" icon="droplet" href="/inky-token/liquidity">
+    PancakeSwap pool details, depth, LP token status.
+  </Card>
+  <Card title="Security" icon="shield" href="/inky-token/security">
+    Scanner reports, audit status, incident history.
+  </Card>
+  <Card title="Contracts" icon="file-text" href="/inky-token/contracts">
+    Full contract list, addresses, admin architecture.
+  </Card>
+  <Card title="Changelog" icon="clock" href="/inky-token/changelog">
+    Chronological record of token events.
+  </Card>
+</Columns>

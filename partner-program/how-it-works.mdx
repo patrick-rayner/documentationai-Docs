@@ -2,15 +2,23 @@
 title: How the Partner Program Works
 description: IBO onboarding flow, referral link mechanics, 7-level network structure, 30/70 commission model, dashboard sections, and IBO Wallet separation.
 ---
+
 ## Onboarding
 
-To become an IBO (Independent Business Owner):
-
-1. Download the Inkryptus app and create your account
-2. Navigate to **IBO Program** section
-3. Accept the terms and conditions for Independent Business Owner status
-4. Your account is immediately activated with a 30-day free trial of the Partner dashboard
-5. After 30 days, a US$24/month subscription is required to maintain active status
+<Steps>
+  <Step title="Download and register" icon="download" title-type="p">
+    Download the Inkryptus app and create your account.
+  </Step>
+  <Step title="Activate IBO status" icon="settings" title-type="p">
+    Navigate to **IBO Program** section and accept the terms and conditions for Independent Business Owner status.
+  </Step>
+  <Step title="Free trial begins" icon="gift" title-type="p">
+    Your account is immediately activated with a 30-day free trial of the Partner dashboard.
+  </Step>
+  <Step title="Subscribe to continue" icon="credit-card" title-type="p">
+    After 30 days, a US$24/month subscription is required to maintain active status.
+  </Step>
+</Steps>
 
 While your subscription is active, you can receive new users in your network and earn all commission types. If subscription lapses, your account enters inactive status: no new signups join your network, and commission payouts stop. You may reactivate anytime.
 
@@ -18,7 +26,9 @@ While your subscription is active, you can receive new users in your network and
 
 Each active IBO receives a unique referral link. Users who sign up via this link become your **Level 1** direct referrals. When Level 1 users invite others, those new users form your **Level 2**, and the pattern continues through **Level 7**.
 
-The network depth is unlimited, but commission distributions cap at 7 levels. Unused commissions (levels 8+) are retained by Inkryptus.
+<Callout kind="info">
+  The network depth is unlimited, but commission distributions cap at 7 levels. Unused commissions (levels 8+) are retained by Inkryptus.
+</Callout>
 
 If a user signs up without a referral link, they have a 30-day window from account creation to manually assign a sponsor via **Profile > Account > Sponsor**. After 30 days, sponsor assignment is locked.
 
@@ -28,40 +38,36 @@ Commissions are calculated daily based on real platform activity: staking contra
 
 The distribution model is uniform across all commission types:
 
-- **30%** of collected fees stays with Inkryptus (operations, security, infrastructure, development)
-- **70%** of collected fees distributes across levels of the partner network: **10% per level**, up to 7 levels
+| Split | Recipient | Per level |
+|-------|-----------|-----------|
+| **30%** | Inkryptus | Operations, security, infrastructure, development |
+| **70%** | Network | **10% per level**, up to 7 levels |
 
 When a network level does not exist (no upline sponsor), that level's 10% allocation returns to Inkryptus and funds community campaigns.
 
-For detailed commission tables and examples, see [Commissions](./commissions.mdx).
+For detailed commission tables and examples, see [Commissions](/partner-program/commissions).
 
 ## Dashboard sections
 
-The Partner Program dashboard provides four main sections:
+<Tabs>
+  <Tab title="Subscription" icon="credit-card">
+    Displays subscription status, renewal date, and payment method. Here you can manage billing and view upcoming charges. The first 30 days are free; after that, US$24 is charged monthly.
+  </Tab>
 
-### Subscription
+  <Tab title="Earnings" icon="trending-up">
+    Shows real-time and historical commission totals broken down by type: subscription commissions, transaction commissions, performance commissions, gaming commissions, and Staking Referral balance.
 
-Displays subscription status, renewal date, and payment method. Here you can manage billing and view upcoming charges. The first 30 days are free; after that, US$24 is charged monthly.
+    All earnings are credited daily in INKY. Daily settlements occur at 00:30 UTC.
+  </Tab>
 
-### Earnings
+  <Tab title="Network" icon="users">
+    Displays your referral tree in real-time. Shows each level's member count, active users, and total network activity. Network events (new signups, user activity) update instantly.
+  </Tab>
 
-Shows real-time and historical commission totals broken down by type:
-
-- Subscription commissions (from monthly IBO fees)
-- Transaction commissions (from Withdraw, Swap, Harvest operations)
-- Performance commissions (from staking cycle profits)
-- Gaming commissions (from CoinFlip and other games)
-- **Staking Referral balance** — displays remaining fund balance for the Staking Referral campaign and historical payouts
-
-All earnings are credited daily in INKY. Daily settlements occur at 00:30 UTC.
-
-### Network
-
-Displays your referral tree in real-time. Shows each level's member count, active users, and total network activity. Network events (new signups, user activity) update instantly.
-
-### Wallet
-
-Separate IBO Wallet for earnings and bonuses. Distinct from user wallet. All commissions, Staking Referral bonuses, and special promotion payouts land in the IBO Wallet. You may withdraw to bank account or transfer funds onward at any time, subject to withdrawal limits and KYC tier.
+  <Tab title="Wallet" icon="wallet">
+    Separate IBO Wallet for earnings and bonuses. Distinct from user wallet. All commissions, Staking Referral bonuses, and special promotion payouts land in the IBO Wallet. You may withdraw to bank account or transfer funds onward at any time, subject to withdrawal limits and KYC tier.
+  </Tab>
+</Tabs>
 
 ## IBO Wallet vs User Wallet
 
@@ -76,7 +82,7 @@ Your User Wallet (staking account, buy/sell activity, gaming rewards) and IBO Wa
 
 ## Payment frequency
 
-All Partner Program commissions settle **daily** (00:30 UTC). Staking Referral bonuses settle **immediately** upon eligible contract activation. See the payment calendar in [Commissions](./commissions.mdx) for complete settlement terms.
+All Partner Program commissions settle **daily** (00:30 UTC). Staking Referral bonuses settle **immediately** upon eligible contract activation. See the payment calendar in [Commissions](/partner-program/commissions) for complete settlement terms.
 
-{/* IMAGE SUGGESTION: Network tree visualization showing 7-level structure with activity indicators */}
-{/* IMAGE SUGGESTION: Dashboard tabs (Subscription, Earnings, Network, Wallet) with sample data */}
+<!-- IMAGE SUGGESTION: Network tree visualization showing 7-level structure with activity indicators -->
+<!-- IMAGE SUGGESTION: Dashboard tabs (Subscription, Earnings, Network, Wallet) with sample data -->

@@ -2,63 +2,82 @@
 title: Security
 description: OpenZeppelin standards, verified source code, GoPlus and Token Sniffer scan results (April 2026), no formal audit, and clean incident history since May 2023.
 ---
+
 ## Standards and verification
 
 All Inkryptus contracts are built on **OpenZeppelin** standards (the most widely used smart contract library in the industry) and have **verified source code on BscScan**, making them publicly readable and verifiable by anyone at any time.
 
-The INKY token contract has been live since May 11, 2023 with **zero security incidents**, no exploits, no contract pauses, and no emergency actions.
+<Callout kind="success">
+  The INKY token contract has been live since May 11, 2023 with **zero security incidents**, no exploits, no contract pauses, and no emergency actions.
+</Callout>
 
 ## Third-party scanners
 
-**GoPlus Security API** (retrieved April 13, 2026):
+<Tabs>
+  <Tab title="GoPlus Security" icon="shield">
+    **GoPlus Security API** (retrieved April 13, 2026):
 
-| Check                        | Result |
-| ---------------------------- | ------ |
-| Honeypot                     | No     |
-| Buy tax                      | 0%     |
-| Sell tax                     | 0%     |
-| Transfer tax                 | 0%     |
-| Hidden owner                 | No     |
-| Can take back ownership      | No     |
-| Transfer pausable            | No     |
-| Self-destruct                | No     |
-| Trading cooldown             | No     |
-| Slippage modifiable          | No     |
-| Anti-whale modifiable        | No     |
-| Personal slippage modifiable | No     |
-| External call                | No     |
-| Cannot buy                   | No     |
-| Cannot sell all              | No     |
+    | Check                        | Result |
+    | ---------------------------- | ------ |
+    | Honeypot                     | No     |
+    | Buy tax                      | 0%     |
+    | Sell tax                     | 0%     |
+    | Transfer tax                 | 0%     |
+    | Hidden owner                 | No     |
+    | Can take back ownership      | No     |
+    | Transfer pausable            | No     |
+    | Self-destruct                | No     |
+    | Trading cooldown             | No     |
+    | Slippage modifiable          | No     |
+    | Anti-whale modifiable        | No     |
+    | Personal slippage modifiable | No     |
+    | External call                | No     |
+    | Cannot buy                   | No     |
+    | Cannot sell all              | No     |
+  </Tab>
 
-**Token Sniffer** (score: **45/100**, retrieved April 13, 2026):
+  <Tab title="Token Sniffer" icon="search">
+    **Token Sniffer** (score: **45/100**, retrieved April 13, 2026):
 
-| Check                      | Result                                           |
-| -------------------------- | ------------------------------------------------ |
-| Honeypot                   | No, token is sellable                            |
-| Buy fee                    | 0%                                               |
-| Sell fee                   | 0%                                               |
-| Contract source            | Verified                                         |
-| Mint function              | Present (expected, see note below)               |
-| Ownership                  | Active (expected, see note below)                |
-| Owner wallet supply        | 0%                                               |
-| Creator wallet supply      | 0%                                               |
-| Top 10 holders             | 6% of circulating supply                         |
-| Liquidity (PancakeSwap v2) | ~1,083,811 USDT (USDT side only)                 |
-| LP locked/burned           | < 0.01% (held by Products Vault, see note below) |
+    | Check                      | Result                                           |
+    | -------------------------- | ------------------------------------------------ |
+    | Honeypot                   | No, token is sellable                            |
+    | Buy fee                    | 0%                                               |
+    | Sell fee                   | 0%                                               |
+    | Contract source            | Verified                                         |
+    | Mint function              | Present (expected, see note below)               |
+    | Ownership                  | Active (expected, see note below)                |
+    | Owner wallet supply        | 0%                                               |
+    | Creator wallet supply      | 0%                                               |
+    | Top 10 holders             | 6% of circulating supply                         |
+    | Liquidity (PancakeSwap v2) | ~1,083,811 USDT (USDT side only)                 |
+    | LP locked/burned           | < 0.01% (held by Products Vault, see note below) |
 
-**Notes on flagged items:**
+    Full report: [Token Sniffer](https://tokensniffer.com/token/bsc/0x75a320c97205dd2e70e09085d1408c73a73d4d8f).
+  </Tab>
+</Tabs>
 
-The mint function is required for staking emission. It is controlled through the **TokenMinter contract**, which maintains a whitelist of authorized minters. Only addresses on this whitelist can trigger minting, and the hard cap of 200M INKY is immutable in the contract. See [Contracts](./contracts.mdx) for the full architecture.
+### Notes on flagged items
 
-Ownership is retained because the platform actively operates staking reward distribution. The owner address is the TokenMinter contract itself (not a personal wallet), and the creator wallet holds 0% of the supply.
+<ExpandableGroup>
+  <Expandable title="Mint function" default-open="false">
+    The mint function is required for staking emission. It is controlled through the **TokenMinter contract**, which maintains a whitelist of authorized minters. Only addresses on this whitelist can trigger minting, and the hard cap of 200M INKY is immutable in the contract. See [Contracts](/inky-token/contracts) for the full architecture.
+  </Expandable>
 
-LP tokens are held by the **Products Vault** (99.997% of all LP tokens) rather than being locked in a third-party locker. See [Liquidity](./liquidity.mdx) for details.
+  <Expandable title="Active ownership" default-open="false">
+    Ownership is retained because the platform actively operates staking reward distribution. The owner address is the TokenMinter contract itself (not a personal wallet), and the creator wallet holds 0% of the supply.
+  </Expandable>
 
-Full report: [Token Sniffer](https://tokensniffer.com/token/bsc/0x75a320c97205dd2e70e09085d1408c73a73d4d8f).
+  <Expandable title="LP tokens not locked" default-open="false">
+    LP tokens are held by the **Products Vault** (99.997% of all LP tokens) rather than being locked in a third-party locker. See [Liquidity](/inky-token/liquidity) for details.
+  </Expandable>
+</ExpandableGroup>
 
 ## Formal audit
 
-No formal third-party audit has been performed on the INKY token contract. The project relies on OpenZeppelin standards, verified source code, and automated scanner results as its current security baseline.
+<Callout kind="alert">
+  No formal third-party audit has been performed on the INKY token contract. The project relies on OpenZeppelin standards, verified source code, and automated scanner results as its current security baseline.
+</Callout>
 
 ## Incident history
 
@@ -68,7 +87,17 @@ No security incidents have occurred since deploy (May 11, 2023). Clean track rec
 
 Anyone can verify the security posture of the INKY contract:
 
-1. Open the [verified source code on BscScan](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code).
-2. Run the contract address through [Token Sniffer](https://tokensniffer.com/) for an automated assessment.
-3. Check the `owner()` function to see which address holds admin privileges.
-4. Review the `Read Contract` tab for all public parameters.
+<Steps>
+  <Step title="Review source code" icon="code" title-type="p">
+    Open the [verified source code on BscScan](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code).
+  </Step>
+  <Step title="Run automated scan" icon="shield" title-type="p">
+    Run the contract address through [Token Sniffer](https://tokensniffer.com/) for an automated assessment.
+  </Step>
+  <Step title="Check ownership" icon="key" title-type="p">
+    Check the `owner()` function to see which address holds admin privileges.
+  </Step>
+  <Step title="Read public parameters" icon="search" title-type="p">
+    Review the `Read Contract` tab for all public parameters.
+  </Step>
+</Steps>

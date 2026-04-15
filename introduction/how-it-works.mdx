@@ -2,43 +2,86 @@
 title: How Inkryptus Works
 description: Custodial model, deposit and withdrawal flows, product suite, on-chain infrastructure, and reward generation mechanics.
 ---
+
 This page explains the core mechanics of the Inkryptus platform: how users deposit assets, how the custodial wallet operates, what products are available, and how staking rewards are generated.
 
 ## Custodial model
 
 Inkryptus operates a custodial platform. When a user creates an account, the platform:
 
-1. Creates an account record in the backend
-2. Generates an individual wallet address for the user, managed within the platform's main multisig wallet structure
-3. Tracks the user's balance through the backend database
+<Steps>
+  <Step title="Account creation" icon="user-plus" title-type="p">
+    Creates an account record in the backend.
+  </Step>
+  <Step title="Wallet generation" icon="wallet" title-type="p">
+    Generates an individual wallet address for the user, managed within the platform's main multisig wallet structure.
+  </Step>
+  <Step title="Balance tracking" icon="database" title-type="p">
+    Tracks the user's balance through the backend database.
+  </Step>
+</Steps>
 
 Each user has their own wallet address on-chain. The keys for all user wallets are managed by the platform's main multisig wallet. Users do not generate, export, or manage private keys or seedphrases. This simplifies onboarding and eliminates seedphrase recovery flows, but requires users to trust the platform as a custodian.
 
 ## User deposit and withdrawal flow
 
-### Deposits
+<Tabs>
+  <Tab title="Deposits" icon="download">
+    <Steps>
+      <Step title="Initiate deposit" icon="circle" title-type="p">
+        User initiates a deposit request in the app, specifying asset, amount, and fiat payment method if applicable.
+      </Step>
+      <Step title="Receive deposit address" icon="copy" title-type="p">
+        App displays a platform-controlled deposit address.
+      </Step>
+      <Step title="Send crypto" icon="send" title-type="p">
+        User sends crypto to that address, or completes a fiat-to-crypto purchase.
+      </Step>
+      <Step title="On-chain confirmation" icon="check-circle" title-type="p">
+        Platform receives the transaction on-chain.
+      </Step>
+      <Step title="Balance credited" icon="wallet" title-type="p">
+        Backend confirms receipt and credits the user's account balance.
+      </Step>
+    </Steps>
 
-When a user deposits crypto:
+    Each user has a dedicated wallet address on-chain, but all wallet keys are managed by the platform's main multisig. The user's balance is tracked both on-chain (via their wallet address) and in the backend database.
+  </Tab>
 
-1. User initiates a deposit request in the app (specifying asset, amount, and fiat payment method if applicable)
-2. App displays a platform-controlled deposit address
-3. User sends crypto to that address (or completes a fiat-to-crypto purchase)
-4. Platform receives the transaction on-chain
-5. Backend confirms receipt and credits the user's account balance
-
-Each user has a dedicated wallet address on-chain, but all wallet keys are managed by the platform's main multisig. The user's balance is tracked both on-chain (via their wallet address) and in the backend database.
-
-### Withdrawals
-
-When a user withdraws:
-
-1. User initiates a withdrawal request
-2. Platform validates the request (KYC, limits, balance)
-3. Platform signs a multisig transaction authorizing the transfer
-4. Crypto is sent from the user's managed wallet to the user's external address
-5. Transaction is confirmed on-chain, and the user's balance is debited
+  <Tab title="Withdrawals" icon="upload">
+    <Steps>
+      <Step title="Request withdrawal" icon="circle" title-type="p">
+        User initiates a withdrawal request.
+      </Step>
+      <Step title="Validation" icon="shield" title-type="p">
+        Platform validates the request (KYC, limits, balance).
+      </Step>
+      <Step title="Multisig signing" icon="key" title-type="p">
+        Platform signs a multisig transaction authorizing the transfer.
+      </Step>
+      <Step title="On-chain transfer" icon="send" title-type="p">
+        Crypto is sent from the user's managed wallet to the user's external address.
+      </Step>
+      <Step title="Confirmation" icon="check-circle" title-type="p">
+        Transaction is confirmed on-chain, and the user's balance is debited.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
 
 ## Products
+
+<Columns cols="3">
+  <Card title="Staking" icon="trending-up" href="/products/staking/index">
+    Stake INKY, USDT, or CAKE and earn daily rewards.
+  </Card>
+  <Card title="Buy and Sell" icon="repeat" href="/products/buy-sell">
+    Purchase or sell crypto directly in the app.
+  </Card>
+  <Card title="Arena" icon="target" href="/products/arena">
+    Coin Flip and other platform games.
+  </Card>
+</Columns>
 
 ### Staking
 
@@ -48,17 +91,15 @@ Inkryptus offers three staking products:
 - **USDT Staking**: Stake USDT and earn yield sourced from protocol revenue and lending arrangements.
 - **CAKE Staking**: Stake CAKE (PancakeSwap governance token) and earn rewards from PancakeSwap protocol incentives.
 
-Users select a pool in the app, deposit their balance, and accrue rewards daily. Rewards can be harvested (claimed) at any time. There is no auto-compound; harvest is manual. See [Staking](../products/staking/) for detailed mechanics.
+Users select a pool in the app, deposit their balance, and accrue rewards daily. Rewards can be harvested (claimed) at any time. There is no auto-compound; harvest is manual. See [Staking](/products/staking/index) for detailed mechanics.
 
 ### Buy and Sell
 
-Users can purchase crypto (BTC, ETH, USDT, INKY, etc.) directly in the app using fiat payment methods. The platform quotes the user a price, collects fiat, and delivers crypto to their custodial wallet. Reverse flow is available for selling crypto for fiat.
+Users can purchase crypto (BTC, ETH, USDT, INKY, etc.) directly in the app using fiat payment methods. The platform quotes the user a price, collects fiat, and delivers crypto to their custodial wallet. Reverse flow is available for selling crypto for fiat. See [Buy and Sell](/products/buy-sell) for pricing and fee details.
 
-See [Buy and Sell](../products/buy-sell.mdx) for pricing and fee details.
+### Arena
 
-### Games
-
-Inkryptus operates a Coin Flip game where users can stake a balance and win or lose against the platform. Payouts and house edge are defined by smart contract logic. See [Arena](../products/arena.mdx) for rules and fee structure.
+Inkryptus operates a Coin Flip game where users can stake a balance and win or lose against the platform. Payouts and house edge are defined by smart contract logic. See [Arena](/products/arena) for rules and fee structure.
 
 ## On-chain infrastructure
 
@@ -66,21 +107,23 @@ Inkryptus operates a Coin Flip game where users can stake a balance and win or l
 
 The INKY token (contract `0x75a320c97205dd2e70e09085d1408c73a73d4d8f`) is a BEP-20 token on BNB Smart Chain. It serves as the reward token for staking pools and platform governance. INKY has a hard cap of 200,000,000 tokens. Daily emission follows a dual rule: 1% of total staked or 10,000 INKY, whichever is lower.
 
-All INKY transactions and balances are public on BscScan. See [INKY Token](../inky-token/) for supply, emission, liquidity, and security details.
+All INKY transactions and balances are public on BscScan. See [INKY Token](/inky-token/index) for supply, emission, liquidity, and security details.
 
 ### Smart contracts
 
 Inkryptus maintains three primary smart contracts on BNB Smart Chain:
 
-- **INKY Token** (BEP-20): The token contract itself, managing supply, transfers, and permissions.
-- **Staking Pool** (INKY): Handles deposits, reward accrual, and claims for INKY stakers.
-- **TokenMinter**: Emits INKY rewards according to a programmed schedule.
+| Contract | Purpose |
+|----------|---------|
+| **INKY Token** (BEP-20) | Token contract managing supply, transfers, and permissions |
+| **Staking Pool** (INKY) | Handles deposits, reward accrual, and claims for INKY stakers |
+| **TokenMinter** | Emits INKY rewards according to a programmed schedule |
 
-Additional contracts manage USDT and CAKE staking. All contract addresses and ABIs are published in the [Contracts](../inky-token/contracts.mdx) section. Contract code is publicly viewable on BscScan.
+Additional contracts manage USDT and CAKE staking. All contract addresses and ABIs are published in the [Contracts](/inky-token/contracts) section. Contract code is publicly viewable on BscScan.
 
 ### Liquidity and trading
 
-INKY maintains liquidity on PancakeSwap v2 in the INKY/USDT pair. This allows users to swap INKY on the open market at market rates. The platform may provide or withdraw liquidity at its discretion. See [Liquidity](../inky-token/liquidity.mdx) for current pool depth and fee information.
+INKY maintains liquidity on PancakeSwap v2 in the INKY/USDT pair. This allows users to swap INKY on the open market at market rates. The platform may provide or withdraw liquidity at its discretion. See [Liquidity](/inky-token/liquidity) for current pool depth and fee information.
 
 ## Reward generation
 
@@ -88,17 +131,17 @@ INKY maintains liquidity on PancakeSwap v2 in the INKY/USDT pair. This allows us
 
 Users who stake INKY earn INKY rewards. Rewards are generated by the TokenMinter contract, which emits INKY daily following a dual rule: 1% of total staked or 10,000 INKY cap, whichever is lower. Emitted tokens are distributed proportionally among stakers.
 
-A 25% performance fee is applied on staking profits.
+<Callout kind="info">
+  A 25% performance fee is applied daily on staking profits. See [Performance Fee](/fees/performance) for details.
+</Callout>
 
 ### USDT and CAKE staking rewards
 
 - **USDT**: Users lock USDT on the platform, injecting liquidity into the INKY/USDT pool. The platform allocates a portion of the daily INKY emission to reward USDT stakers, converted into USDT-denominated rewards.
 - **CAKE**: An encapsulated protocol from PancakeSwap. The platform abstracts the interaction with PancakeSwap's native staking contracts. Rewards come directly from PancakeSwap's reward mechanics.
 
-All rewards are credited daily and can be claimed via the Harvest function. Harvest is manual (no auto-compound). Each Harvest operation has a flat fee of US$ 3.
+All rewards are credited daily and can be claimed via the Harvest function. Harvest is manual (no auto-compound). Each Harvest operation has a flat fee of US$3.
 
-{/* IMAGE SUGGESTION: Diagram showing user app, main multisig wallet managing individual user wallets, and blockchain interaction. Flow: user deposits to their wallet address -> main multisig manages keys -> staking contract -> rewards back to user wallet. */}
+<!-- IMAGE SUGGESTION: Diagram showing user app, main multisig wallet managing individual user wallets, and blockchain interaction. Flow: user deposits to their wallet address -> main multisig manages keys -> staking contract -> rewards back to user wallet. -->
 
-{/* IMAGE SUGGESTION: Timeline or flow diagram showing deposit, staking, reward accrual, and withdrawal lifecycle. */}
-
-{/* IMAGE SUGGESTION: Smart contract interaction diagram showing INKY token, staking pool, and TokenMinter. Include PancakeSwap liquidity pool. */}
+<!-- IMAGE SUGGESTION: Smart contract interaction diagram showing INKY token, staking pool, and TokenMinter. Include PancakeSwap liquidity pool. -->

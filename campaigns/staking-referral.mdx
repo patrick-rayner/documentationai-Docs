@@ -1,7 +1,8 @@
 ---
 title: Staking Referral
-description: Staking Referral is a marketing campaign (not a fee-based commission) funded by Inkryptus vesting reserves. It rewards IBOs (Level 1 sponsors only) when their d
+description: Staking Referral is a marketing campaign funded by Inkryptus vesting reserves. It rewards IBOs (Level 1 sponsors only) when their direct referrals activate eligible INKY Pool staking contracts.
 ---
+
 Staking Referral is a marketing campaign (not a fee-based commission) funded by Inkryptus vesting reserves. It rewards IBOs (Level 1 sponsors only) when their direct referrals activate eligible INKY Pool staking contracts.
 
 ## Program Overview
@@ -18,23 +19,27 @@ Staking Referral is a marketing campaign (not a fee-based commission) funded by 
 
 ## Eligibility
 
-Staking Referral bonus applies only to:
+<Tabs>
+  <Tab title="Eligible" icon="check-circle">
+    - **INKY Pool Staking** with **12-month** contract term
+    - **INKY Pool Staking** with **36-month** contract term
+  </Tab>
 
-- **INKY Pool Staking** with **12-month** contract term
-- **INKY Pool Staking** with **36-month** contract term
-
-Ineligible contracts:
-
-- 6-month INKY Pool (discontinued as of V2.8.0)
-- 24-month INKY Pool (discontinued as of V2.8.0)
-- Other pool types (USDT, CAKE, etc.)
-- Non-staking operations
+  <Tab title="Ineligible" icon="x-circle">
+    - 6-month INKY Pool (discontinued as of V2.8.0)
+    - 24-month INKY Pool (discontinued as of V2.8.0)
+    - Other pool types (USDT, CAKE, etc.)
+    - Non-staking operations
+  </Tab>
+</Tabs>
 
 ## Bonus Calculation: High Staked Amount Rule
 
 The bonus is **not paid on the full stake amount**. Instead, it applies only to the **excess above the user's High Staked Amount watermark**.
 
-**High Staked Amount** is the highest individual stake amount ever made by that user in any eligible contract. It only increases; it never resets.
+<Callout kind="info">
+  **High Staked Amount** is the highest individual stake amount ever made by that user in any eligible contract. It only increases; it never resets.
+</Callout>
 
 ### Example 1: First Stake (2,000 INKY in INKY Pool 12m)
 
@@ -58,7 +63,7 @@ No bonus: the new stake matches the previous high, so there is no incremental in
 | ------------- | ---- | -------------------- | ---------- | ---------------- | ---------- |
 | Level 1 (You) | 5%   | 2,000 INKY           | 3,000 INKY | 1,000 INKY       | 50 INKY    |
 
-Bonus applies to the excess: only the 1,000 INKY difference above the previous record (3,000 - 2,000 = 1,000) is eligible. 1,000 × 5% = 50 INKY.
+Bonus applies to the excess: only the 1,000 INKY difference above the previous record (3,000 - 2,000 = 1,000) is eligible. 1,000 x 5% = 50 INKY.
 
 ## Campaign Termination
 
@@ -71,21 +76,18 @@ The campaign automatically terminates when the 1,000,000 INKY fund is fully dist
 
 ## Key Rules
 
-- **Fund-limited**: Campaign ends when 1,000,000 INKY is exhausted
-- **No cost to affiliate**: Bonus is funded by Inkryptus, not deducted from user staking
-- **Level 1 only**: Uplines do not receive Staking Referral bonuses
-- **High Staked watermark prevents double-dipping**: Same user cannot earn bonus on the same stake amount twice
-- **Automatic calculation**: Bonus is credited in real-time when eligible contract is activated
-- **Per-contract tracking**: High Staked Amount is tracked per user, across all eligible contracts combined
+| Rule | Detail |
+|------|--------|
+| **Fund-limited** | Campaign ends when 1,000,000 INKY is exhausted |
+| **No cost to affiliate** | Bonus is funded by Inkryptus, not deducted from user staking |
+| **Level 1 only** | Uplines do not receive Staking Referral bonuses |
+| **Watermark prevents double-dipping** | Same user cannot earn bonus on the same stake amount twice |
+| **Automatic calculation** | Bonus is credited in real-time when eligible contract is activated |
+| **Per-user tracking** | High Staked Amount is tracked per user, across all eligible contracts combined |
 
 ## Dashboard Visibility
 
-The real-time counter in `IBO > Earnings` card shows:
-
-- Total INKY paid out so far in this campaign
-- Remaining INKY available in the fund
-- Date of last bonus credited to your account
-- Average bonus per eligible referral
+The real-time counter in `IBO > Earnings` card shows: total INKY paid out so far, remaining INKY available in the fund, date of last bonus credited, and average bonus per eligible referral.
 
 ## Comparison with Fee-Based Commissions
 

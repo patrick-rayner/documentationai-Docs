@@ -2,59 +2,81 @@
 title: Buy and Sell
 description: Fiat on/off-ramps, in-app crypto swaps, and external trading on PancakeSwap — mechanics, KYC requirements, fees, and supported assets.
 ---
+
 The Inkryptus platform enables users to purchase and sell cryptocurrency in multiple ways: through in-app fiat on/off-ramps, internal swaps, and external trading on PancakeSwap.
 
-## In-app fiat on-ramps (USDT purchase)
+## Trading methods
 
-Users can purchase USDT directly with fiat payment methods through the Inkryptus app:
+<Tabs>
+  <Tab title="Fiat on-ramp" icon="credit-card">
+    Users can purchase USDT directly with fiat payment methods through the Inkryptus app:
 
-1. User selects buy amount and payment method (bank transfer, card, etc.)
-2. Platform generates a quote showing the fiat amount and USDT to be received
-3. User completes the fiat payment
-4. Platform confirms payment receipt and executes the USDT transfer to the user's wallet
-5. USDT balance is credited in the app
+    <Steps>
+      <Step title="Select amount" icon="circle" title-type="p">
+        User selects buy amount and payment method (bank transfer, card, etc.).
+      </Step>
+      <Step title="Receive quote" icon="file-text" title-type="p">
+        Platform generates a quote showing the fiat amount and USDT to be received.
+      </Step>
+      <Step title="Complete payment" icon="credit-card" title-type="p">
+        User completes the fiat payment.
+      </Step>
+      <Step title="USDT credited" icon="check-circle" title-type="p">
+        Platform confirms payment receipt and executes the USDT transfer to the user's wallet.
+      </Step>
+    </Steps>
 
-This flow is subject to:
+    <Callout kind="info">
+      Fiat on-ramps require KYC verification, are subject to daily and monthly limits by KYC tier, and may take hours or days depending on the payment method. Jurisdiction-specific restrictions apply.
+    </Callout>
+  </Tab>
 
-- **KYC verification**: Users must complete identity verification to use fiat on-ramps
-- **Daily and monthly limits**: Limits vary by KYC tier
-- **Processing time**: Fiat payment processing may take hours or days depending on the payment method
-- **Regulatory compliance**: Fiat on-ramps are subject to jurisdiction-specific restrictions
+  <Tab title="Fiat off-ramp" icon="banknote">
+    The reverse flow is available for selling USDT to fiat:
 
-### Fiat off-ramps (USDT sale)
+    <Steps>
+      <Step title="Initiate sell" icon="circle" title-type="p">
+        User initiates a sell request specifying USDT amount and withdrawal method.
+      </Step>
+      <Step title="Receive quote" icon="file-text" title-type="p">
+        Platform generates a quote.
+      </Step>
+      <Step title="Confirm transaction" icon="check" title-type="p">
+        User confirms the transaction.
+      </Step>
+      <Step title="Fiat payout" icon="banknote" title-type="p">
+        Platform processes the USDT withdrawal and initiates fiat payout to the user's bank or payment method.
+      </Step>
+    </Steps>
 
-The reverse flow is available for selling USDT to fiat:
+    Processing times and daily limits apply.
+  </Tab>
 
-1. User initiates a sell request specifying USDT amount and withdrawal method
-2. Platform generates a quote
-3. User confirms the transaction
-4. Platform processes the USDT withdrawal from the user's wallet and initiates fiat payout
-5. Fiat is transferred to the user's bank or payment method
+  <Tab title="In-app swap" icon="repeat">
+    Users can swap between supported assets within the app. The primary swap pair is INKY/USDT, though other pairs may be available.
 
-Processing times and daily limits apply.
+    - **Quote-based pricing**: The platform provides a quote before execution
+    - **Direct execution**: Swaps are executed by the platform at the quoted price
+    - **Fee structure**: See [Fees](/fees/index) for swap fee rates
 
-## In-app crypto swaps
+    Example: A user with 1,000 INKY can receive a quote to swap to USDT, approve, and receive USDT in their wallet immediately.
+  </Tab>
 
-Users can swap between supported assets within the app. The primary swap pair is INKY/USDT, though other pairs may be available.
+  <Tab title="PancakeSwap" icon="arrow-right-left">
+    Users who wish to trade INKY outside the Inkryptus app can use PancakeSwap v2:
 
-- **Quote-based pricing**: The platform provides a quote before execution
-- **Direct execution**: Swaps are executed by the platform at the quoted price
-- **Fee structure**: See [Fees and Commissions](../fees/) for swap fee rates
+    - **INKY/USDT pair**: The primary liquidity pool where INKY trades against USDT
+    - **Permissionless**: Any user can send INKY to PancakeSwap and receive USDT (or vice versa)
+    - **PancakeSwap fees apply**: All trades incur a 0.25% swap fee, plus gas costs on BNB Smart Chain
+    - **Slippage**: Large trades relative to pool depth may experience slippage
 
-Example: A user with 1,000 INKY can receive a quote to swap to USDT, approve, and receive USDT in their wallet immediately.
+    <Callout kind="alert">
+      Users must have BNB in their wallet to cover gas fees for external swaps.
+    </Callout>
 
-## External trading on PancakeSwap
-
-Users who wish to trade INKY outside the Inkryptus app can use their custodial wallet balance to interact with PancakeSwap v2:
-
-- **INKY/USDT pair**: The primary liquidity pool on PancakeSwap where INKY trades against USDT
-- **Permissionless**: Any user can send INKY from their Inkryptus wallet to PancakeSwap and receive USDT (or vice versa)
-- **PancakeSwap fees apply**: All trades incur a 0.25% swap fee, plus gas costs on BNB Smart Chain
-- **Slippage**: Large trades relative to pool depth may experience slippage
-
-Users must have BNB in their wallet to cover gas fees for external swaps.
-
-Current liquidity pool depth is published in [Liquidity](../inky-token/liquidity.mdx).
+    Current liquidity pool depth is published in [Liquidity](/inky-token/liquidity).
+  </Tab>
+</Tabs>
 
 ## Supported assets for trading
 
@@ -67,24 +89,12 @@ Current liquidity pool depth is published in [Liquidity](../inky-token/liquidity
 | BNB | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
 | CAKE | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
 
-## Fee structure
-
-All buy, sell, and swap operations are subject to fees. See [Fees and Commissions](../fees/) for details on:
-
-- Fiat on/off-ramp fees
-- In-app swap fees
-- PancakeSwap trading fees (external)
-- Network gas fees (for external transactions)
-
 ## Price quoting
 
-The platform provides real-time price quotes based on:
+The platform provides real-time price quotes based on current market price (derived from INKY/USDT liquidity pool or external market data), slippage estimates for large trades, fee deductions, and a quote validity window (typically seconds to minutes). Users must confirm a quote before execution. If the market moves significantly, a new quote is required.
 
-- **Current market price**: Derived from INKY/USDT liquidity pool or external market data
-- **Slippage estimates**: For large trades relative to available liquidity
-- **Fee deduction**: Quotes are net of applicable fees
-- **Quote validity window**: Quotes are typically valid for a short time (seconds to minutes) before expiring
+## Fee structure
 
-Users must confirm a quote before execution. If the market moves significantly, a new quote is required.
+All buy, sell, and swap operations are subject to fees. See [Fees](/fees/index) for details on fiat on/off-ramp fees, in-app swap fees, PancakeSwap trading fees (external), and network gas fees.
 
-{/* IMAGE SUGGESTION: A flow diagram showing the three trading paths: (1) User -> USDT fiat on-ramp -> USDT in wallet, (2) User -> In-app swap (INKY<>USDT) -> Updated wallet, (3) User wallet -> PancakeSwap v2 liquidity pool -> Output asset. Use different colors for each path. */}
+<!-- IMAGE SUGGESTION: A flow diagram showing the three trading paths: (1) User -> USDT fiat on-ramp -> USDT in wallet, (2) User -> In-app swap (INKY<>USDT) -> Updated wallet, (3) User wallet -> PancakeSwap v2 liquidity pool -> Output asset. Use different colors for each path. -->
