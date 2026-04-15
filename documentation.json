@@ -208,6 +208,11 @@
                 "title": "FAQ",
                 "path": "partner-program/faq",
                 "icon": "help-circle"
+              },
+              {
+                "title": "Staking Referral",
+                "path": "partner-program/staking-referral",
+                "icon": "award"
               }
             ]
           },
@@ -250,11 +255,6 @@
                 "title": "Overview",
                 "path": "campaigns/index",
                 "icon": "megaphone"
-              },
-              {
-                "title": "Staking Referral",
-                "path": "campaigns/staking-referral",
-                "icon": "award"
               }
             ]
           }
