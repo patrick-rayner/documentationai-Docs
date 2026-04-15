@@ -9,6 +9,15 @@ When a level has no active sponsor, that level's 10% allocation is retained by I
 
 ## Distribution Model
 
+```mermaid
+graph TD
+    U["👥 User Activity"] -->|"Generates platform fee"| F["Platform Fee\n(Allocation Rule)"]
+    F -->|"70%\nAllocated to\nIBO Network"| N["Up to 7 levels\n10% per level"]
+    F -->|"30%\nRetained for\noperations & growth"| T["Infrastructure, Liquidity\nand Development"]
+    N --> W["💰 IBO Wallet\nBalance"]
+    T --> I["🏦 Inkryptus\nTreasury"]
+```
+
 | Split | Recipient | Purpose |
 | --- | --- | --- |
 | **30%** | Inkryptus | Platform operation, infrastructure, liquidity |
@@ -109,4 +118,3 @@ Commissions are credited to the IBO Wallet, which is split into two sub-wallets:
 
 To use or withdraw IBO earnings, transfer from the IBO Wallet to the User Wallet first.
 
-<!-- IMAGE SUGGESTION: Commission flow diagram showing 30/70 split across 7 levels -->

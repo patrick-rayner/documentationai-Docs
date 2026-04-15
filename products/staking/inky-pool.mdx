@@ -3,8 +3,6 @@ title: INKY Pool
 description: INKY staking contract — flexible, 12-month, and 36-month plans, daily emission formula, performance fee, and contract architecture.
 ---
 
-<!-- IMAGE SUGGESTION: Diagram showing staking flow: User deposits INKY → Staking Contract → Daily emission (1% or 10K cap) → Rewards distributed proportionally → User harvests to wallet. Show 25% performance fee deduction. -->
-
 The INKY Pool is the primary staking product of the Inkryptus platform. Users deposit INKY tokens into the staking contract and receive daily rewards generated through scheduled token emission.
 
 ## Staking contract
@@ -38,6 +36,13 @@ APRs are dynamic: they depend on total staked volume and emission conditions. Th
 </Callout>
 
 ## Emission formula
+
+```mermaid
+graph LR
+    U["👥 User"] -->|"Stakes INKY"| P["INKY Pool\n(Smart Contract)"]
+    P -->|"Applies Emission Rule\n1% of total staked\n(Capped at 10,000 INKY/day)"| M["New INKY\nTokens Minted"]
+    M -->|"Proportional\nDistribution"| U
+```
 
 Daily emission follows two simultaneous rules:
 
