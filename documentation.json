@@ -117,27 +117,29 @@
               {
                 "title": "Staking",
                 "path": "products/staking/index",
-                "icon": "trending-up"
-              },
-              {
-                "title": "INKY Pool",
-                "path": "products/staking/inky-pool",
-                "icon": "circle"
-              },
-              {
-                "title": "USDT and CAKE",
-                "path": "products/staking/other-assets",
-                "icon": "dollar-sign"
-              },
-              {
-                "title": "Harvest",
-                "path": "products/staking/harvest",
-                "icon": "download"
-              },
-              {
-                "title": "Lock-up Plans",
-                "path": "products/staking/lock-up",
-                "icon": "lock"
+                "icon": "trending-up",
+                "pages": [
+                  {
+                    "title": "INKY Pool",
+                    "path": "products/staking/inky-pool",
+                    "icon": "circle"
+                  },
+                  {
+                    "title": "USDT and CAKE",
+                    "path": "products/staking/other-assets",
+                    "icon": "dollar-sign"
+                  },
+                  {
+                    "title": "Harvest",
+                    "path": "products/staking/harvest",
+                    "icon": "download"
+                  },
+                  {
+                    "title": "Lock-up Plans",
+                    "path": "products/staking/lock-up",
+                    "icon": "lock"
+                  }
+                ]
               },
               {
                 "title": "Buy and Sell",
