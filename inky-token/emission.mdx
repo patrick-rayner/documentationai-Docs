@@ -5,7 +5,7 @@ description: "Daily emission formula: 1% of total staked or 10,000 INKY cap (whi
 
 ## How new INKY tokens enter circulation
 
-All new INKY tokens are created through the staking mechanism. There is no other emission source. The staking pool contract ([`0x9b8eC6ac...`](https://bscscan.com/address/0x9b8eC6ac014b926201f085e53A0d0540F7C510c5#code)) handles emission. It currently holds **~6,775,754 INKY** in staked tokens and uses the **TokenMinter** ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)) to call the INKY contract's mint function.
+All new INKY tokens are created through the staking mechanism. There is no other emission source. The staking pool contract ([`0x9b8eC6ac...`](https://bscscan.com/address/0x9b8eC6ac014b926201f085e53A0d0540F7C510c5#code)) handles emission and uses the **TokenMinter** ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)) to call the INKY contract's mint function. Current staked volume is publicly verifiable on BscScan.
 
 {/* IMAGE SUGGESTION: Flowchart showing emission logic: "Total staked INKY" → "Calculate 1%" → "Compare with 10K cap" → "Emit lower value" → "Distribute proportionally to stakers". Clean diagram, dark theme. */}
 
@@ -51,6 +51,6 @@ Whichever value is lower applies. The emitted tokens are distributed proportiona
 
 The emission rate (1%) and daily cap (10,000 INKY) are configurable functions in the staking contract. Changes to these parameters require on-chain execution by the contract owner.
 
-A **TokenMinter** contract ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)) manages which addresses can call the mint function. The Initial Mintage Vault uses a Gnosis Safe (multisig) for fund movements. See [Contracts](/inky-token/contracts) for the full admin architecture.
+A **TokenMinter** contract ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)) manages which addresses can call the mint function. The Initial Mintage Vault uses a multisig arrangement for fund movements. See [Contracts](/inky-token/contracts) for the full architecture.
 
 No emission parameter has been changed since deploy.

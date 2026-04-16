@@ -87,13 +87,13 @@
                     "title": "On-chain Fees",
                     "path": "inky-token/fees",
                     "icon": "percent"
-                  },
-                  {
-                    "title": "Liquidity",
-                    "path": "inky-token/liquidity",
-                    "icon": "droplet"
                   }
                 ]
+              },
+              {
+                "title": "Liquidity",
+                "path": "inky-token/liquidity",
+                "icon": "droplet"
               },
               {
                 "group": "Technical",

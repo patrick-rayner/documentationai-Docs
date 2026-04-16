@@ -17,27 +17,25 @@ The maximum supply of INKY that can ever exist is **200,000,000** tokens. This c
 
 At deploy, **10,000,000 INKY** were minted and sent to the Initial Mintage Vault ([`0x19d24adf08d2c169667353957adb02e7aa4127a9`](https://bscscan.com/address/0x19d24adf08d2c169667353957adb02e7aa4127a9#code)). This vault custodies the initial supply and releases tokens according to the Inkryptus economic plan.
 
-The Initial Mintage Vault is a **Gnosis Safe** (multisig) proxy contract, meaning fund releases require multiple signatures. As of the last on-chain read, it still holds **9,000,000 INKY** of the original 10M mint.
+The Initial Mintage Vault is a multisig contract, meaning fund releases require multiple signatures. The majority of the initial 10M mint remains in this vault.
 
-A **UniversalConversionVault** ([`0xbf2ae077...`](https://bscscan.com/address/0xbf2ae077e85e43198a84903fc0af1ba4b2dcdefc)) also holds ~114,727 INKY and manages token conversions with daily limits.
+A **UniversalConversionVault** ([`0xbf2ae077...`](https://bscscan.com/address/0xbf2ae077e85e43198a84903fc0af1ba4b2dcdefc)) manages token conversions with daily limits.
 
 ## Current circulating supply
 
 As of April 13, 2026 (GoPlus API): **16,884,192.35 INKY** total supply. This number increases daily as the staking pool emits new tokens.
 
-**Top holders** (on-chain snapshot):
+**Top holders** (on-chain, verifiable via BscScan):
 
-| Address                                                                                   | Role                                | Balance   | Share  |
-| ----------------------------------------------------------------------------------------- | ----------------------------------- | --------- | ------ |
-| [`0x19d24adf...`](https://bscscan.com/address/0x19d24adf08d2c169667353957adb02e7aa4127a9) | Initial Mintage Vault (Gnosis Safe) | 9,000,000 | 53.30% |
-| [`0x9b8eC6ac...`](https://bscscan.com/address/0x9b8eC6ac014b926201f085e53A0d0540F7C510c5) | Staking Pool                        | 6,775,754 | 40.13% |
-| [`0xe3a00d1a...`](https://bscscan.com/address/0xe3a00d1a031c505446b028956edc9e0768a11376) | PancakeSwap LP                      | 727,331   | 4.31%  |
-| [`0xbf2ae077...`](https://bscscan.com/address/0xbf2ae077e85e43198a84903fc0af1ba4b2dcdefc) | UniversalConversionVault            | 202,286   | 1.20%  |
-| [`0xa307cf9e...`](https://bscscan.com/address/0xa307cf9e07692e7a31d0b42b970c180f3a2296ee) | Products Vault                      | 153,794   | 0.91%  |
-| [`0x71143697...`](https://bscscan.com/address/0x7114369715D19167754fD2714099BF7DF0007323) | PaymentWallet                       | 5,370     | 0.03%  |
-| 182 other addresses                                                                       | Community / users                   | ~19,657   | 0.12%  |
+| Address                                                                                   | Role                     |
+| ----------------------------------------------------------------------------------------- | ------------------------ |
+| [`0x19d24adf...`](https://bscscan.com/address/0x19d24adf08d2c169667353957adb02e7aa4127a9) | Initial Mintage Vault    |
+| [`0x9b8eC6ac...`](https://bscscan.com/address/0x9b8eC6ac014b926201f085e53A0d0540F7C510c5) | Staking Pool             |
+| [`0xe3a00d1a...`](https://bscscan.com/address/0xe3a00d1a031c505446b028956edc9e0768a11376) | PancakeSwap LP           |
+| [`0xbf2ae077...`](https://bscscan.com/address/0xbf2ae077e85e43198a84903fc0af1ba4b2dcdefc) | UniversalConversionVault |
+| [`0xa307cf9e...`](https://bscscan.com/address/0xa307cf9e07692e7a31d0b42b970c180f3a2296ee) | Products Vault           |
 
-Total holders: **188**.
+Current balances are publicly verifiable on BscScan at each address above.
 
 <Callout kind="info">
   **Note on holder distribution**: Inkryptus is a custodial platform. Most user balances are held inside platform contracts (Wallet, Products Vault, ConversionVault), which is why a small number of contract addresses concentrate a large share of the supply. Individual user balances exist within those contracts but are not visible as separate holders on BscScan. The PancakeSwap pool is public, so some users also hold INKY outside the platform.
