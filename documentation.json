@@ -38,6 +38,11 @@
                 "icon": "layers"
               },
               {
+                "title": "Security & Verification",
+                "path": "introduction/security",
+                "icon": "shield"
+              },
+              {
                 "title": "Risks",
                 "path": "introduction/risks",
                 "icon": "alert-triangle"
@@ -108,11 +113,6 @@
                     "title": "Contracts",
                     "path": "inky-token/contracts",
                     "icon": "file-text"
-                  },
-                  {
-                    "title": "Changelog",
-                    "path": "inky-token/changelog",
-                    "icon": "clock"
                   }
                 ]
               }
@@ -255,6 +255,17 @@
                 "title": "Overview",
                 "path": "campaigns/index",
                 "icon": "megaphone"
+              }
+            ]
+          },
+          {
+            "group": "Changelog",
+            "icon": "clock",
+            "pages": [
+              {
+                "title": "All Updates",
+                "path": "changelog",
+                "icon": "list"
               }
             ]
           }

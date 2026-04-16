@@ -17,6 +17,8 @@ Cryptocurrency assets are subject to rapid and significant price fluctuations. T
 - Platform-quoted prices may change between quote generation and transaction execution.
 - External market conditions (exchange listings, regulatory announcements, macroeconomic factors) can cause sharp price movements.
 
+**Mitigation:** The platform supports stablecoin holdings (USDT) for users who want reduced volatility exposure. The in-app Swap executes at the quoted price with no slippage for the user. Users can diversify across multiple assets.
+
 ## Staking risks
 
 ### APR projections are not guaranteed
@@ -33,6 +35,8 @@ Key factors affecting APR:
 
 Only actual daily rewards claimed or harvested constitute effective return. Claimed rewards are taxable in most jurisdictions and subject to the platform's 25% performance fee.
 
+**Mitigation:** The app displays real-time APR based on current conditions, not projected future performance. Users can harvest rewards at any time and are not locked into claimed returns. The emission cap (10,000 INKY/day) limits supply expansion.
+
 ## Custodial risk
 
 Inkryptus operates as a custodian of user funds. Users do not control private keys or seedphrases. This model introduces custodial risk:
@@ -42,7 +46,9 @@ Inkryptus operates as a custodian of user funds. Users do not control private ke
 - **Regulatory exposure**: In some jurisdictions, custodial platforms face additional regulatory requirements or restrictions.
 - **Operational dependency**: Users depend on the platform's continued operation and good standing.
 
-The platform employs multisig architecture and security best practices, but this architecture is not immune to all threats. See [Architecture](/introduction/architecture) for details on the security model.
+The platform employs multisig architecture and security best practices, but this architecture is not immune to all threats. See [Architecture](/introduction/architecture) and [Security & Verification](/introduction/security) for details on the security model.
+
+**Mitigation:** Multisig wallet requires multiple signatures for fund movements. KYC-tiered withdrawal limits reduce exposure to unauthorized access. Email-based 2FA protects sensitive operations. Zero security incidents since May 2023.
 
 ## Smart contract risk
 
@@ -58,6 +64,8 @@ All staking, games, and on-chain operations depend on smart contract code. While
 
 Users should review the contract code on BscScan before staking or transacting significant amounts. See [Contracts](/inky-token/contracts) for all contract addresses.
 
+**Mitigation:** All contracts use OpenZeppelin standards. Source code is verified on BscScan and publicly readable. Third-party scanners (GoPlus, Token Sniffer) show no honeypot, no hidden fees, and no malicious functions. Clean incident record since May 2023. See [Security & Verification](/introduction/security) for full scanner results.
+
 ## Liquidity risk
 
 INKY maintains liquidity on PancakeSwap v2 in the INKY/USDT pair, but liquidity depth is variable:
@@ -67,7 +75,9 @@ INKY maintains liquidity on PancakeSwap v2 in the INKY/USDT pair, but liquidity 
 - **No guarantee of liquidity**: The platform does not guarantee perpetual liquidity at any level. If liquidity is removed, trading may become difficult or impossible.
 - **Trading fees apply**: All trades on PancakeSwap incur 0.25% swap fees, plus gas costs.
 
-See [Liquidity](/inky-token/liquidity) for current pool depth and historical information.
+See [Liquidity](/inky-token/liquidity) for current pool depth and AMM pricing mechanics.
+
+**Mitigation:** In-app Swap executes at the quoted price with a fixed US$3 fee, shielding users from on-chain slippage. Pool depth is publicly verifiable on GeckoTerminal and DEX Screener. The Products Vault holds the vast majority of LP tokens, maintaining pool stability.
 
 ## Regulatory risk
 
@@ -79,6 +89,8 @@ Cryptocurrency regulation varies significantly by jurisdiction and is rapidly ev
 - **Tax implications**: Users are responsible for understanding and complying with tax obligations in their jurisdiction.
 
 Inkryptus is not responsible for regulatory changes or user tax obligations. Users should seek independent legal and tax advice.
+
+**Mitigation:** KYC verification is available for users who need compliance documentation. Account statements can be exported for tax reporting via `Profile > Account > Statement`.
 
 ## Emission risk
 

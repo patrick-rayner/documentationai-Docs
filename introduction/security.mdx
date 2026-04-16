@@ -1,0 +1,55 @@
+---
+title: Security & Verification
+description: "Platform-wide security overview: custodial model, smart contract standards, incident history, and how to verify independently."
+---
+
+This page is an overview of the Inkryptus security posture. Detailed information lives in the dedicated pages linked below.
+
+## Security model
+
+Inkryptus operates on three security layers:
+
+| Layer | Summary | Details |
+| --- | --- | --- |
+| **Custodial infrastructure** | Individual user wallets on-chain, keys managed by platform multisig. Multiple signatures required for fund movements. | [Wallet](/features/wallet) |
+| **Smart contracts** | Built on OpenZeppelin standards, verified source code on BscScan. Hard cap enforced at contract level. | [INKY Token Security](/inky-token/security), [Contracts](/inky-token/contracts) |
+| **Operational controls** | Email-based 2FA, KYC-tiered withdrawal limits, transaction monitoring. | [Wallet](/features/wallet), [Fees](/fees/index) |
+
+## Audit status
+
+No formal third-party audit has been performed. The current security baseline relies on OpenZeppelin standards, verified source code, automated scanner results (GoPlus, Token Sniffer), and a clean operational track record. Full scanner results are documented in [INKY Token Security](/inky-token/security).
+
+## Incident history
+
+Zero security incidents since platform launch (May 11, 2023). No exploits, no contract pauses, no emergency actions, no fund losses.
+
+## Verify independently
+
+<Steps>
+  <Step title="Review source code" icon="code" title-type="p">
+    All contracts have verified source on BscScan. See [Contracts](/inky-token/contracts) for the full list.
+  </Step>
+  <Step title="Run automated scans" icon="shield" title-type="p">
+    Run contract addresses through [GoPlus](https://gopluslabs.io/) or [Token Sniffer](https://tokensniffer.com/).
+  </Step>
+  <Step title="Check on-chain state" icon="search" title-type="p">
+    Use BscScan's `Read Contract` tab to verify supply cap, ownership, and minter whitelist.
+  </Step>
+</Steps>
+
+## Related pages
+
+<Columns cols="2">
+  <Card title="INKY Token Security" icon="shield" href="/inky-token/security" horizontal={true}>
+    Scanner results, flagged items explained, verification steps.
+  </Card>
+  <Card title="Contracts" icon="file-text" href="/inky-token/contracts" horizontal={true}>
+    All contract addresses and roles.
+  </Card>
+  <Card title="Wallet" icon="wallet" href="/features/wallet" horizontal={true}>
+    Custodial model, 2FA, withdrawal limits, account recovery.
+  </Card>
+  <Card title="Risks" icon="alert-triangle" href="/introduction/risks" horizontal={true}>
+    Risk categories with mitigations.
+  </Card>
+</Columns>
