@@ -67,4 +67,12 @@ The outcome of each Coin Flip game is determined by the smart contract using a r
   Coin Flip is a high-risk game where the expected value for users is negative (due to the platform fee). Users should understand the fee structure before betting, treat bets as entertainment (not investment), set personal loss limits and stick to them, and avoid chasing losses.
 </Callout>
 
-{/* IMAGE SUGGESTION: A simple state diagram showing: User wallet -> [Place bet] -> Coin Flip contract -> [Outcome: Heads/Tails] -> User wins (1.9x) or loses (0x) -> Updated wallet */}
+```mermaid
+stateDiagram-v2
+    [*] --> PlaceBet: User selects amount
+    PlaceBet --> Pending: Bet submitted\nUS$3 fee deducted
+    Pending --> Win: Outcome: Heads ✓
+    Pending --> Lose: Outcome: Tails ✗
+    Win --> [*]: Wallet credited 1.9x payout
+    Lose --> [*]: Bet amount lost
+```

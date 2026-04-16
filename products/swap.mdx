@@ -38,9 +38,20 @@ All operations are structured around USDT as the base currency. This design deci
 | Buy an asset | USDT → INKY | 1 operation |
 | Sell an asset | INKY → USDT | 1 operation |
 | Move between assets | INKY → BTCB | 2 operations: INKY → USDT, then USDT → BTCB |
+
 Direct routes between non-USDT assets (e.g., INKY→CAKE, ETH→BTCB) are intentionally not supported. Every movement passes through USDT.
 
-<!-- IMAGE SUGGESTION: Diagram with USDT at the center and 8 assets around it, bidirectional arrows between each asset and USDT. No arrows between assets. -->
+```mermaid
+graph LR
+    INKY["INKY"] <-->|"swap"| USDT(["💵 USDT\ncenter pair"])
+    BTCB["BTCB"] <-->|"swap"| USDT
+    ETH["ETH"] <-->|"swap"| USDT
+    CAKE["CAKE"] <-->|"swap"| USDT
+    BSW["BSW"] <-->|"swap"| USDT
+    RDNT["RDNT"] <-->|"swap"| USDT
+    SHIB["SHIB"] <-->|"swap"| USDT
+    BNX["BNX"] <-->|"swap"| USDT
+```
 
 ## Supported assets
 
@@ -88,4 +99,9 @@ Swap handles only the internal asset conversion. For depositing USDT into your w
 | Diversify portfolio | USDT → BTCB, USDT → ETH | 1 buy per asset |
 | Move between assets | INKY → USDT (sell) → BTCB (buy) | 2 operations |
 
-<!-- IMAGE SUGGESTION: Diagram showing Swap scope: USDT in center, 8 assets around it with bidirectional arrows. Deposit and Withdrawal arrows pointing into/out of the USDT node, labeled "See Wallet". -->
+```mermaid
+graph LR
+    DEP["🏦 Deposit\nSee: Wallet"] -->|"fiat or crypto"| USDT(["💵 USDT"])
+    USDT <-->|"Buy / Sell"| ASSETS["INKY · BTCB · ETH\nCAKE · BSW · RDNT\nSHIB · BNX"]
+    USDT -->|"withdraw"| WIT["🏦 Withdrawal\nSee: Wallet"]
+```

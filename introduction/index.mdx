@@ -63,4 +63,12 @@ The platform launched in May 2023 and operates a custodial wallet architecture w
   This documentation reflects the state of smart contracts and platform operations as of the date of publication. No audit claims are made. Contract security is subject to third-party scanner results and public code review on BscScan. Users and partners should perform their own technical due diligence.
 </Callout>
 
-{/* IMAGE SUGGESTION: Inkryptus ecosystem diagram showing the relationship between app, BNB Smart Chain, PancakeSwap, and the user. Style: clean, minimal, dark background. */}
+```mermaid
+graph LR
+    U["👤 User"] --> APP["📱 Inkryptus App\niOS / Android"]
+    APP -->|"HTTPS"| API["⚙️ Backend API\nKYC · Balance · Multisig"]
+    API -->|"JSON-RPC"| BSC["⛓️ BNB Smart Chain"]
+    BSC --> INKY["🪙 INKY Token\nBEP-20"]
+    BSC --> POOLS["📈 Staking Pools\nINKY · USDT · CAKE"]
+    BSC --> PS["🥞 PancakeSwap v2\nINKY/USDT Liquidity"]
+```

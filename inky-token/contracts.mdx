@@ -3,7 +3,17 @@ title: Contracts
 description: Full list of Inkryptus smart contracts on BNB Smart Chain: addresses, roles, and admin architecture including TokenMinter and Gnosis Safe.
 ---
 
-{/* IMAGE SUGGESTION: Contract architecture diagram showing relationships between INKY Token contract, TokenMinter, Staking Pool, Products Vault, Initial Mintage Vault, and PancakeSwap pair. Arrows showing mint/burn/transfer flows. Dark background. */}
+```mermaid
+graph TD
+    GS["🔒 Initial Mintage Vault\nGnosis Safe · 9M INKY"] -->|"scheduled release"| INKY
+    TM["TokenMinter\nowner of INKY contract"] -->|"mint via whitelist"| INKY["🪙 INKY Token\nBEP-20"]
+    TM -->|"authorizes"| SP["INKY Staking Pool"]
+    SP -->|"daily rewards"| STAKERS["👥 Stakers"]
+    INKY -->|"LP"| PS["🥞 PancakeSwap v2\nINKY/USDT Pool"]
+    PV["Products Vault\nmanages staking products"] --> SP
+    PV --> USDT["USDT Staking"]
+    PV --> CAKE["CAKE Staking"]
+```
 
 All Inkryptus contracts follow OpenZeppelin standards and have verified source code on BscScan. Critical functions (mint, burn, transferOwnership, deposit, withdraw) are restricted to the owner address and publicly verifiable on-chain.
 

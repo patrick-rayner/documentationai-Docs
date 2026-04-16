@@ -101,4 +101,20 @@ Additionally, the INKY token itself has a hard cap on total supply (200,000,000 
 
 Before using the platform, users should conduct independent due diligence, consult with financial advisors, and review the platform's [Terms of Service](/legal/terms).
 
-{/* IMAGE SUGGESTION: A risk matrix diagram showing Risk (Y-axis) vs. Impact (X-axis) with boxes for each risk category: volatility, staking, custodial, smart contract, liquidity, regulatory, emission. Style: clean, grayscale, technical. */}
+```mermaid
+quadrantChart
+    title Risk Matrix — Probability vs Impact
+    x-axis Low Impact --> High Impact
+    y-axis Low Probability --> High Probability
+    quadrant-1 High Priority
+    quadrant-2 Monitor Closely
+    quadrant-3 Low Priority
+    quadrant-4 Manage Actively
+    Volatility: [0.82, 0.88]
+    Custodial Risk: [0.78, 0.55]
+    Regulatory: [0.72, 0.48]
+    Smart Contract: [0.88, 0.32]
+    Liquidity: [0.62, 0.52]
+    Emission Dilution: [0.48, 0.42]
+    Staking APR: [0.38, 0.58]
+```
