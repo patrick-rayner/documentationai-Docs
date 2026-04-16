@@ -1,9 +1,52 @@
 ---
 title: Liquidity
-description: "INKY/USDT pool on PancakeSwap v2: pool address, current depth (~$2.1M), LP token status, and live data links."
+description: "INKY/USDT pool on PancakeSwap v2: AMM pricing mechanism, constant product formula, price impact, pool address, LP token status, and live data links."
 ---
 
 {/* IMAGE SUGGESTION: Screenshot or embed of GeckoTerminal/DEX Screener showing the INKY/USDT pair with price chart and pool depth. Alternatively, a clean diagram showing liquidity flow: User → App Swap or PancakeSwap → INKY/USDT Pool. */}
+
+## Pricing mechanism
+
+INKY is priced through an Automated Market Maker (AMM) on PancakeSwap v2. There is no order book and no centralized price feed. The price emerges directly from the ratio of assets in the liquidity pool.
+
+### How AMM pricing works
+
+PancakeSwap v2 uses the **constant product formula**:
+
+**x * y = k**
+
+Where **x** is the INKY reserve in the pool, **y** is the USDT reserve, and **k** is a constant that only changes when liquidity is added or removed. The spot price of INKY at any moment equals the ratio of USDT to INKY in the pool:
+
+**Price (INKY/USDT) = USDT reserve / INKY reserve**
+
+When a trader buys INKY, they add USDT to the pool and remove INKY. This shifts the ratio and increases the price. When a trader sells INKY, the opposite happens: INKY enters the pool, USDT leaves, and the price decreases.
+
+```mermaid
+graph LR
+    B["🟢 Buy INKY"] -->|"USDT enters pool\nINKY leaves pool"| P["📈 Price goes up"]
+    S["🔴 Sell INKY"] -->|"INKY enters pool\nUSDT leaves pool"| D["📉 Price goes down"]
+    P --> R["Pool rebalances\nx * y = k holds"]
+    D --> R
+```
+
+### Price impact and slippage
+
+Every trade moves the price. The size of that movement (price impact) depends on the trade size relative to the pool depth. Larger trades relative to the pool produce larger price shifts. Deep liquidity means smaller price impact per trade, which results in tighter spreads and more stable pricing.
+
+<Callout kind="info">
+  The in-app Swap quotes a price derived from the on-chain pool state. The quoted price already accounts for any applicable spread. Users trading via the app do not interact with the AMM directly; the platform executes the conversion internally.
+</Callout>
+
+### Two trading venues
+
+INKY can be traded in two ways, both referencing the same liquidity pool:
+
+| Venue | How it works | Who uses it |
+| --- | --- | --- |
+| **In-app Swap** | Platform executes internally. Fixed US$3 fee, no gas fee for the user. Price derived from pool state. | Most users |
+| **PancakeSwap (direct)** | User connects an external wallet and swaps on-chain. Standard PancakeSwap fees (0.25%) and BNB gas apply. | Advanced users, external traders |
+
+Both venues draw from the same INKY/USDT pool, so price discovery is unified.
 
 ## Primary pair
 
