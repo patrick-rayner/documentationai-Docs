@@ -1,6 +1,6 @@
 ---
 title: Arena
-description: On-chain Coin Flip game: mechanics, 1.9x payout structure, 10% platform fee distribution via the 30/70 model, and responsible gaming notes.
+description: "On-chain Coin Flip game: mechanics, 1.9x payout structure, 10% platform fee distribution via the 30/70 model, and responsible gaming notes."
 ---
 
 The Arena is the gaming section of the Inkryptus platform. It hosts on-chain games where users wager INKY tokens and compete against the platform.
@@ -68,11 +68,9 @@ The outcome of each Coin Flip game is determined by the smart contract using a r
 </Callout>
 
 ```mermaid
-stateDiagram-v2
-    [*] --> PlaceBet: User selects amount
-    PlaceBet --> Pending: Bet submitted\nUS$3 fee deducted
-    Pending --> Win: Outcome: Heads ✓
-    Pending --> Lose: Outcome: Tails ✗
-    Win --> [*]: Wallet credited 1.9x payout
-    Lose --> [*]: Bet amount lost
+flowchart TD
+    A["👤 User selects amount"] --> B["Bet submitted\nUS$3 fee deducted"]
+    B --> C{"Coin Flip\nOutcome"}
+    C -->|"Heads ✓"| D["Win — Wallet credited 1.9x"]
+    C -->|"Tails ✗"| E["Lose — Bet amount lost"]
 ```
