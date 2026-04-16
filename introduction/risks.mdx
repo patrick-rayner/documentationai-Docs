@@ -37,10 +37,10 @@ Only actual daily rewards claimed or harvested constitute effective return. Clai
 
 Inkryptus operates as a custodian of user funds. Users do not control private keys or seedphrases. This model introduces custodial risk:
 
-- **Security depends on platform**: The platform manages all keys through a multisig wallet arrangement. If the platform's security infrastructure is compromised, user funds may be at risk.
-- **No key recovery**: Users cannot recover funds independently if the platform becomes insolvent or ceases operations.
+- **Security depends on platform**: The platform manages all keys through a multisig wallet arrangement with multiple layers of protection.
+- **Key management**: Users do not hold private keys directly. Account recovery is handled through the platform's support process.
 - **Regulatory exposure**: In some jurisdictions, custodial platforms face additional regulatory requirements or restrictions.
-- **Third-party dependency**: Users depend entirely on the platform's continued operation and good standing.
+- **Operational dependency**: Users depend on the platform's continued operation and good standing.
 
 The platform employs multisig architecture and security best practices, but this architecture is not immune to all threats. See [Architecture](/introduction/architecture) for details on the security model.
 
@@ -82,16 +82,9 @@ Inkryptus is not responsible for regulatory changes or user tax obligations. Use
 
 ## Emission risk
 
-The staking contract's emission schedule is driven by two parameters:
+The staking contract's emission schedule is governed by two parameters: the emission rate (1% of total INKY staked across all plans) and a daily cap (10,000 INKY maximum per day). These parameters may be adjusted over time to maintain the health of the ecosystem. Changes to either parameter would affect the realized APR for all stakers.
 
-| Parameter | Value | Mutable |
-|-----------|-------|---------|
-| Emission rate | 1% of total INKY staked across all plans | Yes (contract update) |
-| Daily cap | 10,000 INKY maximum per day | Yes (contract update) |
-
-Both are configurable values in the contract, not hard-coded immutable constants. The platform may adjust these parameters through contract updates. Changes to either parameter would affect the realized APR for all stakers.
-
-Additionally, the INKY token itself has a hard cap on total supply (200,000,000 INKY). As the token approaches this cap, emission will slow or stop entirely, regardless of staked volume.
+The INKY token has a hard cap on total supply (200,000,000 INKY). As circulating supply approaches this cap, emission will slow or stop entirely, regardless of staked volume.
 
 ## Not investment advice
 
