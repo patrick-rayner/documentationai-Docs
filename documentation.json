@@ -119,17 +119,17 @@
             ]
           },
           {
-            "group": "Products",
+            "group": "Features",
             "icon": "box",
             "pages": [
               {
                 "title": "Overview",
-                "path": "products/index",
+                "path": "features/index",
                 "icon": "grid"
               },
               {
                 "title": "Wallet",
-                "path": "products/wallet",
+                "path": "features/wallet",
                 "icon": "wallet"
               },
               {
@@ -138,39 +138,39 @@
                 "pages": [
                   {
                     "title": "Overview",
-                    "path": "products/staking/index",
+                    "path": "features/staking/index",
                     "icon": "grid"
                   },
                   {
                     "title": "INKY Pool",
-                    "path": "products/staking/inky-pool",
+                    "path": "features/staking/inky-pool",
                     "icon": "circle"
                   },
                   {
                     "title": "USDT and CAKE",
-                    "path": "products/staking/other-assets",
+                    "path": "features/staking/other-assets",
                     "icon": "dollar-sign"
                   },
                   {
                     "title": "Harvest",
-                    "path": "products/staking/harvest",
+                    "path": "features/staking/harvest",
                     "icon": "download"
                   },
                   {
                     "title": "Lock-up Plans",
-                    "path": "products/staking/lock-up",
+                    "path": "features/staking/lock-up",
                     "icon": "lock"
                   }
                 ]
               },
               {
                 "title": "Swap",
-                "path": "products/swap",
+                "path": "features/swap",
                 "icon": "repeat"
               },
               {
                 "title": "Arena",
-                "path": "products/arena",
+                "path": "features/arena",
                 "icon": "target"
               }
             ]
