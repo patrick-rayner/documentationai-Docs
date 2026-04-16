@@ -1,9 +1,9 @@
 ---
-title: Buy and Sell
-description: How the Inkryptus buy/sell system works — USDT-centric routing, supported assets, quoting, and fees.
+title: Swap
+description: How the Inkryptus Swap works — USDT-centric routing, supported assets, quoting, and fees.
 ---
 
-Inkryptus replaces the traditional crypto swap with a simplified buy and sell interface. Every trade uses **USDT as the central pair**. There are no direct routes between non-USDT assets (e.g., INKY→BTCB does not exist). To move between two assets, the user sells one for USDT, then buys the other with USDT.
+Inkryptus Swap is the internal asset conversion engine. In the app, users see **Buy** and **Sell** actions for each asset, always paired with **USDT as the central currency**. There are no direct routes between non-USDT assets (e.g., INKY→BTCB does not exist). To move between two assets, the user sells one for USDT, then buys the other with USDT.
 
 ## How it works
 
@@ -44,7 +44,7 @@ Direct routes between non-USDT assets (e.g., INKY→CAKE, ETH→BTCB) are intent
 
 ## Supported assets
 
-All 8 assets trade against USDT. The USDT itself is the central pair and does not appear as a tradeable asset in the Buy/Sell screen.
+All 8 assets trade through USDT. The USDT itself is the central pair and does not appear as a tradeable asset in the Swap screen.
 
 | Asset | Symbol | Category | Buy (USDT→asset) | Sell (asset→USDT) |
 |-------|--------|----------|-------------------|-------------------|
@@ -69,7 +69,7 @@ The platform provides real-time quotes based on current market data. Key charact
 
 ## Fees
 
-A fixed fee of **US$3** applies to every buy or sell operation, regardless of the trade amount.
+A fixed fee of **US$3** applies to every swap operation, regardless of the trade amount.
 
 - The fee is displayed in both USDT and INKY equivalent before confirmation.
 - The fee is the same whether the user is buying or selling, and applies per operation.
@@ -79,7 +79,7 @@ See [Fees](/fees/index) for the full fee structure, including commission distrib
 
 ## Related flows
 
-Buy/Sell handles only the internal asset conversion. For depositing USDT into your wallet (via external wallet, exchange, or fiat provider), see [Wallet](/products/wallet). For sending assets to an external address, see [Wallet — Withdrawals](/products/wallet#withdrawals).
+Swap handles only the internal asset conversion. For depositing USDT into your wallet (via external wallet, exchange, or fiat provider), see [Wallet](/products/wallet). For sending assets to an external address, see [Wallet — Withdrawals](/products/wallet#withdrawals).
 
 | Goal | Route | Operations |
 |------|-------|------------|
@@ -88,4 +88,4 @@ Buy/Sell handles only the internal asset conversion. For depositing USDT into yo
 | Diversify portfolio | USDT → BTCB, USDT → ETH | 1 buy per asset |
 | Move between assets | INKY → USDT (sell) → BTCB (buy) | 2 operations |
 
-<!-- IMAGE SUGGESTION: Diagram showing Buy/Sell scope: USDT in center, 8 assets around it with bidirectional arrows. Deposit and Withdrawal arrows pointing into/out of the USDT node, labeled "See Wallet". -->
+<!-- IMAGE SUGGESTION: Diagram showing Swap scope: USDT in center, 8 assets around it with bidirectional arrows. Deposit and Withdrawal arrows pointing into/out of the USDT node, labeled "See Wallet". -->

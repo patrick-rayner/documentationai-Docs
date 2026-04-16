@@ -164,8 +164,8 @@
                 ]
               },
               {
-                "title": "Buy and Sell",
-                "path": "products/buy-sell",
+                "title": "Swap",
+                "path": "products/swap",
                 "icon": "repeat"
               },
               {
@@ -331,7 +331,7 @@
                 "path": "help-center/tutorials/wallet"
               },
               {
-                "title": "Buy and Sell",
+                "title": "Swap",
                 "path": "help-center/tutorials/buy-sell"
               },
               {
