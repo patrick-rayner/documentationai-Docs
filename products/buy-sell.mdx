@@ -1,100 +1,91 @@
 ---
 title: Buy and Sell
-description: Fiat on/off-ramps, in-app crypto swaps, and external trading on PancakeSwap: mechanics, KYC requirements, fees, and supported assets.
+description: How the Inkryptus buy/sell system works — USDT-centric routing, supported assets, quoting, and fees.
 ---
 
-The Inkryptus platform enables users to purchase and sell cryptocurrency in multiple ways: through in-app fiat on/off-ramps, internal swaps, and external trading on PancakeSwap.
+Inkryptus replaces the traditional crypto swap with a simplified buy and sell interface. Every trade uses **USDT as the central pair**. There are no direct routes between non-USDT assets (e.g., INKY→BTCB does not exist). To move between two assets, the user sells one for USDT, then buys the other with USDT.
 
-## Trading methods
+## How it works
 
-<Tabs>
-  <Tab title="Fiat on-ramp" icon="credit-card">
-    Users can purchase USDT directly with fiat payment methods through the Inkryptus app:
+The user navigates to the asset screen inside the app. Two actions are available: **Buy** (USDT→asset) and **Sell** (asset→USDT).
 
-    <Steps>
-      <Step title="Select amount" icon="circle" title-type="p">
-        User selects buy amount and payment method (bank transfer, card, etc.).
-      </Step>
-      <Step title="Receive quote" icon="file-text" title-type="p">
-        Platform generates a quote showing the fiat amount and USDT to be received.
-      </Step>
-      <Step title="Complete payment" icon="credit-card" title-type="p">
-        User completes the fiat payment.
-      </Step>
-      <Step title="USDT credited" icon="check-circle" title-type="p">
-        Platform confirms payment receipt and executes the USDT transfer to the user's wallet.
-      </Step>
-    </Steps>
+<Steps>
+  <Step title="Select asset" icon="circle" title-type="p">
+    User opens the asset screen (e.g., INKY, BTCB, ETH). The Buy and Sell options are displayed.
+  </Step>
+  <Step title="Choose action" icon="arrow-right-left" title-type="p">
+    **Buy**: user specifies how much USDT to spend. The app returns a quote showing the amount of the asset to be received.
+    **Sell**: user specifies how much of the asset to sell. The app returns a quote showing the USDT to be received.
+  </Step>
+  <Step title="Review quote" icon="file-text" title-type="p">
+    The quote displays: current price, amount in/out, and the applicable fee (shown in both USDT and INKY equivalent). The quote has a short validity window.
+  </Step>
+  <Step title="Confirm" icon="check-circle" title-type="p">
+    User confirms. Execution is internal — no gas fee, no on-chain confirmation wait. The updated balance appears in the wallet immediately.
+  </Step>
+</Steps>
 
-    <Callout kind="info">
-      Fiat on-ramps require KYC verification, are subject to daily and monthly limits by KYC tier, and may take hours or days depending on the payment method. Jurisdiction-specific restrictions apply.
-    </Callout>
-  </Tab>
+<Callout kind="info">
+  If the price moves beyond the quote validity window, the app requests a new quote before execution. The user always sees the final terms before confirming.
+</Callout>
 
-  <Tab title="Fiat off-ramp" icon="banknote">
-    The reverse flow is available for selling USDT to fiat:
+## USDT-centric routing
 
-    <Steps>
-      <Step title="Initiate sell" icon="circle" title-type="p">
-        User initiates a sell request specifying USDT amount and withdrawal method.
-      </Step>
-      <Step title="Receive quote" icon="file-text" title-type="p">
-        Platform generates a quote.
-      </Step>
-      <Step title="Confirm transaction" icon="check" title-type="p">
-        User confirms the transaction.
-      </Step>
-      <Step title="Fiat payout" icon="banknote" title-type="p">
-        Platform processes the USDT withdrawal and initiates fiat payout to the user's bank or payment method.
-      </Step>
-    </Steps>
+All operations are structured around USDT as the base currency. This design decision was made to simplify the user experience for non-technical users.
 
-    Processing times and daily limits apply.
-  </Tab>
+| Route | Example | Steps |
+|-------|---------|-------|
+| Buy an asset | USDT → INKY | 1 operation |
+| Sell an asset | INKY → USDT | 1 operation |
+| Move between assets | INKY → BTCB | 2 operations: INKY → USDT, then USDT → BTCB |
+Direct routes between non-USDT assets (e.g., INKY→CAKE, ETH→BTCB) are intentionally not supported. Every movement passes through USDT.
 
-  <Tab title="In-app swap" icon="repeat">
-    Users can swap between supported assets within the app. The primary swap pair is INKY/USDT, though other pairs may be available.
+<!-- IMAGE SUGGESTION: Diagram with USDT at the center and 8 assets around it, bidirectional arrows between each asset and USDT. No arrows between assets. -->
 
-    - **Quote-based pricing**: The platform provides a quote before execution
-    - **Direct execution**: Swaps are executed by the platform at the quoted price
-    - **Fee structure**: See [Fees](/fees/index) for swap fee rates
+## Supported assets
 
-    Example: A user with 1,000 INKY can receive a quote to swap to USDT, approve, and receive USDT in their wallet immediately.
-  </Tab>
+All 8 assets trade against USDT. The USDT itself is the central pair and does not appear as a tradeable asset in the Buy/Sell screen.
 
-  <Tab title="PancakeSwap" icon="arrow-right-left">
-    Users who wish to trade INKY outside the Inkryptus app can use PancakeSwap v2:
+| Asset | Symbol | Category | Buy (USDT→asset) | Sell (asset→USDT) |
+|-------|--------|----------|-------------------|-------------------|
+| INKY | INKY | Native token | Yes | Yes |
+| Bitcoin (BEP-20) | BTCB | Major | Yes | Yes |
+| Ethereum | ETH | Major | Yes | Yes |
+| PancakeSwap | CAKE | DeFi | Yes | Yes |
+| Biswap | BSW | DeFi | Yes | Yes |
+| Radiant | RDNT | DeFi | Yes | Yes |
+| Shiba Inu | SHIB | Meme | Yes | Yes |
+| BinaryX | BNX | GameFi | Yes | Yes |
 
-    - **INKY/USDT pair**: The primary liquidity pool where INKY trades against USDT
-    - **Permissionless**: Any user can send INKY to PancakeSwap and receive USDT (or vice versa)
-    - **PancakeSwap fees apply**: All trades incur a 0.25% swap fee, plus gas costs on BNB Smart Chain
-    - **Slippage**: Large trades relative to pool depth may experience slippage
-
-    <Callout kind="alert">
-      Users must have BNB in their wallet to cover gas fees for external swaps.
-    </Callout>
-
-    Current liquidity pool depth is published in [Liquidity](/inky-token/liquidity).
-  </Tab>
-</Tabs>
-
-## Supported assets for trading
-
-| Asset | Available for buy | Available for sell | Swap pairs |
-|-------|------|-------|-----------|
-| USDT | Yes (fiat on-ramp) | Yes (fiat off-ramp) | INKY/USDT |
-| INKY | Yes (from USDT swap) | Yes (to USDT swap) | INKY/USDT, others on PancakeSwap |
-| BTC | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
-| ETH | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
-| BNB | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
-| CAKE | Yes (from fiat or swap) | Yes (to fiat or swap) | Depends on available pairs |
+All assets operate on BNB Smart Chain (BEP-20).
 
 ## Price quoting
 
-The platform provides real-time price quotes based on current market price (derived from INKY/USDT liquidity pool or external market data), slippage estimates for large trades, fee deductions, and a quote validity window (typically seconds to minutes). Users must confirm a quote before execution. If the market moves significantly, a new quote is required.
+The platform provides real-time quotes based on current market data. Key characteristics:
 
-## Fee structure
+- **Pre-execution visibility**: price, amount, and fee are shown before the user confirms.
+- **Validity window**: quotes expire after a short period (typically seconds). If expired, the app generates a new quote automatically.
+- **No slippage for the user**: execution happens at the quoted price. The platform absorbs any price movement within the validity window.
 
-All buy, sell, and swap operations are subject to fees. See [Fees](/fees/index) for details on fiat on/off-ramp fees, in-app swap fees, PancakeSwap trading fees (external), and network gas fees.
+## Fees
 
-{/* IMAGE SUGGESTION: A flow diagram showing the three trading paths: (1) User -> USDT fiat on-ramp -> USDT in wallet, (2) User -> In-app swap (INKY<>USDT) -> Updated wallet, (3) User wallet -> PancakeSwap v2 liquidity pool -> Output asset. Use different colors for each path. */}
+A fixed fee of **US$3** applies to every buy or sell operation, regardless of the trade amount.
+
+- The fee is displayed in both USDT and INKY equivalent before confirmation.
+- The fee is the same whether the user is buying or selling, and applies per operation.
+- For multi-step routes (e.g., INKY → USDT → BTCB), the fee applies to each operation (2× US$3 in this example).
+
+See [Fees](/fees/index) for the full fee structure, including commission distribution.
+
+## Related flows
+
+Buy/Sell handles only the internal asset conversion. For depositing USDT into your wallet (via external wallet, exchange, or fiat provider), see [Wallet](/products/wallet). For sending assets to an external address, see [Wallet — Withdrawals](/products/wallet#withdrawals).
+
+| Goal | Route | Operations |
+|------|-------|------------|
+| Enter staking | USDT → INKY (buy) → Staking | 1 buy + 1 stake |
+| Realize staking profit | Harvest INKY → INKY → USDT (sell) | 1 harvest + 1 sell |
+| Diversify portfolio | USDT → BTCB, USDT → ETH | 1 buy per asset |
+| Move between assets | INKY → USDT (sell) → BTCB (buy) | 2 operations |
+
+<!-- IMAGE SUGGESTION: Diagram showing Buy/Sell scope: USDT in center, 8 assets around it with bidirectional arrows. Deposit and Withdrawal arrows pointing into/out of the USDT node, labeled "See Wallet". -->
