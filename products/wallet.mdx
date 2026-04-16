@@ -1,9 +1,11 @@
 ---
 title: Wallet
-description: Custodial wallet on BNB Smart Chain: supported assets, deposit and withdrawal flows, multisig security model, and what users cannot do.
+description: Custodial wallet on BNB Smart Chain. Supported assets, deposit and withdrawal flows, withdrawal limits, AML/KYC compliance, multisig security model, dashboard features, and account recovery.
 ---
 
 The Inkryptus wallet is a custodial wallet on BNB Smart Chain. Each user receives their own wallet address, managed by the platform's main multisig wallet. Users interact with their assets through the mobile app without generating or storing private keys.
+
+The app has been active since 2020.
 
 ## Custodial model
 
@@ -18,91 +20,175 @@ The Inkryptus wallet is a custodial wallet on BNB Smart Chain. Each user receive
 
 ## Supported assets
 
-| Asset | Network | Purpose |
-| --- | --- | --- |
-| INKY | BNB Smart Chain | Native token, staking, Arena, buy/sell |
-| USDT | BNB Smart Chain | Staking, buy/sell |
-| BTC | BNB Smart Chain | Trading, user holdings |
-| ETH | BNB Smart Chain | Trading, user holdings |
-| CAKE | BNB Smart Chain | Staking (PancakeSwap) |
-| BNB | BNB Smart Chain | Trading, user holdings |
-| RDNT | BNB Smart Chain | Trading, user holdings |
-| SHIB | BNB Smart Chain | Trading, user holdings |
-| BNX | BNB Smart Chain | Trading, user holdings |
+| Asset | Symbol | Network | Category | In-app features |
+| --- | --- | --- | --- | --- |
+| INKY | INKY | BNB Smart Chain | Native token | Staking, Arena, buy/sell, fee payment |
+| Tether | USDT | BNB Smart Chain | Stablecoin | Staking, buy/sell, fiat on-ramp |
+| Bitcoin | BTCB | BNB Smart Chain | Major | Trading, user holdings |
+| Ethereum | ETH | BNB Smart Chain | Major | Trading, user holdings |
+| PancakeSwap | CAKE | BNB Smart Chain | DeFi | Staking (PancakeSwap protocol) |
+| Biswap | BSW | BNB Smart Chain | DeFi | Trading, user holdings |
+| Radiant | RDNT | BNB Smart Chain | DeFi | Trading, user holdings |
+| Shiba Inu | SHIB | BNB Smart Chain | Meme | Trading, user holdings |
+| BinaryX | BNX | BNB Smart Chain | GameFi | Trading, user holdings |
 
-Each user's wallet address can receive deposits of any BEP-20 standard token, though only listed assets are supported for staking and trading within the app.
+Each user's wallet address can receive deposits of any BEP-20 standard token, though only the listed assets are supported for staking, trading and in-app features.
 
-## Deposit and withdrawal flows
+New assets are evaluated periodically based on liquidity, utility, security and relevance to the ecosystem.
+
+## Deposit flows
 
 <Tabs>
-  <Tab title="Crypto deposit" icon="download">
+  <Tab title="From external wallet" icon="download">
     <Steps>
-      <Step title="Initiate deposit" icon="circle" title-type="p">
-        User initiates a deposit request in the app, specifying asset and amount.
+      <Step title="Open deposit screen" icon="circle" title-type="p">
+        In the app, go to Wallet and tap Add Funds. Select the asset you want to receive.
       </Step>
-      <Step title="Receive address" icon="copy" title-type="p">
-        App displays a platform-controlled deposit address on BNB Smart Chain.
+      <Step title="Copy your BEP-20 address" icon="copy" title-type="p">
+        The app displays your unique deposit address on BNB Smart Chain. Copy it or use the QR Code.
       </Step>
-      <Step title="Send crypto" icon="send" title-type="p">
-        User sends crypto from their external wallet to the displayed address.
+      <Step title="Send from your wallet" icon="send" title-type="p">
+        In your external wallet, paste the address and send the crypto on the BEP-20 network.
       </Step>
-      <Step title="On-chain detection" icon="search" title-type="p">
-        Platform monitors the address and detects the incoming transaction.
+      <Step title="On-chain confirmation" icon="search" title-type="p">
+        The platform detects the incoming transaction once confirmed on BNB Smart Chain. Confirmation is usually fast but may take a few minutes.
       </Step>
       <Step title="Balance credited" icon="check-circle" title-type="p">
-        Platform credits the user's account balance once the transaction is confirmed on-chain.
-      </Step>
-    </Steps>
-  </Tab>
-
-  <Tab title="Fiat-to-crypto" icon="credit-card">
-    <Steps>
-      <Step title="Select amount" icon="circle" title-type="p">
-        User selects buy amount and fiat payment method.
-      </Step>
-      <Step title="Receive quote" icon="file-text" title-type="p">
-        Platform provides a quote and payment instructions.
-      </Step>
-      <Step title="Complete payment" icon="credit-card" title-type="p">
-        User completes the fiat payment (bank transfer, card, etc.).
-      </Step>
-      <Step title="Payment confirmed" icon="check" title-type="p">
-        Platform confirms receipt and executes a buy order.
-      </Step>
-      <Step title="Crypto credited" icon="wallet" title-type="p">
-        Crypto is credited to the user's wallet on-chain and app balance is updated.
+        Your app balance updates automatically.
       </Step>
     </Steps>
 
     <Callout kind="alert">
-      Fiat deposits are subject to KYC verification and regulatory compliance.
+      Always confirm you are sending on the BEP-20 (BNB Smart Chain) network. Deposits sent on other networks (ERC-20, TRC-20, etc.) cannot be recovered.
     </Callout>
   </Tab>
 
-  <Tab title="Withdrawal" icon="upload">
+  <Tab title="From exchange" icon="building">
     <Steps>
-      <Step title="Request withdrawal" icon="circle" title-type="p">
-        User initiates a withdrawal request, specifying asset, amount, and external address.
+      <Step title="Open deposit screen" icon="circle" title-type="p">
+        In the app, go to Wallet and tap Add Funds. Select the asset.
       </Step>
-      <Step title="Validation" icon="shield" title-type="p">
-        Platform validates the request (KYC limits, balance, address format).
+      <Step title="Copy your BEP-20 address" icon="copy" title-type="p">
+        Copy your deposit address or scan the QR Code.
       </Step>
-      <Step title="Multisig signing" icon="key" title-type="p">
-        Platform constructs a multisig transaction authorizing the transfer from the user's managed wallet.
+      <Step title="Initiate withdrawal on the exchange" icon="send" title-type="p">
+        In your exchange (e.g., Binance, Coinbase), go to Withdraw, select the asset, paste the Inkryptus address, and choose BEP-20 as the network.
       </Step>
-      <Step title="Broadcast" icon="send" title-type="p">
-        Withdrawal is signed and broadcast to BNB Smart Chain.
+      <Step title="Confirm and wait" icon="search" title-type="p">
+        The exchange processes the withdrawal. Once broadcast and confirmed on BNB Smart Chain, Inkryptus detects the transaction.
       </Step>
-      <Step title="Confirmation" icon="check-circle" title-type="p">
-        Transaction is confirmed on-chain, crypto arrives at the user's external address, and app balance is debited.
+      <Step title="Balance credited" icon="check-circle" title-type="p">
+        Your app balance updates automatically.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Buy with local currency (fiat)" icon="credit-card">
+    <Steps>
+      <Step title="Select amount" icon="circle" title-type="p">
+        In the app, select the buy option. Choose USDT and the desired amount.
+      </Step>
+      <Step title="Receive quote" icon="file-text" title-type="p">
+        The platform provides a quote and payment instructions based on your region.
+      </Step>
+      <Step title="Complete payment" icon="credit-card" title-type="p">
+        Complete the fiat payment using the available method (bank transfer, card, PIX, etc.).
+      </Step>
+      <Step title="Payment confirmed" icon="check" title-type="p">
+        The platform confirms receipt and executes the buy order.
+      </Step>
+      <Step title="USDT credited" icon="wallet" title-type="p">
+        USDT is credited to your wallet on-chain and your app balance updates.
+      </Step>
+    </Steps>
+
+    <Callout kind="alert">
+      Fiat purchases are subject to KYC verification and regional availability. Not all payment methods are available in all jurisdictions.
+    </Callout>
+  </Tab>
+</Tabs>
+
+## Withdrawal flows
+
+<Tabs>
+  <Tab title="To external wallet" icon="upload">
+    <Steps>
+      <Step title="Select asset" icon="circle" title-type="p">
+        In the app, go to your wallet, select the asset you want to send, and tap Send.
+      </Step>
+      <Step title="Enter destination" icon="edit" title-type="p">
+        Paste the destination BEP-20 address. Confirm it supports the BEP-20 network.
+      </Step>
+      <Step title="Confirm amount" icon="file-text" title-type="p">
+        Enter the amount. The app shows the applicable fee and the net amount that will arrive.
+      </Step>
+      <Step title="2FA verification" icon="shield" title-type="p">
+        Confirm the transaction via email 2FA.
+      </Step>
+      <Step title="Transaction broadcast" icon="send" title-type="p">
+        The platform signs and broadcasts the transaction to BNB Smart Chain.
+      </Step>
+      <Step title="Funds arrive" icon="check-circle" title-type="p">
+        Once confirmed on-chain, crypto arrives at the destination address. App balance is debited.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="To exchange (off-ramp to fiat)" icon="building">
+    <Steps>
+      <Step title="Convert to USDT" icon="repeat" title-type="p">
+        If your balance is in INKY, BTC, ETH or another asset, first convert to USDT using the in-app swap. This is the recommended practice for external transfers.
+      </Step>
+      <Step title="Send USDT to exchange" icon="send" title-type="p">
+        Copy the USDT deposit address from your exchange (e.g., Binance). In the Inkryptus app, select USDT, tap Send, paste the address, and confirm.
+      </Step>
+      <Step title="Confirm on exchange" icon="check" title-type="p">
+        Once the USDT arrives on the exchange, convert to local currency and withdraw using the available method (PIX, SEPA, bank transfer, etc.).
       </Step>
     </Steps>
 
     <Callout kind="info">
-      Withdrawals may be subject to daily limits, KYC tier restrictions, and processing delays.
+      Some exchanges and wallets do not recognize INKY directly. Converting to USDT before sending avoids compatibility issues.
     </Callout>
   </Tab>
 </Tabs>
+
+## Withdrawal limits
+
+Withdrawal limits are defined by KYC tier. The monthly counter resets on the 1st of each month at 00:00:01 UTC.
+
+| Tier | KYC required | Monthly limit |
+| --- | --- | --- |
+| **Bronze** | No | US$ 500 |
+| **Silver** | Yes | US$ 500,000 |
+
+To upgrade from Bronze to Silver, complete the KYC process in Profile, then Account, then KYC inside the app.
+
+<Callout kind="info">
+  Individual transactions may also be subject to per-transaction limits and processing delays depending on the asset and amount.
+</Callout>
+
+## AML and KYC compliance
+
+Inkryptus integrates anti-money laundering (AML) and know-your-customer (KYC) procedures into the platform.
+
+- **KYC verification**: Users submit identity documents through the app. Verification is processed by a third-party provider and typically completed within a few business days.
+- **AML monitoring**: Transactions are monitored for suspicious patterns. The platform may request additional verification or temporarily hold transactions that trigger compliance flags.
+- **Tier-based access**: KYC completion unlocks higher withdrawal limits and access to additional features.
+
+## Wallet dashboard
+
+The app provides a unified dashboard for managing all wallet activity.
+
+| Feature | Description |
+| --- | --- |
+| **Balance overview** | Total value across all assets, with breakdown between free balance and amounts allocated in staking contracts |
+| **Daily earnings** | Returns generated by active staking contracts, updated daily |
+| **Transaction history** | All movements (deposits, withdrawals, swaps, harvests, commissions) with dates and amounts |
+| **Active contracts** | Running staking contracts with invested amount, remaining term, and accumulated return |
+| **Asset breakdown** | Individual asset balances with current value in USD |
+
+The dashboard is accessible via the Wallet tab in the app and updates in real time.
 
 ## Security model
 
@@ -118,19 +204,40 @@ The platform uses a multisig wallet to control user funds. The specific signatur
 
 | Measure | Description |
 |---------|-------------|
-| **Two-factor authentication (2FA)** | Users can enable 2FA on their account to prevent unauthorized access |
-| **Rate limiting** | Withdrawal amounts may be limited per day or per transaction |
-| **Address whitelisting** | Users may register withdrawal addresses to prevent accidental transfers |
+| **Two-factor authentication (2FA)** | Email-based verification for sensitive operations (withdrawals, logins) |
+| **Rate limiting** | Withdrawal amounts limited by KYC tier (see Withdrawal limits above) |
 | **Monitoring** | Platform monitors for suspicious activity and may block transactions or require additional verification |
+| **On-chain transparency** | All transactions are recorded on BNB Smart Chain and publicly viewable on BscScan |
 
 ### What users cannot do
 
 <Callout kind="alert">
-  Because the wallet is custodial, users cannot export or recover private keys, sign transactions directly, use the wallet with external wallet software, or take unilateral possession of their funds. If a user loses access to their account, they must use the platform's account recovery process, which may require identity verification.
+  Because the wallet is custodial, users cannot export or recover private keys, sign transactions directly, use the wallet with external wallet software (WalletConnect, MetaMask, etc.), or take unilateral possession of their funds.
 </Callout>
 
-## Asset transactions on-chain
+## Account recovery
 
-All transactions involving user deposits, withdrawals, and staking are recorded on BNB Smart Chain and are publicly viewable on BscScan. Users can track their transaction history by wallet address or transaction hash.
+If a user loses access to their account:
 
-{/* IMAGE SUGGESTION: Diagram showing the custodial wallet architecture: main multisig wallet managing individual user wallet addresses on BNB Smart Chain. Show deposit flow (external -> user wallet), withdrawal flow (user wallet -> external), and staking flow (user wallet -> staking contract). Clean, light background. */}
+1. Contact support through the app or website.
+2. The recovery process requires identity verification (email, KYC documents, or other proof of ownership).
+3. Once verified, account access is restored. No seedphrase or private key is needed because all keys are managed by the platform.
+
+<Callout kind="info">
+  Account recovery timelines depend on the complexity of the case and the documentation provided. Funds remain secure in the managed wallet during the process.
+</Callout>
+
+## Architecture diagram
+
+```mermaid
+graph TD
+    U["External Wallet\nor Exchange"] -->|"Deposit\n(BEP-20)"| UW["User Wallet\n(Individual address\non BNB Chain)"]
+    F["Fiat Payment"] -->|"Buy USDT\n(local currency)"| UW
+    UW -->|"Withdraw\n(BEP-20)"| E["External Wallet\nor Exchange"]
+    UW -->|"Stake"| SC["Staking\nContracts"]
+    UW -->|"Swap"| SW["Swap\nEngine"]
+    UW -->|"Play"| AR["Arena\n(Games)"]
+    SC -->|"Harvest\nrewards"| UW
+    SW -->|"Converted\nassets"| UW
+    MW["Main Multisig Wallet\n(Inkryptus Infrastructure)"] -.->|"Manages keys\nfor all user wallets"| UW
+```
