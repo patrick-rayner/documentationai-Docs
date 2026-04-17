@@ -1,6 +1,6 @@
 ---
 title: Swap
-description: "How the Inkryptus Swap works — USDT-centric routing, supported assets, quoting, and fees."
+description: "How the Inkryptus Swap works: USDT-centric routing, supported assets, quoting, and fees."
 ---
 
 Inkryptus Swap is the internal asset conversion engine. In the app, users see **Buy** and **Sell** actions for each asset, always paired with **USDT as the central currency**. There are no direct routes between non-USDT assets (e.g., INKY→BTCB does not exist). To move between two assets, the user sells one for USDT, then buys the other with USDT.
@@ -21,7 +21,7 @@ The user navigates to the asset screen inside the app. Two actions are available
     The quote displays: current price, amount in/out, and the applicable fee (shown in both USDT and INKY equivalent). The quote has a short validity window.
   </Step>
   <Step title="Confirm" icon="check-circle" title-type="p">
-    User confirms. Execution is internal — no gas fee, no on-chain confirmation wait. The updated balance appears in the wallet immediately.
+    User confirms. Execution is internal: no gas fee, no on-chain confirmation wait. The updated balance appears in the wallet immediately.
   </Step>
 </Steps>
 
@@ -90,7 +90,7 @@ See [Fees](/fees/index) for the full fee structure, including commission distrib
 
 ## Related flows
 
-Swap handles only the internal asset conversion. For depositing USDT into your wallet (via external wallet, exchange, or fiat provider), see [Wallet](/features/wallet). For sending assets to an external address, see [Wallet — Withdrawals](/features/wallet#withdrawals).
+Swap handles only the internal asset conversion. For depositing USDT into your wallet (via external wallet, exchange, or fiat provider), see [Wallet](/features/wallet). For sending assets to an external address, see [Wallet: Withdrawals](/features/wallet#withdrawals).
 
 | Goal | Route | Operations |
 |------|-------|------------|
