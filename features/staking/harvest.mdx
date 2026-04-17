@@ -32,8 +32,13 @@ Harvest is the process of collecting accumulated staking rewards from an active 
 | Availability | 24 hours after contract activation |
 | Fee | US$3 flat per operation |
 | What moves | Profit only (principal stays invested) |
+| Processing | Instant for harvests up to US$500 equivalent; above US$500 enters approval queue (up to 24h) |
 | Frequency | Can be performed as often as desired after the initial 24h |
 | Compound option | User can manually reinvest harvested profit into new contracts |
+
+<Callout kind="info">
+  The US$500 threshold is based on the USD equivalent value at the time of the harvest, regardless of the staked asset. For example, harvesting INKY profit worth US$600 at current price will enter the approval queue even though the payout is in INKY.
+</Callout>
 
 ## What users can do with harvested profit
 

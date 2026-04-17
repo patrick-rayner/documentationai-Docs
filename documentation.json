@@ -195,24 +195,40 @@
                 "icon": "dollar-sign"
               },
               {
+                "group": "Partner Campaigns",
+                "icon": "award",
+                "pages": [
+                  {
+                    "title": "Overview",
+                    "path": "partner-program/partner-campaigns",
+                    "icon": "megaphone"
+                  },
+                  {
+                    "title": "Staking Referral",
+                    "path": "partner-program/staking-referral",
+                    "icon": "trending-up"
+                  },
+                  {
+                    "title": "Fast Bonus",
+                    "path": "partner-program/fast-bonus",
+                    "icon": "clock"
+                  }
+                ]
+              },
+              {
                 "title": "Compliance",
                 "path": "partner-program/compliance",
-                "icon": "check-circle"
+                "icon": "shield"
               },
               {
                 "title": "Operational Rules",
                 "path": "partner-program/operational-rules",
-                "icon": "list"
+                "icon": "clipboard"
               },
               {
                 "title": "FAQ",
                 "path": "partner-program/faq",
                 "icon": "help-circle"
-              },
-              {
-                "title": "Staking Referral",
-                "path": "partner-program/staking-referral",
-                "icon": "award"
               }
             ]
           },
