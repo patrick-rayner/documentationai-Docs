@@ -15,11 +15,6 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Website",
-        "icon": "globe",
-        "href": "https://inkryptus.com"
-      },
-      {
         "tab": "Documentation",
         "icon": "book",
         "groups": [
@@ -436,6 +431,10 @@
         "link": "https://link.inkryptus.com/?c=website"
       },
       "links": [
+        {
+          "title": "Website",
+          "link": "https://inkryptus.com"
+        },
         {
           "title": "Support",
           "link": "mailto:support@inkryptus.com"
