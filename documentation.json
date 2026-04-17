@@ -453,5 +453,8 @@
   "description": "Inkryptus documentation: platform, features, fees, and partner program reference.",
   "logo-dark": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
   "logo-light": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
-  "favicon": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat"
+  "favicon": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
+  "ai": {
+    "ai-assistant:enabled": false
+  }
 }
