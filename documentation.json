@@ -131,9 +131,21 @@
                 "icon": "grid"
               },
               {
-                "title": "Wallet",
-                "path": "features/wallet",
-                "icon": "wallet"
+                "group": "Wallet",
+                "icon": "wallet",
+                "expandable": true,
+                "pages": [
+                  {
+                    "title": "Overview",
+                    "path": "features/wallet/index",
+                    "icon": "grid"
+                  },
+                  {
+                    "title": "FIAT On-Ramp",
+                    "path": "features/wallet/fiat-on-ramp",
+                    "icon": "credit-card"
+                  }
+                ]
               },
               {
                 "group": "Staking",

@@ -1,0 +1,90 @@
+---
+title: FIAT On-Ramp
+description: "Buy USDT with local currency directly in the Inkryptus app. Provider details, supported currencies, fees, minimum amounts, and step-by-step flow."
+---
+
+Buy USDT with local currency (fiat) directly inside the Inkryptus app. The purchase flow is handled by a third-party payment provider integrated into the app.
+
+<Callout kind="info">
+  KYC verification is required for fiat purchases. GPS access may be requested by the payment provider to determine available payment methods for your region.
+</Callout>
+
+## Current provider
+
+| Attribute | Details |
+| --- | --- |
+| **Provider** | Simplex |
+| **Asset purchased** | USDT (BEP-20) |
+| **Minimum purchase** | US$50 |
+| **Fee** | 3.5% (minimum US$5) + US$0.33 blockchain fee |
+| **Payment methods** | Credit/debit card, other methods depending on region |
+| **KYC** | Required |
+| **GPS** | May be requested to detect local payment options |
+
+### Fee examples
+
+| Purchase amount | Provider fee (3.5%) | Blockchain fee | Total fee | USDT received (approx.) |
+| --- | --- | --- | --- | --- |
+| US$50 | US$5.00 (minimum) | US$0.33 | US$5.33 | ~US$44.67 |
+| US$100 | US$5.00 (minimum) | US$0.33 | US$5.33 | ~US$94.67 |
+| US$500 | US$17.50 | US$0.33 | US$17.83 | ~US$482.17 |
+| US$1,000 | US$35.00 | US$0.33 | US$35.33 | ~US$964.67 |
+
+<Callout kind="alert">
+  Fees are charged by the payment provider, not by Inkryptus. The exact amount received may vary slightly depending on exchange rates at the time of purchase.
+</Callout>
+
+## How it works
+
+<Steps>
+  <Step title="Tap Add Funds" icon="circle" title-type="p">
+    On the Home screen, tap Add Funds and select Buy USDT.
+  </Step>
+  <Step title="Choose provider" icon="list" title-type="p">
+    Select your preferred provider from the list. Currently, Simplex is available. More providers are planned.
+  </Step>
+  <Step title="Enter amount" icon="edit" title-type="p">
+    Enter the amount you wish to purchase (minimum US$50) and tap Confirm.
+  </Step>
+  <Step title="Continue to payment" icon="arrow-right" title-type="p">
+    Tap Continue to payment. Allow GPS access if prompted (required by the payment provider to determine available payment methods).
+  </Step>
+  <Step title="Complete purchase" icon="credit-card" title-type="p">
+    Inside the provider's screen, insert your payment method (card or another available option). Enter all required details: card number, cardholder name, billing address. Confirm the transaction.
+  </Step>
+  <Step title="USDT credited" icon="check-circle" title-type="p">
+    Once the provider confirms the payment, USDT is deposited automatically into your Inkryptus wallet. Your app balance updates accordingly.
+  </Step>
+</Steps>
+
+## Supported fiat currencies
+
+Simplex supports 88 fiat currencies. Available payment methods vary by currency and region.
+
+<Expandable title="Full list of supported fiat currencies (88)">
+
+ALL, AMD, AUD, AZN, BHD, BDT, BBD, BMD, BAM, BWP, BRL, GBP, BND, BGN, KHR, CAD, KYD, CLP, CNY, COP, CRC, CZK, DKK, DJF, DOP, EGP, EUR, GEL, GHS, GTQ, HKD, HUF, ISK, INR, IDR, IQD, ILS, XOF, JMD, JPY, JOD, KZT, KES, KWD, KGS, MOP, MYR, MUR, MXN, MDL, MNT, MAD, MZN, NAD, ANG, TWD, NZD, NGN, MKD, NOK, OMR, PAB, PGK, PYG, PEN, UYU, PHP, PLN, QAR, XAF, RON, SAR, RSD, SGD, SOS, ZAR, KRW, LKR, SEK, CHF, TZS, THB, UGX, UAH, AED, USD, VND, ZMW
+
+For the most up-to-date list, see [Simplex supported currencies](https://integrations.simplex.com/docs/supported_currencies#fiat-currencies).
+
+</Expandable>
+
+## Additional providers
+
+<Callout kind="info">
+  More payment providers are planned for future updates. Each provider will have its own fee structure, supported currencies, and payment methods. Check the provider list in the app for the latest options.
+</Callout>
+
+## Related
+
+<Columns cols="3">
+  <Card title="Wallet" icon="wallet" href="/features/wallet" horizontal={true}>
+    Custodial model, deposit/withdrawal flows, and security.
+  </Card>
+  <Card title="Swap" icon="repeat" href="/features/swap" horizontal={true}>
+    Convert USDT to other assets after purchase.
+  </Card>
+  <Card title="Fee Table" icon="table" href="/fees/fee-table" horizontal={true}>
+    Complete fee schedule for all platform operations.
+  </Card>
+</Columns>
