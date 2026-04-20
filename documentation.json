@@ -271,6 +271,17 @@
         "icon": "help-circle",
         "groups": [
           {
+            "group": "Help Center",
+            "icon": "help-circle",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "help-center/index",
+                "icon": "home"
+              }
+            ]
+          },
+          {
             "group": "FAQ",
             "icon": "help-circle",
             "pages": [
