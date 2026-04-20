@@ -1,7 +1,26 @@
 ---
-title: Deposits and wallet FAQ
-description: > **Status**: scaffold, content pending.
+title: Deposits
+description: "Questions about adding funds, fiat on-ramp, deposit confirmation, and wallet balance."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: How deposits work, confirmation times, supported tokens, minimum amounts.
+
+<ExpandableGroup>
+  <Expandable title="How do I add funds?" default-open="true">
+    Use **Add Funds** on Home or in **Wallet**, select the asset, copy the address (or QR code), and send through BEP20.
+  </Expandable>
+
+  <Expandable title="Does Inkryptus accept fiat deposits in the app?" default-open="false">
+    Yes. You can purchase USDT directly inside the app using a debit/credit card or other payment methods via the integrated provider (on-ramp). Go to **Add Funds > Buy USDT**, choose a provider, enter the amount, and complete the payment. Your USDT will be deposited automatically once the provider confirms the transaction.
+  </Expandable>
+
+  <Expandable title="How do I track balance and history?" default-open="false">
+    In the **Wallet** area, you can track estimated balance, composition between assets and products, transaction history, and active contracts in one panel.
+  </Expandable>
+
+  <Expandable title="A deposit was sent but did not appear in the wallet. How should I check?" default-open="false">
+    Validate BEP20 network, asset, and on-chain status (TXID, the unique transaction code on blockchain). Credit may take up to 24h. If it does not reflect after this period, contact support with all details.
+  </Expandable>
+
+  <Expandable title="First deposit tip" default-open="false">
+    For maximum operational safety, make a small test transaction first and, after confirming credit, move the main amount.
+  </Expandable>
+</ExpandableGroup>

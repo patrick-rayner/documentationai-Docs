@@ -1,7 +1,88 @@
 ---
-title: Withdrawals tutorial
-description: > **Status**: scaffold, content pending.
+title: Withdrawals
+description: "How to send assets from Inkryptus to external wallets, find your TXID, and off-ramp to fiat."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: Step by step: sending assets out, withdrawal limits, fees.
+
+## Send assets (external withdrawal)
+
+<Steps>
+  <Step title="Select asset" icon="circle" title-type="p">
+    Open the asset in your wallet and tap **Send**.
+  </Step>
+  <Step title="Paste destination" icon="copy" title-type="p">
+    Paste the destination wallet address.
+  </Step>
+  <Step title="Confirm BEP20" icon="check" title-type="p">
+    Verify that the destination wallet supports BNB Smart Chain (BEP20).
+  </Step>
+  <Step title="Enter amount" icon="edit" title-type="p">
+    Enter the withdrawal amount. Observe the minimum (US$6) and the fixed network fee (US$3).
+  </Step>
+  <Step title="Validate with email code" icon="mail" title-type="p">
+    Tap **Confirm** and enter the security code sent to your email.
+  </Step>
+  <Step title="Track transaction" icon="activity" title-type="p">
+    Monitor progress through the transaction hash in app history.
+  </Step>
+</Steps>
+
+<Callout kind="warning">
+  Before confirming, review address, asset, and BEP20 network. Send a test transaction with a small amount when needed.
+</Callout>
+
+---
+
+## How to find the TXID (hash)
+
+- **External transfers:** open asset details and locate the transaction hash.
+- **Internal actions:** check the transaction ID in app history.
+- If you cannot find it, contact support with operation details.
+
+---
+
+## Example: Send USDT to Binance
+
+<Steps>
+  <Step title="Get Binance address" icon="copy" title-type="p">
+    In Binance: **Wallet > Assets > Add Funds > Deposit Crypto**. Select USDT, choose BSC (BEP20), and copy the deposit address.
+  </Step>
+  <Step title="Send from Inkryptus" icon="arrow-right" title-type="p">
+    In Inkryptus: **Wallet > Assets > Tether (USDT) > Send**. Paste the Binance address.
+  </Step>
+  <Step title="Enter amount and confirm" icon="check-circle" title-type="p">
+    Tap **Next**, enter amount (or MAX), tap **Send**, and validate with email code.
+  </Step>
+</Steps>
+
+**Expected result:** USDT arrives in Binance for conversion to local currency.
+
+---
+
+## Withdraw to local currency (off-ramp via Binance)
+
+<Steps>
+  <Step title="Confirm receipt" icon="check" title-type="p">
+    In Binance, verify USDT arrived in **Wallet > Spot**.
+  </Step>
+  <Step title="Convert to fiat" icon="dollar-sign" title-type="p">
+    Convert USDT to your local currency (BRL, USD, EUR, etc.).
+  </Step>
+  <Step title="Withdraw" icon="arrow-right" title-type="p">
+    Go to **Wallet > Spot > Withdraw** and choose your method (PIX, SEPA, etc.).
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  Binance may require KYC and additional checks depending on your region.
+</Callout>
+
+---
+
+## Withdrawal limits
+
+| Tier | KYC Status | Monthly Limit |
+|------|-----------|---------------|
+| Bronze | No KYC | US$500/month |
+| Silver | KYC verified | US$500,000/month |
+
+The counter resets on the 1st of each month at 00:00:01 UTC. Check your current limits in `Profile > Account > Fees`.

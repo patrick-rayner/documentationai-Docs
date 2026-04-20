@@ -1,7 +1,31 @@
 ---
-title: Network and assets FAQ
-description: > **Status**: scaffold, content pending.
+title: Network & Assets
+description: "Questions about the supported blockchain network, available tokens, and compatibility rules."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: Supported networks, supported assets, how the wallet integrates multiple chains.
+
+<ExpandableGroup>
+  <Expandable title="Which network does Inkryptus support?" default-open="true">
+    Inkryptus operates exclusively on **BNB Smart Chain (BEP20)**. Transfers on any other network may cause permanent loss of funds.
+  </Expandable>
+
+  <Expandable title="Which assets are currently supported?" default-open="false">
+    The wallet works with a BEP20 asset selection aligned with the platform's current ecosystem:
+
+    | Asset | Symbol |
+    |-------|--------|
+    | Dollar Tether | USDT |
+    | Bitcoin (BEP-20) | BTCB |
+    | Ethereum | ETH |
+    | Inkryptus | INKY |
+    | PancakeSwap | CAKE |
+    | Biswap | BSW |
+    | Radiant | RDNT |
+    | Shiba Inu | SHIB |
+
+    This list may evolve with the product roadmap. Always confirm in the app before transferring.
+  </Expandable>
+
+  <Expandable title="Can I send any BEP20 token?" default-open="false">
+    No. In addition to being on the correct network, the asset must be listed as supported by Inkryptus. Unsupported tokens may not be credited.
+  </Expandable>
+</ExpandableGroup>

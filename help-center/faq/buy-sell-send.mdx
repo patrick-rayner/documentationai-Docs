@@ -1,7 +1,50 @@
 ---
-title: Swap and send FAQ
-description: > **Status**: scaffold, content pending.
+title: Buy, Sell & Send
+description: "Questions about buying and selling assets, sending to external wallets, AMM pricing, and withdrawal status."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: Questions about in-app swap, sending and receiving assets, limits.
+
+<ExpandableGroup>
+  <Expandable title="How do I buy and sell assets in the app?" default-open="true">
+    Buy and sell are done directly on each asset screen using **Buy** and **Sell** buttons. Before confirmation, the app shows fee and minimum values for informed decision-making.
+  </Expandable>
+
+  <Expandable title="How do I send to another wallet or exchange?" default-open="false">
+    Open the asset, tap **Send**, paste the destination address, confirm BEP20, enter the amount, and validate with the email code.
+  </Expandable>
+
+  <Expandable title="My withdrawal is 'processing' for more than 24h. What should I do?" default-open="false">
+    Withdrawals are usually completed before 24h. Confirm transaction status and whether the email verification code was confirmed. If still pending after 24h, contact support with details.
+  </Expandable>
+
+  <Expandable title="Can I send INKY to any exchange?" default-open="false">
+    For better receiving compatibility, the operational recommendation is to convert INKY to USDT before sending outside Inkryptus. Some exchanges/wallets do not support direct reading of INKY. Always confirm BEP20 network.
+  </Expandable>
+
+  <Expandable title="I sent INKY out without converting to USDT. Is reversal possible?" default-open="false">
+    In some cases, recovery is possible with the destination platform when the exchange/wallet offers a reversal process. Analysis depends on the receiving platform's policy. If a ticket is opened, transaction data is usually required (TXID on BNB Smart Chain and return address).
+  </Expandable>
+
+  <Expandable title="I made a swap and balance did not update. How long does it take?" default-open="false">
+    In specific operational scenarios, balance may take up to 24h to reflect. If it exceeds this period, contact support with details.
+  </Expandable>
+
+  <Expandable title="Why don't I receive exactly the displayed price when selling a large amount of INKY?" default-open="false">
+    Inkryptus uses AMM (Automated Market Maker), where price is dynamic and adjusts during order execution. The displayed price is the value of the next token traded at that moment, not the average price of the entire order.
+
+    - **When you sell** (INKY to USDT): INKY amount in the pool increases, USDT liquidity decreases, and INKY price decreases during execution.
+    - **When you buy** (USDT to INKY): USDT amount in the pool increases, INKY liquidity decreases, and INKY price increases during execution.
+
+    This is the normal AMM pricing mechanism (supply and demand), not a hidden fee or platform error.
+  </Expandable>
+
+  <Expandable title="What is the difference between price variation (AMM) and operation fee?" default-open="false">
+    These are different and complementary components:
+
+    - **Price variation (AMM):** market effect during execution, caused by order size and available liquidity.
+    - **Operation fee:** operational cost of the action, displayed on screen before confirmation.
+  </Expandable>
+
+  <Expandable title="What happens if I delete my account without withdrawing funds?" default-open="false">
+    Deletion without prior withdrawal may cause permanent loss of values. Withdraw before closing your account.
+  </Expandable>
+</ExpandableGroup>

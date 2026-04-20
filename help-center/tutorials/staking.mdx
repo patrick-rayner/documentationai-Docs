@@ -1,7 +1,92 @@
 ---
-title: Staking tutorial
-description: > **Status**: scaffold, content pending.
+title: Staking
+description: "How to open staking contracts, harvest rewards, and close contracts on the Inkryptus platform."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: Step by step: staking INKY and other assets, unlocking, harvesting.
+
+## Available products
+
+| Product | Lock Period |
+|---------|-----------|
+| USDT Staking | Flexible |
+| INKY Pool | Flexible |
+| INKY Pool 12 months | 12 months |
+| INKY Pool 36 months | 36 months |
+| CAKE Staking | Flexible |
+
+<Callout kind="info">
+  The 6-month and 24-month plans were discontinued for new contracts (v2.8.0). Active contracts on those terms continue until maturity.
+</Callout>
+
+## Cycle rule
+
+In Inkryptus Staking, operations run in **cycles**. Relevant actions (open, close, harvest) take up to **1 cycle** to settle. On average, consider **24h** per cycle.
+
+---
+
+## Open a new contract
+
+<Steps>
+  <Step title="Navigate to Staking" icon="trending-up" title-type="p">
+    Go to **Products > Staking** (or the **Stake** shortcut on Home).
+  </Step>
+  <Step title="Select product" icon="circle" title-type="p">
+    Choose the desired staking product (e.g., INKY Pool 36 months or USDT Staking).
+  </Step>
+  <Step title="Open contract" icon="plus" title-type="p">
+    Tap **Open a new contract**, enter the amount, review estimated yield and lock rules, then confirm.
+  </Step>
+  <Step title="Wait for confirmation" icon="clock" title-type="p">
+    Contract opening takes up to 1 cycle. After confirmation, first rewards are generated in the next cycle.
+  </Step>
+</Steps>
+
+**Fee:** there is no fee to open a contract.
+
+---
+
+## Harvest (claim rewards)
+
+Harvest means claiming rewards without closing the main contract.
+
+<Steps>
+  <Step title="Select contract" icon="file-text" title-type="p">
+    Open the active contract that has available profit.
+  </Step>
+  <Step title="Tap Harvest" icon="download" title-type="p">
+    Tap **Harvest**, review fees, and confirm.
+  </Step>
+  <Step title="Receive funds" icon="check-circle" title-type="p">
+    Harvested value is credited to your available Assets balance in up to 1 cycle (average 24h).
+  </Step>
+</Steps>
+
+**Harvest fee:** fixed US$3 charged at claim time. **Minimum harvest amount:** US$3.
+
+---
+
+## Close a contract
+
+To redeem your principal (invested capital), you must close the contract.
+
+<Steps>
+  <Step title="Select contract" icon="file-text" title-type="p">
+    Select the target contract in your products list.
+  </Step>
+  <Step title="Request close" icon="x-circle" title-type="p">
+    Tap **Close contract**. Fixed-term contracts can be closed at maturity.
+  </Step>
+  <Step title="Receive principal" icon="check-circle" title-type="p">
+    After the close request, principal is released to your wallet in up to 1 cycle (average 24h).
+  </Step>
+</Steps>
+
+**Fee:** there is no fee to close a contract.
+
+---
+
+## Common cycle questions
+
+- **No yield yet after opening:** expected. Opening confirms in up to 1 cycle, first reward comes in the next cycle.
+- **Harvest balance not credited instantly:** expected. Credit happens in up to 1 cycle.
+- **Funds not returned after closing:** expected. Settlement happens in up to 1 cycle after the request.
+- **Reduce mistakes:** always check staking product type, confirmed amount, contract status, and history before opening a support ticket.

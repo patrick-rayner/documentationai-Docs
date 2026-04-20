@@ -1,7 +1,64 @@
 ---
-title: Swap tutorial
-description: > **Status**: scaffold, content pending.
+title: Swap (Buy & Sell)
+description: "How to buy and sell assets inside the Inkryptus app using USDT as the reference pair."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: Step by step: executing a swap, understanding rates, confirming transactions.
+
+In the app, the reference asset is always **USDT**. All buy/sell operations route through USDT.
+
+---
+
+## Buy an asset (e.g., INKY)
+
+<Steps>
+  <Step title="Open asset" icon="circle" title-type="p">
+    In the **Assets** tab, tap the asset you want to buy (e.g., INKY).
+  </Step>
+  <Step title="Tap Buy" icon="arrow-down" title-type="p">
+    Select the **Buy** option.
+  </Step>
+  <Step title="Enter amount" icon="edit" title-type="p">
+    Enter the USDT amount. The system calculates the token quantity based on current price.
+  </Step>
+  <Step title="Review and confirm" icon="check-circle" title-type="p">
+    Review the fee and minimum shown on screen, then confirm.
+  </Step>
+</Steps>
+
+---
+
+## Sell an asset
+
+<Steps>
+  <Step title="Open asset" icon="circle" title-type="p">
+    Select the asset you hold and tap **Sell**.
+  </Step>
+  <Step title="Enter quantity" icon="edit" title-type="p">
+    Enter the amount of the asset to sell.
+  </Step>
+  <Step title="Review estimate vs. execution" icon="file-text" title-type="p">
+    The first screen shows an **initial estimate** based on current price. On the confirmation step, the app queries the contract and shows the **real execution amount**, considering liquidity impact.
+  </Step>
+  <Step title="Confirm" icon="check-circle" title-type="p">
+    Review the real amount and all fees on the confirmation screen, then approve.
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  The decision value is always the confirmation-screen amount, which includes pool liquidity impact.
+</Callout>
+
+---
+
+## Typical flow
+
+```
+USDT → Buy INKY → Stake → Harvest → Sell INKY → USDT → Withdraw
+```
+
+---
+
+## Important notes
+
+- A fixed fee of **US$3** applies per swap operation.
+- For external withdrawals, convert INKY to USDT before sending. Not all exchanges/wallets recognize INKY.
+- There are no direct routes between non-USDT assets. To move between two assets (e.g., INKY to BTCB), sell the first for USDT, then buy the second with USDT.

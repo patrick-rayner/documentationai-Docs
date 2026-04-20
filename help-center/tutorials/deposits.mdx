@@ -1,7 +1,101 @@
 ---
-title: Deposits tutorial
-description: > **Status**: scaffold, content pending.
+title: Deposits
+description: "How to add funds to your Inkryptus wallet: fiat on-ramp, crypto deposits, and verification steps."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: Step by step: adding funds, reading confirmations, troubleshooting.
+
+## Buy USDT with fiat (on-ramp)
+
+The fastest way to fund your account if you do not already have crypto in an external wallet.
+
+<Steps>
+  <Step title="Open Add Funds" icon="plus" title-type="p">
+    On the Home screen, tap **Add Funds**.
+  </Step>
+  <Step title="Select Buy USDT" icon="dollar-sign" title-type="p">
+    Choose **Buy USDT** from the options.
+  </Step>
+  <Step title="Choose provider" icon="credit-card" title-type="p">
+    Select your preferred payment provider from the list.
+  </Step>
+  <Step title="Enter amount and confirm" icon="check" title-type="p">
+    Enter the purchase amount, tap **Confirm**, then **Continue to payment**.
+  </Step>
+  <Step title="Complete payment" icon="check-circle" title-type="p">
+    Allow GPS access if prompted (required by provider). Complete the payment inside the provider's screen with your card or available method.
+  </Step>
+  <Step title="Receive USDT" icon="download" title-type="p">
+    Once the provider confirms, USDT is deposited automatically into your Inkryptus account.
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  Availability may vary by region. If no provider is available in your country, use one of the crypto deposit methods below.
+</Callout>
+
+---
+
+## Deposit crypto (via address or QR code)
+
+<Steps>
+  <Step title="Open deposit" icon="plus" title-type="p">
+    In the app, tap **Add Funds > Deposit Crypto**.
+  </Step>
+  <Step title="Select asset" icon="circle" title-type="p">
+    Choose the asset you want to receive (e.g., USDT, BTCB, INKY).
+  </Step>
+  <Step title="Copy address" icon="copy" title-type="p">
+    Tap **Copy Address** or scan the QR code displayed.
+  </Step>
+  <Step title="Send from external wallet" icon="arrow-right" title-type="p">
+    In your external wallet or exchange, paste the address and select **BNB Smart Chain (BEP20)** as the network.
+  </Step>
+</Steps>
+
+<Callout kind="warning">
+  Sending on the wrong network will result in permanent loss of funds. Always confirm BEP20 before proceeding.
+</Callout>
+
+---
+
+## Example: USDT deposit via Binance
+
+<Steps>
+  <Step title="Prepare on Binance" icon="arrow-right" title-type="p">
+    On Binance, buy or convert your balance to USDT.
+  </Step>
+  <Step title="Get Inkryptus address" icon="copy" title-type="p">
+    In the Inkryptus app: **Add Funds > Deposit Crypto > USDT**. Copy the address.
+  </Step>
+  <Step title="Withdraw from Binance" icon="arrow-right" title-type="p">
+    In Binance withdrawal, paste the address and select **BSC (BEP20)** as the network.
+  </Step>
+  <Step title="Confirm" icon="check-circle" title-type="p">
+    Enter the amount, confirm security checks, and wait for processing.
+  </Step>
+</Steps>
+
+<Callout kind="info">
+  For first-time transfers, send a small test amount to verify the flow.
+</Callout>
+
+---
+
+## Check deposit status
+
+**Crypto deposit:** check the transaction status on the sending platform. BEP20 confirmations are usually fast but may take a few minutes.
+
+**Fiat purchase:** tap **Add Funds > Buy USDT > History** tab to see all past transactions and their status (pending, completed, failed).
+
+---
+
+## Deposit not reflected
+
+In some cases, deposits can take up to 24 hours to reflect in the app. If it takes longer, contact support with all transaction details (TXID, asset, amount, date/time).
+
+---
+
+## Safety tips
+
+- Always verify the first and last 5-6 characters of the destination address before confirming.
+- Minimum deposit depends on the platform or provider used.
+- When in doubt, send a small test transaction first.

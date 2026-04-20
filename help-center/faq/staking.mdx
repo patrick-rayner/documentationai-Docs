@@ -1,9 +1,62 @@
 ---
-title: Staking FAQ
-description: > **Status**: scaffold, content pending.
+title: Staking
+description: "Questions about staking pools, yield mechanics, emission cap, harvest, and contract rules."
 ---
-> **Status**: scaffold, content pending.
->
-> **What belongs here**: User questions about staking: lock-up, rewards, harvest, plan differences.
->
-> **TODO**: include harvest processing rule: up to US$500 equivalent is instant; above US$500 enters approval queue (up to 24h). Threshold applies to USD equivalent regardless of staked asset.
+
+<ExpandableGroup>
+  <Expandable title="Which pools are available?" default-open="true">
+    Main products for new contracts: USDT Pool, INKY Pool (Flexible), INKY Pool 12 months, INKY Pool 36 months, and CAKE Pool.
+
+    The 6-month and 24-month plans were discontinued for new contracts (v2.8.0). Active contracts on those terms continue normally until maturity with no rule changes.
+  </Expandable>
+
+  <Expandable title="I have a 6 or 24-month contract active. What happens?" default-open="false">
+    Nothing changes for contracts already open. They continue running with original rules until maturity. The discontinuation affects only new contract creation for those terms.
+  </Expandable>
+
+  <Expandable title="Why does staking yield increase or decrease over time?" default-open="false">
+    Yield is dynamic by design. Daily staking emission is distributed proportionally across eligible contracts. When total staked amount increases, the same emission is split among more participants; when it decreases, distribution occurs over a smaller base. The percentage varies according to total staked amount at that moment.
+  </Expandable>
+
+  <Expandable title="How is staking emission calculated (daily cap)?" default-open="false">
+    Programmed daily emission is capped at **10,000 INKY per day**. This cap protects model sustainability over time.
+
+    - Example: 900k INKY in staking, 1% = 9,000 tokens/day (below cap).
+    - Example: 4M INKY in staking, 1% would be 40k, but daily cap limits emission to maximum allowed.
+    - Above 1M INKY in staking, effective daily percentage becomes 10,000 divided by total staked amount.
+  </Expandable>
+
+  <Expandable title="Why can inflation control reduce daily percentage and still strengthen the model?" default-open="false">
+    With controlled emission, the ecosystem gains predictability and avoids inflationary growth without discipline. The current model provides more predictable emission, inflation and scarcity discipline, long-term sustainability focus, and reduces risk of structural pressure from excessive emission.
+
+    This content is informational and does not represent a promise of return. Rules and parameters may evolve according to product.
+  </Expandable>
+
+  <Expandable title="Where can I track total staked amount and yield updates?" default-open="false">
+    In the app at **Wallet > Products** and each pool/contract screen. Always use app-displayed data as official reference for the current cycle.
+  </Expandable>
+
+  <Expandable title="How do I open a contract?" default-open="false">
+    Go to **Products** or **Stake**, choose pool, tap **Stake / Open a new contract**, enter amount, review terms, and confirm.
+  </Expandable>
+
+  <Expandable title="What is Harvest?" default-open="false">
+    Harvest is claiming yields without closing the main contract. This lets you manage cash without interrupting your contract strategy.
+  </Expandable>
+
+  <Expandable title="Harvest is processing for more than 24h. What is the correct flow?" default-open="false">
+    Update app, review the operation, and wait processing window. If it exceeds 24h, contact support with all details.
+  </Expandable>
+
+  <Expandable title="My previous cycle profit shows 0 or missing. What does it mean?" default-open="false">
+    Update app and wait cycle closing. Check operational pending items. If still divergent, contact support with all details.
+  </Expandable>
+
+  <Expandable title="Balance is 'locked'. What is the period and why?" default-open="false">
+    This indicates allocation in a product with active contract rules. To release, go to Staking and follow the closing flow according to plan type. Contract creation takes 1 cycle (24h). After that cycle, cancellation may be requested when permitted by the product. After cancellation, there may be one more cycle for finalization.
+  </Expandable>
+
+  <Expandable title="Can I cancel a contract before maturity?" default-open="false">
+    Fixed-term contracts follow product rules and are generally closed at maturity. Before confirming any contract, validate the period and conditions shown on screen.
+  </Expandable>
+</ExpandableGroup>
