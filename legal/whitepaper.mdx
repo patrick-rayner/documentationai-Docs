@@ -1,6 +1,6 @@
 ---
 title: Whitepaper
-description: "Inkryptus Whitepaper: hybrid finance platform overview, INKY token economy, emission mechanics, burn mechanisms, and roadmap."
+description: "Inkryptus Whitepaper: hybrid finance (HyFi) platform overview, INKY token economy, emission mechanics, and burn mechanisms."
 ---
 
 <Callout kind="info">
@@ -9,152 +9,299 @@ description: "Inkryptus Whitepaper: hybrid finance platform overview, INKY token
 
 ## Introduction
 
-The digital era has brought about a revolution in finance, marked by the emergence of decentralized and innovative technologies. In this scenario, Inkryptus emerges as a visionary hybrid finance platform, combining the attributes of centralized finance with the dynamism and autonomy of decentralized finance (DeFi). The main goal of Inkryptus is to democratize access to decentralized finance, creating a bridge between the familiarity of web2 and the vast and innovative opportunities of web3.
+The digital revolution has transformed how people interact with money, driven by decentralized technologies that expanded the boundaries of financial innovation. In this new landscape, Inkryptus emerges as a Hybrid Finance (HyFi) platform, a model that combines the best of two worlds: the stability and usability of Centralized Finance (CeFi) with the autonomy and transparency of Decentralized Finance (DeFi).
 
-Inkryptus positions itself as an inclusive platform, designed to cater to a variety of users, from blockchain technology novices to more experienced enthusiasts.
+The concept of Hybrid Finance (HyFi) defines the purpose of Inkryptus: to democratize access to DeFi by connecting the familiarity of Web2 to the opportunities of Web3. This integration makes the blockchain experience accessible, secure, and intuitive for anyone, from beginners to experienced investors.
+
+Inkryptus combines a custodial Web2 layer, responsible for user experience, with on-chain execution and traceability, ensuring operations that are verifiable, secure, and transparent. The result is an ecosystem that prioritizes security, accessibility, and innovation, promoting financial inclusion on a global scale.
+
+At the center of this ecosystem is the INKY Token, the asset that sustains the entire Inkryptus economy. It functions as a utility token, internal payment method, governance mechanism, and deflationary instrument. Its emission is programmed and limited by a hard cap of 200 million units, while automatic burns gradually reduce the circulating supply, preserving the sustainability of the model.
+
+This document presents the technical and economic architecture of Inkryptus, detailing its emission mechanics, inflation control, governance structure, and the foundations that support the HyFi model.
 
 ## Market Context
 
-The growing popularity of decentralized finance has revealed significant potential for innovation and economic growth. However, this field is still perceived as complex and inaccessible to many, creating a significant barrier to mass adoption. The need for a platform that simplifies and makes DeFi more accessible is evident.
+The growing popularity of decentralized finance has revealed significant potential for innovation and economic growth. However, this field is still perceived as complex and inaccessible to many, creating a significant barrier to mass adoption.
 
-Inkryptus enters this emerging market with a unique proposition: a hybrid platform that unites the best of both worlds of finance. With a focus on security, ease of use, and innovation, Inkryptus stands out as a solution that can open the doors of DeFi to a broader audience, promoting greater financial inclusion and participation in the new digital financial ecosystem.
+Broad adoption of Web3 solutions requires three pillars: simplified user experience, verifiable security, and predictable costs. The HyFi model addresses these requirements by combining the Web2 interface with verifiable on-chain execution.
 
 ## Problem: Restricted Access to Decentralized Finance (DeFi)
 
 The DeFi ecosystem represents a revolution in the financial world, promising greater autonomy, attractive returns, and constant innovation. However, its mass adoption faces significant challenges:
 
-- **Risks of Scams and Frauds in Smart Contracts:** The DeFi universe is filled with complex smart contracts that often contain flaws or loopholes exploited by scammers. For the average user, identifying these risks is almost impossible, leading to substantial financial losses.
-- **Management of Private Keys:** The decentralized nature of DeFi requires users to manage their own private keys. This is a complex and risky process, where a simple mistake can result in the irreversible loss of assets.
-- **Complexity of Smart Contracts:** Despite being the backbone of DeFi, smart contracts are, for most, a technical labyrinth. Understanding their operation, interactions, and implications is a significant obstacle for many users.
+- **Smart Contract Scams and Fraud Risks:** The DeFi universe is filled with complex smart contracts that often contain flaws or loopholes exploited by scammers. For the average user, identifying these risks is nearly impossible, leading to substantial financial losses.
+- **Private Key Management:** The decentralized nature of DeFi requires users to manage their own private keys. This is a complex and risky process, where a simple mistake can result in the irreversible loss of assets.
+- **Smart Contract Complexity:** Despite being the backbone of DeFi, smart contracts are, for most people, a technical labyrinth. Understanding their operation, interactions, and implications is a significant obstacle for many users.
 
-These challenges create a barrier that prevents a broader audience from enjoying the opportunities offered by DeFi, limiting its potential for growth and widespread adoption.
+These challenges create a barrier that prevents a broader audience from benefiting from the opportunities offered by DeFi, limiting its potential for growth and widespread adoption.
 
 ## Solution: Inkryptus - Democratizing Access to DeFi
 
-Inkryptus emerges as an innovative response to the above challenges, aiming to democratize access to decentralized finance. It offers a comprehensive and intuitive solution:
+Inkryptus emerges as an innovative response to the challenges above, aiming to democratize access to decentralized finance.
 
-- **Simplified Web2 Interface:** Inkryptus uses a familiar web2 interface, significantly reducing the learning curve for new users. This approach allows people without deep technical knowledge in blockchain and cryptocurrencies to easily interact with DeFi products.
-- **Security and Trust in Smart Contracts:** The platform handles the complexity and risks associated with smart contracts. By filtering and validating these contracts, Inkryptus ensures that its users are protected against common scams and frauds in the DeFi space.
-- **Secure Management of Private Keys:** One of the biggest challenges faced by users in the DeFi universe is the management of private keys, a technical and often intimidating process, essential for the security and access to digital assets.
+The Inkryptus architecture is composed of four main layers:
 
-Inkryptus addresses this issue by employing smart contracts to generate and manage wallet addresses for users. This system offers several benefits:
+- **Custodial Web2 application**, responsible for user experience;
+- **Smart contracts on BNB Smart Chain**, which record and execute operations;
+- **On-chain security infrastructure** for key management and signatures via smart contracts;
+- **INKY Token**, as a utility, reward, and economic governance asset.
 
-- **Automation and Security:** The smart contracts of Inkryptus are designed to automatically create wallet addresses for users, storing and managing private keys securely.
-- **Ease of Use:** This approach eliminates the need for users to directly manage their private keys, significantly simplifying the process of interacting with the blockchain and making DeFi more accessible to a broader audience.
-- **Reduction of Human Risks:** By automating key management, Inkryptus minimizes risks associated with human error, such as loss or leakage of private keys.
-- **Visibility and Control of Actions:** Although smart contracts manage the private keys, users maintain visibility and control over their transactions and actions performed on the blockchain.
+The technical response is detailed in "Project Description > Platform": a Web2 interface layer with on-chain execution, contract validation, and key management abstraction, maintaining public traceability and operational security.
 
-Education and User Support: Besides providing a safe and easy-to-use platform, Inkryptus also commits to educating its users about the functioning and best practices within the DeFi ecosystem, promoting a greater understanding and confidence.
-
-In summary, Inkryptus not only provides a safe and accessible bridge between the familiar world of web2 and the new universe of DeFi but also ensures a safer, educational, and less intimidating user experience. By doing so, Inkryptus opens the doors of decentralized finance to a broader audience, promoting financial inclusion and mass adoption of blockchain technologies.
+In summary, Inkryptus not only provides a secure and accessible bridge between the familiar world of Web2 and the new universe of DeFi, but also ensures a safer, educational, and less intimidating user experience. By doing so, Inkryptus opens the doors of decentralized finance to a broader audience, promoting financial inclusion and mass adoption of blockchain technologies.
 
 ## Project Description
 
 ### Platform
 
-Inkryptus is a hybrid finance platform designed to be the bridge between the web2 layer and web3. It offers users an integrated experience, allowing access to decentralized financial products through a familiar and intuitive interface. This innovative approach seeks to reduce the complexity associated with DeFi, making it accessible to a wider user base.
+Inkryptus is a Hybrid Finance (HyFi) platform designed to be the bridge between the Web2 layer and Web3.
 
-### Inkryptus Token (INKY)
+It offers users an integrated and secure experience, enabling access to decentralized financial products through a familiar and intuitive interface.
 
-The INKY token, launched on the Binance Smart Chain, plays a fundamental role in the Inkryptus platform's economy. Designed as a utility token, INKY is used in several key functionalities within the platform, including:
+This approach reduces the technical complexity of DeFi, making it accessible to a broader user base regardless of their level of blockchain knowledge.
 
-#### Lottery System
+### INKY Token
 
-- **Operation:** Users can buy lottery tickets using INKY. Each lottery has a maximum number of tickets, and when this number is reached, a winner is drawn randomly.
-- **Prize Distribution:** 70% of the prize goes to the holder of the drawn ticket, while 30% is allocated to the burning of INKY tokens, reducing the total supply and potentially increasing the token's value.
+The INKY Token, launched on the Binance Smart Chain (BEP-20), is the central axis of the Inkryptus economy.
 
-#### INKY Pool
+More than a utility token, it represents the economic infrastructure that connects all platform products: staking, swaps, games, rewards, bonuses, and market liquidity.
 
-- **Staking:** Offers users the option to stake their INKY tokens, with different locking modalities (12 months, 6 months, or no lock).
-- **Rewards:** The rewards vary according to the type of stake, encouraging long-term commitment to the platform.
+Its economic model is founded on limited supply, programmed emission, and controlled inflation, designed to maintain balance between growth and long-term sustainability.
 
-## Roadmap
+#### Ecosystem Integration (Token Sink and Demand Sources)
 
-Inkryptus commits to continuously innovate and expand its capabilities, offering an increasingly rich and diverse ecosystem for its users. The detailed roadmap below illustrates the planned stages for the future, marking the ongoing development and introduction of new features.
+- **Utility token:** used in all platform operations (staking, swaps, games, IBO, and operational fees);
+- **Reward token:** distributed daily to staking pool participants;
+- **Controlled-inflation token:** daily emission is limited by fixed contract rules, and a portion of fees is allocated to a future burn reserve, gradually balancing the circulating supply;
+- **Technical governance token:** INKY Token contracts are verifiable on-chain, reinforcing the transparency and predictability of the economic model.
 
-### NFT Box
+#### Ecosystem Integration
 
-- **Concept:** Launch of an NFT functionality, where users can acquire NFT boxes using the INKY token.
-- **Cost and Variety:** Each box will cost a fixed amount in INKY and contain NFTs of different categories, such as visual and utility.
-- **Utility of NFTs:**
-  - **Visuals:** Focused on aesthetic aspects, these NFTs will serve to demonstrate achievements and status within the Inkryptus community.
-  - **Utilities:** Will offer practical advantages on the platform, such as discounts on fees, free withdrawals, and access to exclusive services.
+The INKY Token is used as the base unit across all platform products, acting as a means of access, liquidity currency, and reward element.
 
-### Multi-Investment Contracts
+Each interaction within the ecosystem (a transaction, a withdrawal, a game, or an IBO commission) reinforces the internal economic cycle and contributes to the balance between emission and burn.
 
-- **Objective:** To provide INKY holders the opportunity to collectively invest in a variety of crypto assets and innovative projects.
-- **Operation:** Opening of investment quotas that can be acquired exclusively with INKY, aiming to build a diversified portfolio with various types of tokens.
-- **Duration and Return:** The pools will have variable locking periods, after which the assets will be converted back into INKY and distributed proportionally among the investors.
+This architecture makes the INKY Token an asset with immediate utility, internal monetary function, and programmed scarcity, sustaining the Inkryptus HyFi model as a hybrid and economically autonomous system.
 
-### Inky Bridge
+Supply, emission, and burn parameters are detailed in the "Token Economy", "Emission", and "Burn Mechanism" sections.
 
-- **Network Interconnection:** Implementation of a bridge to connect Inkryptus with other major blockchains, such as Ethereum, Avalanche, Polygon, and Solana.
-- **Simplified Transfers:** Facilitation of the transfer of INKY tokens between different networks, promoting greater flexibility and access to various cryptocurrency ecosystems.
+### INKY Pool Staking
 
-### Launch Pool
+Staking is the core passive income product of Inkryptus. Through verifiable smart contracts on-chain, users can lock INKY Tokens and receive rewards proportional to their participation in the pool.
 
-- **Incentive to Emerging Projects:** Creation of a platform within Inkryptus for INKY staking, rewarding users with tokens from new projects.
-- **Strategic Partnerships:** Collaboration with promising projects, offering users early access to innovative and potentially profitable tokens.
+**Available plans:**
+
+- **Free:** no lock-up, ideal for new users;
+- **12 months:** stable and predictable yield;
+- **36 months:** long-term plan with additional incentives per current policy.
+
+<Callout kind="alert">
+  The 6-month and 24-month lock-up plans were discontinued in app version 2.8.0. Existing contracts under these plans remain active until their original maturity date. New contracts are available under the Free, 12-month, and 36-month plans only.
+</Callout>
+
+**Economic mechanics:**
+
+- Proportional distribution among participants;
+- Performance fee: 25% on effective profit (distribution policy: 30% Inkryptus / 70% IBO network, as per the "IBO Program" section);
+- Institutional fraction (reinvestment): the operational portion allocated to Inkryptus is directed to ecosystem operations, including programmed burns, product development (e.g., games), and continuous development;
+- Fixed rules ensure stability, transparency, and controlled scarcity.
+
+**Harvest (Withdrawal):** Profits can be withdrawn without affecting the invested principal. Rewards can be reinvested (Compound), converted via Swap, withdrawn (Send), or held in the wallet balance.
+
+### Inkryptus Wallet (iOS and Android App)
+
+The wallet is the core access point to the ecosystem. Users can store, send, receive, and track their assets with security and transparency. The interface was developed to combine the familiarity of Web2 applications with the robustness of Web3 technology, acting as a bridge between both worlds.
+
+**Key features:**
+
+- Secure storage and advanced encryption;
+- Sending and receiving crypto assets with on-chain validation;
+- Yield visualization, contracts, and complete transaction history;
+- Direct integration with staking, swap, games, and the IBO Program;
+- 2FA authentication and continuous operation monitoring.
+
+**Simplified custody:**
+
+Inkryptus adopts a secure institutional custody model with segregation of client assets and proprietary assets. Private keys are generated and managed through smart contracts integrated into the Inkryptus infrastructure, which execute and validate operations automatically and traceably on-chain, without manual intervention or direct exposure to the user.
+
+All transactions are signed by the Inkryptus infrastructure and recorded on-chain, ensuring traceability and integrity.
+
+This approach eliminates the need for users to handle keys directly, without compromising operational transparency.
+
+### Inkryptus Swap
+
+The Swap module enables instant conversions between tokens without the need for external exchanges. With fixed fees and verifiable contracts, users have the freedom to rebalance their portfolio with agility and security.
+
+**Differentiators:**
+
+- Immediate on-chain execution;
+- Single fee of US$3 per operation;
+- Full transparency (no hidden slippage);
+- Direct integration with the Inkryptus Wallet and consolidated history.
+
+**Primary uses:**
+
+- Diversification between assets (e.g., INKY to USDT);
+- Profit realization and preparation for new strategies;
+- Balance conversion for participation in games or withdrawals.
+
+### Inkryptus Games
+
+Each play has a fixed multiplier of 1.9x on the bet amount in case of victory.
+
+The 0.1x difference represents the platform's operational fee, distributed in the 30% Inkryptus / 70% IBO network model, applied only on bets that are effectively processed.
+
+Example: if a user bets 10 INKY and wins, they receive 19 INKY; the 1 INKY difference is the total operational fee.
+
+Results are verifiable by public hash, and VRF (Verifiable Random Function) integration is planned for 2026, ensuring proof of randomness and public verification of the seed and proof on-chain.
+
+Access to games respects KYC policies, betting limits, and jurisdictional restrictions in accordance with local compliance regulations.
+
+**How it works:**
+
+1. The player chooses a side.
+2. The contract executes the play and publishes the result on-chain.
+3. In case of victory, the payout is 1.9x the bet amount.
+
+**Operational fee:** The difference (0.1x) is distributed in the 30% Inkryptus / 70% network model, ensuring ecosystem sustainability (only in case of victory).
+
+**Transparency and limits:**
+
+- Results verifiable by public hash;
+- Bets from 1 to 100 INKY;
+- Proof of randomness based on VRF (Verifiable Random Function) integration is planned, with public verification of the seed and proof on-chain.
+
+### IBO Program (Independent Business Owner)
+
+The IBO is the official Inkryptus affiliate program, based on merit and real activity. Commissions are distributed based on fees generated by the user's network within the platform (staking, swaps, harvests, games).
+
+**Key characteristics:**
+
+- Free enrollment (30-day trial);
+- Monthly subscription of US$24 for full access;
+- Network with up to 7 commission levels;
+- Distribution: 30% Inkryptus / 70% network;
+- Real-time dashboard with metrics, earnings, and reports.
+
+Anti-fraud mechanisms and activity verification validate the origin of commissionable fees.
+
+**Enrollment Policy and Compliance:**
+
+The initial enrollment is free for 30 days. After the trial period, the US$24 monthly subscription is manual and not automatically renewed. There is no refund for periods already started, as the service is prepaid.
+
+All commissions derive exclusively from fees generated by real activity on the platform (staking, swaps, harvests, games, subscriptions), never from the enrollment of new participants.
+
+The system uses automatic anti-fraud metrics that validate the origin, frequency, and value of commissionable operations, preventing manipulation or volume simulation.
+
+**Revenue sources:**
+
+1. Monthly subscription fee (US$24);
+2. Transaction fees (US$3 per operation);
+3. Staking performance fee (25% on profits);
+4. Game fees (CoinFlip).
+
+### Integration and Sustainability
+
+All Inkryptus products are connected by the same economic core: the INKY Token, which ensures traceability, technical governance, and programmed/controlled inflation. The platform architecture prioritizes transparency, utility, and scalability, reinforcing the HyFi (Hybrid Finance) model as the foundation of its identity.
 
 ## Token Economy
 
-The economic structure underlying the INKY token is outlined with an initial issuance of 10 million units of the token, representing a portion of the total maximum supply of 200 million tokens. This initial allocation is specifically intended for the team maintaining and developing the Inkryptus project. The use of these funds is strategically planned to boost various activities essential to the growth and strengthening of the INKY ecosystem.
+The INKY Token economy sustains all reward dynamics, burns, and governance (when applicable) of the Inkryptus platform, functioning as the value core of the hybrid (HyFi) ecosystem.
 
-Primary applications of these funds include concentrated efforts in marketing campaigns. These campaigns are vital to increasing awareness and adoption of the INKY token, as well as strengthening its presence in the market. Another critical area of investment is the initiation of liquidity, a fundamental step to ensure the stability and viability of the token in financial markets.
+This structure is outlined with an initial issuance of 10 million units, representing a portion of the total maximum supply of 200 million tokens.
 
-Additionally, part of this initial issuance will be allocated for team expansion. The growth of the team is a key indicator of the project's commitment to scale its operations and improve its product and service offerings. This expansion is also a direct reflection of the commitment to maintain a robust and efficient team, capable of facing emerging challenges in the cryptocurrency and blockchain technology sector.
+This initial reserve is allocated to continuous development of the Inkryptus ecosystem, liquidity provision, product expansion, and community incentive policies.
 
-Creating new functionalities is another crucial area for the application of these resources. The continuous development of new features is essential to keep the INKY token relevant and competitive in the rapidly evolving cryptocurrency market. These functionalities are designed to enhance user experience and expand the practical applications of the token.
+The use of these funds is strategically planned to drive various activities essential to the growth and strengthening of the ecosystem.
 
-Finally, a portion of the funds is aimed at boosting products on the Inkryptus platform. This investment is strategic to ensure that the products associated with the Inkryptus platform are successful, thus contributing to the overall growth of the ecosystem.
+Primary applications of these funds include concentrated efforts in marketing campaigns. These campaigns are vital to increasing awareness and adoption of the INKY Token, as well as strengthening its market presence. Another critical area of investment is liquidity initiation, a fundamental step to ensure the stability and viability of the token in financial markets.
 
-## INKY Token Issuance
+Additionally, part of this initial issuance is allocated to team expansion. Team growth is a key indicator of the project's commitment to scaling its operations and improving its product and service offerings. This expansion is also a direct reflection of the commitment to maintaining a robust and efficient team, capable of facing emerging challenges in the cryptocurrency and blockchain technology sector.
 
-The operationalization of the issuance of the INKY token is managed through the smart contract named TokenMinter, identified by the address `0x68BDAb3dcc5332BcCcDC940D54122c155b80857a` on the Binance Smart Chain blockchain. This contract is designed to facilitate the minting process of INKY tokens, granting the exclusive ability to authorized entities, called minters, to create new tokens within the ecosystem.
+Creating new functionalities is another crucial area for the application of these resources. Continuous development of new features is essential to keeping the INKY Token relevant and competitive in the rapidly evolving cryptocurrency market. These functionalities are designed to enhance user experience and expand the practical applications of the token.
 
-In the current context, the only agent with minter privileges is the INKY StakingPool, operating under the address `0x921BAD14BE449Af905E68d3Ed03Fbe784e748A13` on the Binance Smart Chain blockchain. The main function of this agent in the issuance system is to generate INKY tokens daily, following a model intended to regulate the token's inflation. This model establishes that a fixed percentage of 1% of the INKY tokens allocated in stake is issued each day, subject to a maximum daily limit of 10,000 INKY units.
+Finally, a portion of the funds is directed toward boosting products on the Inkryptus platform. This investment is strategic to ensure that products associated with the Inkryptus platform are successful, contributing to the overall growth of the ecosystem.
 
-This daily issuance mechanism, tied to both a fixed percentage and a quantitative limit, is a strategic measure to control the token's inflation. By limiting the number of new INKY tokens that can be generated daily, the system seeks to ensure a balance between supply and demand, avoiding abrupt devaluations or uncontrolled inflation. This approach demonstrates careful planning in managing the token's economy, aiming to maintain its stability and long-term value.
+### Liquidity and Market
 
-## INKY Token Burn Mechanisms for Inflation Control
+Circulating supply vs. liquidity: the circulating supply encompasses tokens in circulation (including wallet balances and staking positions), while liquidity refers to the amount effectively available for trading in market pairs (e.g., INKY/USDT) on decentralized exchanges.
 
-The INKY token implements various token burn strategies with the aim of controlling inflation and maintaining the token's value. These mechanisms are an integral part of the economic strategy of the Inkryptus ecosystem and are structured as follows:
+## Emission
 
-### Token Burn via Lottery Contract
+The operationalization of INKY Token emission is managed through the smart contract named Token Minter, identified by the address `0x68BDAb3dcc5332BcCcDC940D54122c155b80857a` on the Binance Smart Chain (BEP-20) blockchain. This contract is designed to facilitate the minting process of INKY tokens, granting the exclusive ability to authorized entities, called minters, to create new tokens within the ecosystem.
 
-The INKY ecosystem includes a lottery contract, where, at the end of each lottery round, 30% of the PrizePool is burned. This system ensures that 70% of the value collected in tickets is distributed to the winner, while the remaining 30% are used for the burn of INKY tokens, contributing to the reduction of the total token supply and inflationary control.
+In the current context, the only agent with minter privileges is the INKY Staking Pool, operating under the address `0x921BAD14BE449Af905E68d3Ed03Fbe784e748A13` on the Binance Smart Chain (BEP-20) blockchain. The main function of this agent in the emission system is to generate INKY tokens daily, following a model intended to regulate the token's inflation. This model establishes that a fixed percentage of 1% of the INKY tokens allocated in stake is issued each day, subject to a maximum daily limit of 10,000 INKY units.
 
-### Token Burn from Inkryptus Platform Profits
+This daily emission mechanism, tied to both a fixed percentage and a quantitative limit, is a strategic measure to control the token's inflation. By limiting the number of new INKY tokens that can be generated daily, the system seeks to ensure a balance between supply and demand, avoiding abrupt devaluations or uncontrolled inflation.
 
-The Inkryptus platform adopts a proactive and tiered strategy for burning INKY tokens, directly linked to its monthly financial performance. This mechanism is not only fundamental for adjusting the token's supply in the market but also for adding value to the token in the long term. The burning strategy is detailed as follows, based on the monthly revenue tiers of the platform:
+This approach demonstrates careful planning in managing the token's economy, aiming to maintain its stability and long-term value.
 
-- **Revenue below 100,000 USD:** Token Burn: There will be no burning of INKY tokens.
-- **Revenue between 100,000 USD and 500,000 USD:** Token Burn: 15% of the tokens will be burned. This burn tier is designed to initiate the gradual reduction of the total supply of INKY tokens, in response to a significant increase in economic activity and platform revenue.
-- **Revenue between 500,000 USD and 1,000,000 USD:** Token Burn: 30% of the tokens will be burned. This higher percentage of burn reflects robust platform performance, and the accelerated burning of tokens serves to further appreciate INKY, benefiting all token holders.
-- **Revenue above 1,000,000 USD:** Token Burn: 50% of the tokens will be burned. This is the most aggressive burn tier, applied when the platform reaches an exceptionally high revenue level. The substantial burning of tokens is a measure to capitalize on financial success, significantly reducing the supply of INKY and potentially increasing its market value.
+### Supply and Emission
 
-This tiered token burn model reflects Inkryptus's commitment to adapt its economic strategy to market conditions and its own financial performance. The burn policy not only helps control the inflation of the token but also acts as an indicator of the economic health and success of the platform, thereby encouraging continued investment and interest in the Inkryptus ecosystem.
+| Parameter | Value |
+|-----------|-------|
+| Hard cap | 200,000,000 INKY |
+| Initial supply | 10,000,000 INKY (5% of hard cap) |
+| Daily reward emission | 1% of total INKY in stake |
+| Daily emission limit | 10,000 INKY |
+| Public query | Official website and BscScan |
 
-### Fees Generated by the Inkryptus Platform
+Total emission ceases automatically upon reaching the hard cap. Burns reduce the circulating supply but do not alter the maximum limit defined in the smart contract.
 
-- **Swaps:** Fees generated by cryptocurrency buy or sell transactions on the Inkryptus platform are partially burned.
-- **Withdrawals:** A portion of the fees generated by withdrawal transactions of tokens from Inkryptus platform contracts is earmarked for burning INKY tokens.
-- **Harvest:** Fees from requests to withdraw profits to the Inkryptus wallet, arising from stake and yield farm products, are used for burning INKY tokens.
-- **Compound:** Transactions generated by the request for reinvestment of profits earned through stake and yield farm products also contribute to the burning of INKY tokens.
-- **Profit Fee:** Daily fees generated to pay the yields of the stake and yield farm products of the Inkryptus platform are partially used for the burning of INKY tokens.
+The number of tokens in circulation is updated daily and can be consulted on the official Inkryptus website, ensuring transparency and public tracking of emission.
 
-### Methodology for Fee-Generated Burning
+## Burn Mechanism (Inflation Control)
 
-Based on the platform's monthly revenue, a specific percentage of the profit is allocated to purchase INKY tokens in the open market. This percentage varies according to monthly revenue, as previously detailed (15% for revenues between 100,000 USD and 500,000 USD, 30% between 500,000 USD and 1,000,000 USD, and 50% for revenues above 1,000,000 USD).
+Inkryptus will implement an automatic and progressive token burn mechanism, designed to balance the INKY supply in accordance with platform growth and the ecosystem's transaction volume.
 
-### Burning Process
+The burn process will be executed directly through the native functions of the INKY contract (`burn` - `0x42966c68` and `burnFrom` - `0x79cc6790`), ensuring that token removal from the supply is irreversible, transparent, and verifiable on-chain.
 
-After acquisition, the purchased INKY tokens will be burned through the burn method of the INKY contract. The burning of tokens is an irreversible blockchain transaction, ensuring that the tokens cannot be recovered or reused.
+This method ensures that the burn occurs within the smart contract itself, without the need for burn addresses, maintaining full traceability and technical compliance.
 
-### Transparency and Monitoring
+This mechanism operates analogously to deflationary monetary policies, in which the controlled reduction of supply tends to balance the value of an asset over time.
 
-The burn transaction is recorded on the blockchain and can be viewed by anyone, offering complete transparency to the process. Users and interested parties can monitor these burn transactions through the INKY token contract. This monitoring can be done using blockchain explorers, such as BscScan, where transactions are public and can be examined in detail.
+The burn functionality is planned for 2026, integrating the next phase of economic enhancement of the Inkryptus ecosystem.
 
-### Communication and Trust
+### Burn Incidence and Calculation
 
-Inkryptus is committed to clearly communicating each burn operation to its community, including the transaction details and the quantity of burned tokens. This approach promotes trust between the platform and its users, demonstrating Inkryptus's commitment to transparency and the appreciation of the INKY token.
+The burn will be applied directly on transactions that generate fees within the platform, including swaps, withdrawals, staking, harvest, and other products.
+
+| Parameter | Description |
+|-----------|-------------|
+| Incidence | All fee-generating operations (swap, withdrawal, harvest, staking, games, IBO subscription) |
+| Base | The economic fraction corresponding to Inkryptus (30% of the total fee from each product) |
+| Burn percentage | 2% of the Inkryptus fraction, subject to scaling based on transaction volume |
+
+**Example:** On a US$3 swap fee, 30% (US$0.90) corresponds to the Inkryptus fraction; 2% of that fraction (US$0.018) is automatically converted to INKY and burned.
+
+The process will be fully verifiable on-chain, allowing any user to track burn transactions and contract execution events in the public blockchain records, reinforcing Inkryptus's commitment to transparency, stability, and sustainability of the INKY Token.
+
+### Technical Note and Audit
+
+Burns permanently reduce the circulating supply of INKY but do not alter the maximum supply of 200M INKY Tokens defined in the smart contract, preserving the integrity of the tokenomic structure.
+
+All contracts referenced in this whitepaper will be submitted to independent audits and will have their code publicly verified on BscScan, reinforcing Inkryptus's commitment to security, transparency, and on-chain compliance.
+
+Official contract addresses and audit hashes will be published and maintained with version control on the official whitepaper page.
+
+This whitepaper describes the current technical and economic design. Execution depends on market conditions, third-party integrations, and regulatory milestones. Parameters may be adjusted through governance approval and public on-chain recording, preserving the hard cap and the principles of transparency.
+
+## Risks and Disclosures
+
+Participating in the Inkryptus ecosystem involves risks inherent to blockchain technologies and crypto assets, including:
+
+- **Market risk:** volatility and potential partial or total loss of invested capital;
+- **Smart contract risk:** bugs, vulnerabilities, or dependency on third parties;
+- **Operational risk:** service interruptions, cyberattacks, bugs, or API unavailability;
+- **Regulatory risk:** legal changes that may affect access to games, swaps, or staking in certain jurisdictions;
+- **Liquidity risk:** volume fluctuations and difficulty in converting assets quickly.
+
+Users should evaluate their risk tolerance and tax responsibilities in accordance with applicable legislation. Inkryptus does not provide financial advice and does not guarantee future returns.
+
+## Conclusion
+
+Inkryptus reaffirms its commitment to building a solid bridge between the Web2 and Web3 worlds, promoting secure and transparent access to decentralized finance.
+
+This whitepaper consolidates the technical and economic design of the INKY Token ecosystem and will be updated periodically to reflect audits, deliveries, and on-chain governance adjustments.
+
+Updated and digitally signed versions will be available at https://inkryptus.com/whitepaper, accompanied by a public SHA-256 hash for integrity verification.
