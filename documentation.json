@@ -7,7 +7,7 @@
       "text": "#374151"
     },
     "dark": {
-      "brand": "#fcc95c",
+      "brand": "#fbb03c",
       "heading": "#f2f2f2",
       "text": "#c1c1c1"
     }
@@ -61,7 +61,6 @@
               {
                 "group": "Token",
                 "icon": "tag",
-                "expandable": true,
                 "pages": [
                   {
                     "title": "Token Identity",
@@ -83,7 +82,6 @@
               {
                 "group": "Mechanics",
                 "icon": "trending-up",
-                "expandable": true,
                 "pages": [
                   {
                     "title": "Emission",
@@ -105,7 +103,6 @@
               {
                 "group": "Technical",
                 "icon": "code",
-                "expandable": true,
                 "pages": [
                   {
                     "title": "Security",
@@ -131,26 +128,13 @@
                 "icon": "grid"
               },
               {
-                "group": "Wallet",
-                "icon": "wallet",
-                "expandable": true,
-                "pages": [
-                  {
-                    "title": "Overview",
-                    "path": "features/wallet/index",
-                    "icon": "grid"
-                  },
-                  {
-                    "title": "FIAT On-Ramp",
-                    "path": "features/wallet/fiat-on-ramp",
-                    "icon": "credit-card"
-                  }
-                ]
+                "title": "Wallet",
+                "path": "features/wallet",
+                "icon": "wallet"
               },
               {
                 "group": "Staking",
                 "icon": "trending-up",
-                "expandable": true,
                 "pages": [
                   {
                     "title": "Overview",
@@ -211,9 +195,23 @@
                 "icon": "dollar-sign"
               },
               {
+                "title": "Compliance",
+                "path": "partner-program/compliance",
+                "icon": "check-circle"
+              },
+              {
+                "title": "Operational Rules",
+                "path": "partner-program/operational-rules",
+                "icon": "list"
+              },
+              {
+                "title": "FAQ",
+                "path": "partner-program/faq",
+                "icon": "help-circle"
+              },
+              {
                 "group": "Partner Campaigns",
                 "icon": "award",
-                "expandable": true,
                 "pages": [
                   {
                     "title": "Overview",
@@ -221,31 +219,11 @@
                     "icon": "megaphone"
                   },
                   {
-                    "title": "Staking Referral",
-                    "path": "partner-program/staking-referral",
-                    "icon": "trending-up"
-                  },
-                  {
                     "title": "Fast Bonus",
                     "path": "partner-program/fast-bonus",
                     "icon": "clock"
                   }
                 ]
-              },
-              {
-                "title": "Compliance",
-                "path": "partner-program/compliance",
-                "icon": "shield"
-              },
-              {
-                "title": "Operational Rules",
-                "path": "partner-program/operational-rules",
-                "icon": "clipboard"
-              },
-              {
-                "title": "FAQ",
-                "path": "partner-program/faq",
-                "icon": "help-circle"
               }
             ]
           },
@@ -436,24 +414,6 @@
       }
     ]
   },
-  "navbar": {
-    "actions": {
-      "primary": {
-        "title": "Open App",
-        "link": "https://link.inkryptus.com/?c=website"
-      },
-      "links": [
-        {
-          "title": "Website",
-          "link": "https://inkryptus.com"
-        },
-        {
-          "title": "Support",
-          "link": "mailto:support@inkryptus.com"
-        }
-      ]
-    }
-  },
   "template": "atlas",
   "initialRoute": "introduction/index",
   "seo": {
@@ -462,11 +422,8 @@
     "sitemap:enabled": false,
     "llms-txt:enabled": false
   },
-  "description": "Inkryptus documentation: platform, features, fees, and partner program reference.",
+  "description": "Inkryptus documentation: platform, products, fees, and partner program reference.",
   "logo-dark": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
   "logo-light": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
-  "favicon": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat",
-  "ai": {
-    "ai-assistant:enabled": false
-  }
+  "favicon": "https://blob-cdn.documentation.ai/org-24791ff1-cd13-4c3e-a86a-de2ae23b1e41/doc-509395f4-17bb-42f9-ae77-81271a7fe970/1776265004013-zkpto4p3ri-rounded.png?fm=auto&auto=compress%2Cformat"
 }
