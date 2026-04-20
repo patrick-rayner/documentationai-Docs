@@ -91,7 +91,6 @@
 * [Overview](partner-program/index.mdx)
 * [How it works](partner-program/how-it-works.mdx)
 * [Commissions](partner-program/commissions.mdx)
-* [Partner Campaigns](partner-program/partner-campaigns.mdx)
 * [Compliance](partner-program/compliance.mdx)
 * [Operational rules](partner-program/operational-rules.mdx)
 * [FAQ](partner-program/faq.mdx)

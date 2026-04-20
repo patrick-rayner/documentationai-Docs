@@ -248,11 +248,6 @@
                 "icon": "dollar-sign"
               },
               {
-                "title": "Partner Campaigns",
-                "path": "partner-program/partner-campaigns",
-                "icon": "megaphone"
-              },
-              {
                 "title": "Compliance",
                 "path": "partner-program/compliance",
                 "icon": "check-circle"
