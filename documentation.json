@@ -12,6 +12,20 @@
       "text": "#c1c1c1"
     }
   },
+  "navbar": {
+    "actions": {
+      "primary": {
+        "title": "Open App",
+        "link": "https://inkryptus.com"
+      },
+      "links": [
+        {
+          "title": "Support",
+          "link": "mailto:support@inkryptus.com"
+        }
+      ]
+    }
+  },
   "navigation": {
     "tabs": [
       {
