@@ -214,14 +214,9 @@
                 "icon": "award",
                 "pages": [
                   {
-                    "title": "Overview",
+                    "title": "Partner Campaigns",
                     "path": "partner-program/partner-campaigns",
                     "icon": "megaphone"
-                  },
-                  {
-                    "title": "Fast Bonus",
-                    "path": "partner-program/fast-bonus",
-                    "icon": "clock"
                   }
                 ]
               }
