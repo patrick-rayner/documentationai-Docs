@@ -7,6 +7,10 @@ Chronological log of all Inkryptus platform updates. Each entry includes what ch
 
 {/* Tags used: App, Contract Deploy, Genesis, Liquidity, Website, Campaign, Milestone, IBO, Event, INKY Token, Platform */}
 
+<Update label="2026-04-20" description="Partner Program Update and Plan Changes" tags={["App", "IBO"]}>
+  **App v2.8.0.** Sponsor 30-day window for new users without referral. Active subscription required to link new referrals. Contact sharing opt-in (username always visible, name/email/phone optional). Real-time network timeline in IBO dashboard. 6-month and 24-month staking plans discontinued for new contracts. Fast Bonus campaign ended.
+</Update>
+
 <Update label="2026-03-17" description="Buy USDT with FIAT directly in the App" tags={["App"]}>
   **App v2.7.1.** Users can now buy USDT directly using fiat payment methods (credit/debit cards). Multiple providers available, with GPS-based local payment options.
 </Update>
@@ -91,8 +95,36 @@ Chronological log of all Inkryptus platform updates. Each entry includes what ch
   Community engagement campaign tied to Coin Flip. Players who won their first Coin Flip of the day received double the standard payout.
 </Update>
 
+<Update label="2024-11-20" description="Bug Fix" tags={["App"]}>
+  **App v1.11.1.** Fixed withdrawal confirmation resend issues.
+</Update>
+
+<Update label="2024-11-02" description="Charts and Navigation" tags={["App"]}>
+  **App v1.11.0.** Added charts for better data visualization. Improved user navigation flow.
+</Update>
+
+<Update label="2024-10-05" description="Infrastructure Improvements" tags={["App"]}>
+  **App v1.10.0.** Improved Web3 connection reliability and enhanced user feedback mechanisms.
+</Update>
+
+<Update label="2024-07-08" description="UX/UI Fixes" tags={["App"]}>
+  **App v1.7.0.** Fixed visual bugs and improved transaction history display.
+</Update>
+
+<Update label="2024-06-12" description="QR Code Fixes" tags={["App"]}>
+  **App v1.6.0.** Fixed QR code scanning and display issues.
+</Update>
+
+<Update label="2024-05-05" description="Home and Wallet Redesign" tags={["App"]}>
+  **App v1.5.83.** Redesign of Home screen, Products, and Wallets.
+</Update>
+
 <Update label="2024-04-12" description="PaymentWallet deployed" tags={["Contract Deploy"]}>
   **PaymentWallet** ([`0x71143697...`](https://bscscan.com/address/0x7114369715D19167754fD2714099BF7DF0007323)): multi-signature payment processing contract.
+</Update>
+
+<Update label="2024-04-10" description="Harvest and Compound Fix" tags={["App"]}>
+  **App v1.5.82.** Fixed harvest and compound issues.
 </Update>
 
 <Update label="2024-04-04" description="ConversionVault and Exchange deployed" tags={["Contract Deploy"]}>
@@ -102,11 +134,27 @@ Chronological log of all Inkryptus platform updates. Each entry includes what ch
 - **UniversalExchange** ([`0x3e3a5a21...`](https://bscscan.com/address/0x3e3a5a21b270b2f84bf4c6e4503f704bb085f673)): swap contract with slippage protection.
 </Update>
 
+<Update label="2024-03-01" description="Network System and INKY Token Support" tags={["App"]}>
+  **App v1.5.8.** Introduced new network system and INKY Token support in-app.
+</Update>
+
+<Update label="2024-02-05" description="New Products and Stability" tags={["App"]}>
+  **App v1.5.7.** Added new products and general stability improvements.
+</Update>
+
+<Update label="2024-01-10" description="Optimization and Cleanup" tags={["App"]}>
+  **App v1.5.6.** Application optimization and removal of deprecated products.
+</Update>
+
 <Update label="2023-10-31" description="StakingPool and TokenMinter deployed" tags={["Contract Deploy"]}>
   Two contracts deployed:
 
 - **TokenMinter** ([`0x68bdab3d...`](https://bscscan.com/address/0x68bdab3dcc5332bcccdc940d54122c155b80857a)): gatekeeper for the INKY mint function.
 - **StakingPool** ([`0x9b8eC6ac...`](https://bscscan.com/address/0x9b8eC6ac014b926201f085e53A0d0540F7C510c5)): active staking pool with 1%/day emission, 10K cap.
+</Update>
+
+<Update label="2023-05-23" description="First INKY Token Transfer" tags={["Milestone", "INKY Token"]}>
+  First on-chain transfer of INKY Token executed successfully, validating basic token functionality (send, receive, balance updates).
 </Update>
 
 <Update label="2023-05-17" description="Liquidity pool created" tags={["Liquidity"]}>
@@ -116,10 +164,26 @@ Chronological log of all Inkryptus platform updates. Each entry includes what ch
 - Creation tx: [`0x755859ef...`](https://bscscan.com/tx/0x755859ef719acd5668b74c40d8fcbc1df7a9712550c8cbc7906d1f7536a1861e)
 </Update>
 
-<Update label="2023-05-11" description="INKY Token deploy" tags={["Genesis"]}>
+<Update label="2023-05-11" description="INKY Token deploy" tags={["Genesis", "INKY Token"]}>
   Initial deploy of the INKY token contract on BNB Smart Chain at 17:00:39 UTC. 10,000,000 INKY minted to the Initial Mintage Vault.
 
 - Token contract: [`0x75a320c9...`](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f)
 - Initial Mintage Vault: [`0x19d24adf...`](https://bscscan.com/address/0x19d24adf08d2c169667353957adb02e7aa4127a9)
 - Deploy tx: [`0xbb7cd490...`](https://bscscan.com/tx/0xbb7cd490a16dc51af47263b6e7ad5960ff9fa2da6ef7a3a16cbfcd974907e04c)
+</Update>
+
+<Update label="2022-06-15" description="Coinflip Launch" tags={["App"]}>
+  Launch of Coinflip, Inkryptus' first on-chain game.
+</Update>
+
+<Update label="2021-04-24" description="First Staking Contract" tags={["Milestone"]}>
+  First staking contract opened using PancakeSwap-based architecture. Enabled the first reward-earning mechanism for users.
+</Update>
+
+<Update label="2020-03-02" description="Staking Architecture" tags={["Platform"]}>
+  Staking architecture created, initially powered by PancakeSwap protocols.
+</Update>
+
+<Update label="2020-03-02" description="Inkryptus Launch" tags={["Platform"]}>
+  Official release of Inkryptus as a crypto platform.
 </Update>
