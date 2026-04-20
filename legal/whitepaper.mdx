@@ -15,7 +15,7 @@ The concept of Hybrid Finance (HyFi) defines the purpose of Inkryptus: to democr
 
 Inkryptus combines a custodial Web2 layer, responsible for user experience, with on-chain execution and traceability, ensuring operations that are verifiable, secure, and transparent. The result is an ecosystem that prioritizes security, accessibility, and innovation, promoting financial inclusion on a global scale.
 
-At the center of this ecosystem is the INKY Token, the asset that sustains the entire Inkryptus economy. It functions as a utility token, internal payment method, governance mechanism, and deflationary instrument. Its emission is programmed and limited by a hard cap of 200 million units, while automatic burns gradually reduce the circulating supply, preserving the sustainability of the model.
+At the center of this ecosystem is the INKY Token, the asset that sustains the entire Inkryptus economy. It functions as a utility token, internal payment method, governance mechanism, and deflationary instrument. Its emission is programmed and limited by a hard cap of 200 million units, and a planned automatic burn mechanism will gradually reduce the circulating supply, preserving the sustainability of the model.
 
 This document presents the technical and economic architecture of Inkryptus, detailing its emission mechanics, inflation control, governance structure, and the foundations that support the HyFi model.
 
@@ -72,22 +72,26 @@ Its economic model is founded on limited supply, programmed emission, and contro
 
 - **Utility token:** used in all platform operations (staking, swaps, games, IBO, and operational fees);
 - **Reward token:** distributed daily to staking pool participants;
-- **Controlled-inflation token:** daily emission is limited by fixed contract rules, and a portion of fees is allocated to a future burn reserve, gradually balancing the circulating supply;
+- **Controlled-inflation token:** daily emission is limited by fixed contract rules, and a portion of fees will be allocated to a burn reserve, gradually balancing the circulating supply;
 - **Technical governance token:** INKY Token contracts are verifiable on-chain, reinforcing the transparency and predictability of the economic model.
 
 #### Ecosystem Integration
 
 The INKY Token is used as the base unit across all platform products, acting as a means of access, liquidity currency, and reward element.
 
-Each interaction within the ecosystem (a transaction, a withdrawal, a game, or an IBO commission) reinforces the internal economic cycle and contributes to the balance between emission and burn.
+Each interaction within the ecosystem (a transaction, a withdrawal, a game, or an IBO commission) reinforces the internal economic cycle and contributes to the balance between emission and the planned burn mechanism.
 
 This architecture makes the INKY Token an asset with immediate utility, internal monetary function, and programmed scarcity, sustaining the Inkryptus HyFi model as a hybrid and economically autonomous system.
 
 Supply, emission, and burn parameters are detailed in the "Token Economy", "Emission", and "Burn Mechanism" sections.
 
-### INKY Pool Staking
+### Staking
 
-Staking is the core passive income product of Inkryptus. Through verifiable smart contracts on-chain, users can lock INKY Tokens and receive rewards proportional to their participation in the pool.
+Staking is the core passive income product of Inkryptus. Users deposit tokens into smart contracts on BNB Smart Chain and receive daily rewards based on the specific product's mechanics.
+
+#### INKY Pool
+
+Through verifiable smart contracts on-chain, users can lock INKY Tokens and receive rewards proportional to their participation in the pool. Rewards are paid in INKY, generated through the emission mechanism described in the "Emission" section.
 
 **Available plans:**
 
@@ -99,11 +103,31 @@ Staking is the core passive income product of Inkryptus. Through verifiable smar
   The 6-month and 24-month lock-up plans were discontinued in app version 2.8.0. Existing contracts under these plans remain active until their original maturity date. New contracts are available under the Free, 12-month, and 36-month plans only.
 </Callout>
 
-**Economic mechanics:**
+#### USDT Stablecoin Staking
+
+Users can stake USDT and receive daily rewards in USDT. This product operates as a flexible (no lock-up) staking option, managed via the platform's Products Vault. It provides a stablecoin yield alternative for users who prefer lower volatility exposure.
+
+#### CAKE Staking
+
+Users can stake CAKE tokens and receive daily rewards in CAKE. Like the USDT staking product, this is flexible (no lock-up) and managed via the Products Vault. Rewards are sourced from the PancakeSwap protocol.
+
+#### Common Staking Rules
+
+All staking products share these properties:
+
+| Rule | Detail |
+|------|--------|
+| Performance fee | 25% on profit only. No profit, no fee. The fee never applies to the principal |
+| Harvest fee | Flat US$3 per operation |
+| Minimum stake | Equivalent to US$3 (applies to all plans and assets) |
+| Harvest availability | 24 hours after contract activation |
+| Network | BNB Smart Chain |
+
+**Economic mechanics (INKY Pool):**
 
 - Proportional distribution among participants;
-- Performance fee: 25% on effective profit (distribution policy: 30% Inkryptus / 70% IBO network, as per the "IBO Program" section);
-- Institutional fraction (reinvestment): the operational portion allocated to Inkryptus is directed to ecosystem operations, including programmed burns, product development (e.g., games), and continuous development;
+- Performance fee: 25% on effective profit (distributed as per the fee sharing model described in the "IBO Program" section);
+- Institutional fraction (reinvestment): the operational portion allocated to Inkryptus is directed to ecosystem operations, including future programmed burns, product development (e.g., games), and continuous development;
 - Fixed rules ensure stability, transparency, and controlled scarcity.
 
 **Harvest (Withdrawal):** Profits can be withdrawn without affecting the invested principal. Rewards can be reinvested (Compound), converted via Swap, withdrawn (Send), or held in the wallet balance.
@@ -120,23 +144,70 @@ The wallet is the core access point to the ecosystem. Users can store, send, rec
 - Direct integration with staking, swap, games, and the IBO Program;
 - 2FA authentication and continuous operation monitoring.
 
-**Simplified custody:**
+#### Supported Assets
 
-Inkryptus adopts a secure institutional custody model with segregation of client assets and proprietary assets. Private keys are generated and managed through smart contracts integrated into the Inkryptus infrastructure, which execute and validate operations automatically and traceably on-chain, without manual intervention or direct exposure to the user.
+All assets operate on BNB Smart Chain (BEP-20).
+
+| Asset | Symbol | In-app features |
+|-------|--------|-----------------|
+| INKY | INKY | Staking, Arena, Swap, fee payment |
+| Tether | USDT | Staking, Swap, fiat on-ramp |
+| Bitcoin | BTCB | Swap, user holdings |
+| Ethereum | ETH | Swap, user holdings |
+| PancakeSwap | CAKE | Staking (PancakeSwap protocol) |
+| Biswap | BSW | Swap, user holdings |
+| Radiant | RDNT | Swap, user holdings |
+| Shiba Inu | SHIB | Swap, user holdings |
+| BinaryX | BNX | Swap, user holdings |
+
+#### Simplified Custody
+
+Inkryptus adopts a secure institutional custody model with segregation of client assets and proprietary assets. Each user receives a dedicated wallet address on-chain, generated at account creation. Private keys are generated and managed through smart contracts integrated into the Inkryptus infrastructure, which execute and validate operations automatically and traceably on-chain, without manual intervention or direct exposure to the user.
+
+All user wallet keys are managed by the platform's main multisig wallet. The specific signature scheme is not publicly disclosed. This design requires multiple signers to approve large transactions, distributes trust across multiple signing parties, and allows key rotation without interrupting service.
 
 All transactions are signed by the Inkryptus infrastructure and recorded on-chain, ensuring traceability and integrity.
 
 This approach eliminates the need for users to handle keys directly, without compromising operational transparency.
 
+#### Deposit Flows
+
+Users can add funds to their wallet through three methods:
+
+- **From external wallet:** Send crypto on the BEP-20 network to the user's dedicated deposit address. Balance is credited once confirmed on BNB Smart Chain.
+- **From exchange:** Copy the Inkryptus deposit address, initiate a withdrawal from the exchange on the BEP-20 network, and receive funds once confirmed on-chain.
+- **Buy with local currency (fiat):** Purchase USDT directly with local currency through an integrated payment provider (Simplex). Minimum purchase: US$50. Provider fee: 3.5% (min US$5) + US$0.33 blockchain fee. KYC required.
+
+<Callout kind="alert">
+  Deposits must be sent on the BEP-20 (BNB Smart Chain) network. Deposits sent on other networks (ERC-20, TRC-20, etc.) cannot be recovered.
+</Callout>
+
+#### Withdrawal Limits and KYC
+
+Withdrawal limits are defined by KYC tier. The monthly counter resets on the 1st of each month at 00:00:01 UTC.
+
+| Tier | KYC required | Monthly limit |
+|------|-------------|---------------|
+| Bronze | No | US$500 |
+| Silver | Yes | US$500,000 |
+
+Inkryptus integrates anti-money laundering (AML) and know-your-customer (KYC) procedures into the platform. Users submit identity documents through the app, and verification is processed by a third-party provider. KYC completion unlocks higher withdrawal limits and access to additional features. Transactions are monitored for suspicious patterns.
+
+#### Account Recovery
+
+If a user loses access to their account, they can contact support through the app or email. The recovery process requires identity verification (email, KYC documents, or other proof of ownership). Once verified, account access is restored. No seedphrase or private key is needed because all keys are managed by the platform.
+
 ### Inkryptus Swap
 
-The Swap module enables instant conversions between tokens without the need for external exchanges. With fixed fees and verifiable contracts, users have the freedom to rebalance their portfolio with agility and security.
+The Swap module enables instant conversions between tokens without the need for external exchanges. All operations are structured around USDT as the central currency. There are no direct routes between non-USDT assets (e.g., INKY to BTCB does not exist). To move between two assets, the user sells one for USDT, then buys the other with USDT.
+
+**Supported pairs:** All 8 assets (INKY, BTCB, ETH, CAKE, BSW, RDNT, SHIB, BNX) trade against USDT. Both Buy (USDT to asset) and Sell (asset to USDT) are available.
 
 **Differentiators:**
 
-- Immediate on-chain execution;
+- Immediate internal execution, no gas fee;
 - Single fee of US$3 per operation;
-- Full transparency (no hidden slippage);
+- Full transparency: price, amount, and fee are shown before the user confirms. Execution happens at the quoted price;
 - Direct integration with the Inkryptus Wallet and consolidated history.
 
 **Primary uses:**
@@ -145,42 +216,58 @@ The Swap module enables instant conversions between tokens without the need for 
 - Profit realization and preparation for new strategies;
 - Balance conversion for participation in games or withdrawals.
 
-### Inkryptus Games
+### Inkryptus Games (Arena)
 
-Each play has a fixed multiplier of 1.9x on the bet amount in case of victory.
+The Arena is the gaming section of the Inkryptus platform. All games use INKY tokens exclusively, and every outcome is recorded on BNB Smart Chain for independent verification.
 
-The 0.1x difference represents the platform's operational fee, distributed in the 30% Inkryptus / 70% IBO network model, applied only on bets that are effectively processed.
+#### Coin Flip
 
-Example: if a user bets 10 INKY and wins, they receive 19 INKY; the 1 INKY difference is the total operational fee.
+A heads-or-tails game where the user wagers INKY against the platform. Each play has a fixed multiplier of 1.9x on the bet amount in case of victory. The 0.1x difference represents the platform's operational fee, distributed according to the fee sharing model (see "IBO Program" section), applied only on bets that are effectively processed.
 
-Results are verifiable by public hash, and VRF (Verifiable Random Function) integration is planned for 2026, ensuring proof of randomness and public verification of the seed and proof on-chain.
-
-Access to games respects KYC policies, betting limits, and jurisdictional restrictions in accordance with local compliance regulations.
+**Fixed bet amounts:** 1, 5, 10, 25, 50, or 100 INKY. There are no custom bet values.
 
 **How it works:**
 
-1. The player chooses a side.
+1. The player selects a bet amount and chooses a side (heads or tails).
 2. The contract executes the play and publishes the result on-chain.
 3. In case of victory, the payout is 1.9x the bet amount.
 
-**Operational fee:** The difference (0.1x) is distributed in the 30% Inkryptus / 70% network model, ensuring ecosystem sustainability (only in case of victory).
+**Example:** If a user bets 10 INKY and wins, they receive 19 INKY; the 1 INKY difference is the total operational fee.
 
-**Transparency and limits:**
+**Operational fee:** The difference (0.1x) is distributed according to the fee sharing model, ensuring ecosystem sustainability (only in case of victory).
 
-- Results verifiable by public hash;
-- Bets from 1 to 100 INKY;
-- Proof of randomness based on VRF (Verifiable Random Function) integration is planned, with public verification of the seed and proof on-chain.
+#### Fairness: Commit-Reveal Scheme
+
+The Arena uses a commit-reveal scheme to ensure fair outcomes:
+
+1. **Commit phase:** Before the user clicks Play, the smart contract calculates the result and generates a cryptographic hash. This hash is not yet visible to the user.
+2. **Reveal phase:** After the user clicks Play, the result and hash are revealed simultaneously.
+3. **Verification:** The user can independently verify that the revealed result matches the pre-committed hash, proving the outcome was determined before the bet was placed and was not manipulated.
+
+All game events are recorded on BNB Smart Chain and can be verified on BscScan. VRF (Verifiable Random Function) integration is under development, which will enable proof of randomness and public verification of the seed and proof on-chain.
+
+Access to games respects KYC policies, betting limits, and jurisdictional restrictions in accordance with local compliance regulations.
 
 ### IBO Program (Independent Business Owner)
 
 The IBO is the official Inkryptus affiliate program, based on merit and real activity. Commissions are distributed based on fees generated by the user's network within the platform (staking, swaps, harvests, games).
 
+#### Fee Sharing Model
+
+Inkryptus shares a portion of its operational fee revenue with the Partner Program community. This distribution applies uniformly to all platform fees (performance, transaction, subscription, and Arena):
+
+| Recipient | Share | Description |
+|-----------|-------|-------------|
+| Inkryptus | 30% | Platform operations, infrastructure, liquidity, and development |
+| Community (Partner Program) | 70% | Distributed across up to 7 levels (10% per level) |
+
+When a level has no active sponsor, that level's 10% allocation is retained by Inkryptus.
+
 **Key characteristics:**
 
 - Free enrollment (30-day trial);
-- Monthly subscription of US$24 for full access;
-- Network with up to 7 commission levels;
-- Distribution: 30% Inkryptus / 70% network;
+- Monthly subscription of US$24 (paid in USDT) for full access;
+- Network with up to 7 commission levels (10% per level);
 - Real-time dashboard with metrics, earnings, and reports.
 
 Anti-fraud mechanisms and activity verification validate the origin of commissionable fees.
@@ -193,6 +280,17 @@ All commissions derive exclusively from fees generated by real activity on the p
 
 The system uses automatic anti-fraud metrics that validate the origin, frequency, and value of commissionable operations, preventing manipulation or volume simulation.
 
+**IBO Wallet Structure:**
+
+Commissions are credited to the IBO Wallet, which is split into two sub-wallets:
+
+| Sub-wallet | Receives | Transfer to User Wallet |
+|------------|----------|------------------------|
+| Harvest | Performance fee commissions | US$3 harvest fee per operation |
+| Transfer | All other commissions (subscription, transaction, Arena) | No fee, immediate |
+
+To use or withdraw IBO earnings, transfer from the IBO Wallet to the User Wallet first.
+
 **Revenue sources:**
 
 1. Monthly subscription fee (US$24);
@@ -200,13 +298,27 @@ The system uses automatic anti-fraud metrics that validate the origin, frequency
 3. Staking performance fee (25% on profits);
 4. Game fees (CoinFlip).
 
+### Platform Fees
+
+All fees charged on the Inkryptus platform:
+
+| Fee Category | Applies To | Amount |
+|-------------|-----------|--------|
+| Performance fee | Net profit from staking | 25% of daily profit |
+| Withdrawal fee | Withdrawing funds from the platform | US$3 per operation |
+| Swap fee | Exchanging between assets (Buy/Sell) | US$3 per operation |
+| Harvest fee | Collecting accumulated staking rewards | US$3 per operation |
+| Partner Subscription | Partner Program access | US$24/month (after 30-day trial) |
+
+All platform fees follow the fee sharing model described in the "IBO Program" section.
+
 ### Integration and Sustainability
 
 All Inkryptus products are connected by the same economic core: the INKY Token, which ensures traceability, technical governance, and programmed/controlled inflation. The platform architecture prioritizes transparency, utility, and scalability, reinforcing the HyFi (Hybrid Finance) model as the foundation of its identity.
 
 ## Token Economy
 
-The INKY Token economy sustains all reward dynamics, burns, and governance (when applicable) of the Inkryptus platform, functioning as the value core of the hybrid (HyFi) ecosystem.
+The INKY Token economy sustains all reward dynamics, planned burns, and governance (when applicable) of the Inkryptus platform, functioning as the value core of the hybrid (HyFi) ecosystem.
 
 This structure is outlined with an initial issuance of 10 million units, representing a portion of the total maximum supply of 200 million tokens.
 
@@ -246,7 +358,7 @@ This approach demonstrates careful planning in managing the token's economy, aim
 | Daily emission limit | 10,000 INKY |
 | Public query | Official website and BscScan |
 
-Total emission ceases automatically upon reaching the hard cap. Burns reduce the circulating supply but do not alter the maximum limit defined in the smart contract.
+Total emission ceases automatically upon reaching the hard cap. The burn mechanism (see "Burn Mechanism" section) will reduce the circulating supply but will not alter the maximum limit defined in the smart contract.
 
 The number of tokens in circulation is updated daily and can be consulted on the official Inkryptus website, ensuring transparency and public tracking of emission.
 
@@ -256,7 +368,7 @@ Inkryptus will implement an automatic and progressive token burn mechanism, desi
 
 The burn process will be executed directly through the native functions of the INKY contract (`burn` - `0x42966c68` and `burnFrom` - `0x79cc6790`), ensuring that token removal from the supply is irreversible, transparent, and verifiable on-chain.
 
-This method ensures that the burn occurs within the smart contract itself, without the need for burn addresses, maintaining full traceability and technical compliance.
+This method ensures that the burn will occur within the smart contract itself, without the need for burn addresses, maintaining full traceability and technical compliance.
 
 This mechanism operates analogously to deflationary monetary policies, in which the controlled reduction of supply tends to balance the value of an asset over time.
 
@@ -272,17 +384,15 @@ The burn will be applied directly on transactions that generate fees within the 
 | Base | The economic fraction corresponding to Inkryptus (30% of the total fee from each product) |
 | Burn percentage | 2% of the Inkryptus fraction, subject to scaling based on transaction volume |
 
-**Example:** On a US$3 swap fee, 30% (US$0.90) corresponds to the Inkryptus fraction; 2% of that fraction (US$0.018) is automatically converted to INKY and burned.
+**Example:** On a US$3 swap fee, 30% (US$0.90) corresponds to the Inkryptus fraction; 2% of that fraction (US$0.018) will be automatically converted to INKY and burned.
 
 The process will be fully verifiable on-chain, allowing any user to track burn transactions and contract execution events in the public blockchain records, reinforcing Inkryptus's commitment to transparency, stability, and sustainability of the INKY Token.
 
-### Technical Note and Audit
+### Technical Note
 
-Burns permanently reduce the circulating supply of INKY but do not alter the maximum supply of 200M INKY Tokens defined in the smart contract, preserving the integrity of the tokenomic structure.
+Once active, burns will permanently reduce the circulating supply of INKY but will not alter the maximum supply of 200M INKY Tokens defined in the smart contract, preserving the integrity of the tokenomic structure.
 
-All contracts referenced in this whitepaper will be submitted to independent audits and will have their code publicly verified on BscScan, reinforcing Inkryptus's commitment to security, transparency, and on-chain compliance.
-
-Official contract addresses and audit hashes will be published and maintained with version control on the official whitepaper page.
+All contracts referenced in this whitepaper have their code publicly verified on BscScan, reinforcing Inkryptus's commitment to security, transparency, and on-chain compliance.
 
 This whitepaper describes the current technical and economic design. Execution depends on market conditions, third-party integrations, and regulatory milestones. Parameters may be adjusted through governance approval and public on-chain recording, preserving the hard cap and the principles of transparency.
 
@@ -302,6 +412,6 @@ Users should evaluate their risk tolerance and tax responsibilities in accordanc
 
 Inkryptus reaffirms its commitment to building a solid bridge between the Web2 and Web3 worlds, promoting secure and transparent access to decentralized finance.
 
-This whitepaper consolidates the technical and economic design of the INKY Token ecosystem and will be updated periodically to reflect audits, deliveries, and on-chain governance adjustments.
+This whitepaper consolidates the technical and economic design of the INKY Token ecosystem and will be updated periodically to reflect deliveries and on-chain governance adjustments.
 
 Updated and digitally signed versions will be available at https://inkryptus.com/whitepaper, accompanied by a public SHA-256 hash for integrity verification.
