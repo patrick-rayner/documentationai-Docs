@@ -385,6 +385,10 @@
                 "path": "legal/privacy"
               },
               {
+                "title": "Whitepaper",
+                "path": "legal/whitepaper"
+              },
+              {
                 "title": "Disclaimers",
                 "path": "legal/disclaimers"
               },
