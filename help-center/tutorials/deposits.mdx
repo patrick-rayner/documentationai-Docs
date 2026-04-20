@@ -3,99 +3,121 @@ title: Deposits
 description: "How to add funds to your Inkryptus wallet: fiat on-ramp, crypto deposits, and verification steps."
 ---
 
-## Buy USDT with fiat (on-ramp)
+<Tabs>
+  <Tab title="Buy USDT with fiat" icon="credit-card">
+    The fastest way to fund your account if you do not already have crypto in an external wallet.
 
-The fastest way to fund your account if you do not already have crypto in an external wallet.
+    <Steps>
+      <Step title="Open Add Funds" icon="plus" title-type="p">
+        On the Home screen, tap **Add Funds**.
+      </Step>
+      <Step title="Select Buy USDT" icon="dollar-sign" title-type="p">
+        Choose **Buy USDT** from the options.
+      </Step>
+      <Step title="Choose provider" icon="credit-card" title-type="p">
+        Select your preferred payment provider from the list.
+      </Step>
+      <Step title="Enter amount and confirm" icon="check" title-type="p">
+        Enter the purchase amount, tap **Confirm**, then **Continue to payment**.
+      </Step>
+      <Step title="Complete payment" icon="check-circle" title-type="p">
+        Allow GPS access if prompted (required by provider). Complete the payment inside the provider's screen with your card or available method.
+      </Step>
+      <Step title="Receive USDT" icon="download" title-type="p">
+        Once the provider confirms, USDT is deposited automatically into your Inkryptus account.
+      </Step>
+    </Steps>
 
-<Steps>
-  <Step title="Open Add Funds" icon="plus" title-type="p">
-    On the Home screen, tap **Add Funds**.
-  </Step>
-  <Step title="Select Buy USDT" icon="dollar-sign" title-type="p">
-    Choose **Buy USDT** from the options.
-  </Step>
-  <Step title="Choose provider" icon="credit-card" title-type="p">
-    Select your preferred payment provider from the list.
-  </Step>
-  <Step title="Enter amount and confirm" icon="check" title-type="p">
-    Enter the purchase amount, tap **Confirm**, then **Continue to payment**.
-  </Step>
-  <Step title="Complete payment" icon="check-circle" title-type="p">
-    Allow GPS access if prompted (required by provider). Complete the payment inside the provider's screen with your card or available method.
-  </Step>
-  <Step title="Receive USDT" icon="download" title-type="p">
-    Once the provider confirms, USDT is deposited automatically into your Inkryptus account.
-  </Step>
-</Steps>
+    <Callout kind="info">
+      Availability may vary by region. If no provider is available in your country, use the crypto deposit method.
+    </Callout>
+  </Tab>
 
-<Callout kind="info">
-  Availability may vary by region. If no provider is available in your country, use one of the crypto deposit methods below.
-</Callout>
+  <Tab title="Deposit crypto" icon="download">
+    Generate your unique deposit address to receive supported assets from an external wallet or exchange.
 
----
+    <Steps>
+      <Step title="Open deposit" icon="plus" title-type="p">
+        In the app, tap **Add Funds > Deposit Crypto**.
+      </Step>
+      <Step title="Select asset" icon="circle" title-type="p">
+        Choose the asset you want to receive (e.g., USDT, BTCB, INKY).
+      </Step>
+      <Step title="Copy address" icon="copy" title-type="p">
+        Tap **Copy Address** or scan the QR code displayed.
+      </Step>
+      <Step title="Send from external source" icon="arrow-right" title-type="p">
+        In your external wallet or exchange, paste the address and select **BNB Smart Chain (BEP20)** as the network.
+      </Step>
+    </Steps>
 
-## Deposit crypto (via address or QR code)
+    <Callout kind="warning">
+      Sending on the wrong network will result in permanent loss of funds. Always confirm BEP20 before proceeding.
+    </Callout>
+  </Tab>
 
-<Steps>
-  <Step title="Open deposit" icon="plus" title-type="p">
-    In the app, tap **Add Funds > Deposit Crypto**.
-  </Step>
-  <Step title="Select asset" icon="circle" title-type="p">
-    Choose the asset you want to receive (e.g., USDT, BTCB, INKY).
-  </Step>
-  <Step title="Copy address" icon="copy" title-type="p">
-    Tap **Copy Address** or scan the QR code displayed.
-  </Step>
-  <Step title="Send from external wallet" icon="arrow-right" title-type="p">
-    In your external wallet or exchange, paste the address and select **BNB Smart Chain (BEP20)** as the network.
-  </Step>
-</Steps>
+  <Tab title="Example: via Binance" icon="building">
+    Step-by-step example depositing USDT from Binance into Inkryptus.
 
-<Callout kind="warning">
-  Sending on the wrong network will result in permanent loss of funds. Always confirm BEP20 before proceeding.
-</Callout>
+    <Steps>
+      <Step title="Prepare on Binance" icon="arrow-right" title-type="p">
+        On Binance, buy or convert your balance to USDT.
+      </Step>
+      <Step title="Get Inkryptus address" icon="copy" title-type="p">
+        In the Inkryptus app: **Add Funds > Deposit Crypto > USDT**. Copy the address.
+      </Step>
+      <Step title="Withdraw from Binance" icon="arrow-right" title-type="p">
+        In Binance withdrawal, paste the address and select **BSC (BEP20)** as the network.
+      </Step>
+      <Step title="Confirm" icon="check-circle" title-type="p">
+        Enter the amount, confirm security checks, and wait for processing.
+      </Step>
+    </Steps>
 
----
-
-## Example: USDT deposit via Binance
-
-<Steps>
-  <Step title="Prepare on Binance" icon="arrow-right" title-type="p">
-    On Binance, buy or convert your balance to USDT.
-  </Step>
-  <Step title="Get Inkryptus address" icon="copy" title-type="p">
-    In the Inkryptus app: **Add Funds > Deposit Crypto > USDT**. Copy the address.
-  </Step>
-  <Step title="Withdraw from Binance" icon="arrow-right" title-type="p">
-    In Binance withdrawal, paste the address and select **BSC (BEP20)** as the network.
-  </Step>
-  <Step title="Confirm" icon="check-circle" title-type="p">
-    Enter the amount, confirm security checks, and wait for processing.
-  </Step>
-</Steps>
-
-<Callout kind="info">
-  For first-time transfers, send a small test amount to verify the flow.
-</Callout>
+    <Callout kind="info">
+      For first-time transfers, send a small test amount to verify the flow.
+    </Callout>
+  </Tab>
+</Tabs>
 
 ---
 
 ## Check deposit status
 
-**Crypto deposit:** check the transaction status on the sending platform. BEP20 confirmations are usually fast but may take a few minutes.
+<Tabs>
+  <Tab title="Crypto deposit" icon="link">
+    Check the transaction status on the sending platform. BEP20 confirmations are usually fast but may take a few minutes.
+  </Tab>
+  <Tab title="Fiat purchase" icon="credit-card">
+    Tap **Add Funds > Buy USDT > History** tab to see all past transactions and their status (pending, completed, failed).
 
-**Fiat purchase:** tap **Add Funds > Buy USDT > History** tab to see all past transactions and their status (pending, completed, failed).
+    If a purchase shows as completed in History but the balance has not updated yet, wait a few minutes and refresh the app.
+  </Tab>
+</Tabs>
 
 ---
 
-## Deposit not reflected
+## Troubleshooting
 
-In some cases, deposits can take up to 24 hours to reflect in the app. If it takes longer, contact support with all transaction details (TXID, asset, amount, date/time).
+<ExpandableGroup>
+  <Expandable title="Deposit not reflected after 24h" default-open="false">
+    In some cases, deposits can take up to 24 hours. If it takes longer, contact support with all transaction details: TXID, asset, amount, and date/time.
+  </Expandable>
+
+  <Expandable title="Safety tips" default-open="false">
+    - Always verify the first and last 5-6 characters of the destination address before confirming.
+    - Minimum deposit depends on the platform or provider used.
+    - When in doubt, send a small test transaction first.
+  </Expandable>
+</ExpandableGroup>
 
 ---
 
-## Safety tips
-
-- Always verify the first and last 5-6 characters of the destination address before confirming.
-- Minimum deposit depends on the platform or provider used.
-- When in doubt, send a small test transaction first.
+<Columns cols="2">
+  <Card title="Deposits FAQ" icon="help-circle" href="/help-center/faq/deposits">
+    Common questions about deposits and wallet balance.
+  </Card>
+  <Card title="Network & Assets" icon="link" href="/help-center/tutorials/network">
+    Supported tokens and BEP20 network details.
+  </Card>
+</Columns>
