@@ -451,7 +451,7 @@
             "icon": "file-text",
             "pages": [
               {
-                "title": "Terms of Service",
+                "title": "Terms of Use",
                 "path": "legal/terms",
                 "icon": "file-text"
               },
@@ -464,11 +464,6 @@
                 "title": "Whitepaper",
                 "path": "legal/whitepaper",
                 "icon": "book"
-              },
-              {
-                "title": "Disclaimers",
-                "path": "legal/disclaimers",
-                "icon": "alert-triangle"
               },
               {
                 "title": "Contact",
