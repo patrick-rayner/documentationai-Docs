@@ -176,53 +176,6 @@
             ]
           },
           {
-            "group": "Partner Program",
-            "icon": "users",
-            "pages": [
-              {
-                "title": "Overview",
-                "path": "partner-program/index",
-                "icon": "info"
-              },
-              {
-                "title": "How It Works",
-                "path": "partner-program/how-it-works",
-                "icon": "settings"
-              },
-              {
-                "title": "Commissions",
-                "path": "partner-program/commissions",
-                "icon": "dollar-sign"
-              },
-              {
-                "title": "Compliance",
-                "path": "partner-program/compliance",
-                "icon": "check-circle"
-              },
-              {
-                "title": "Operational Rules",
-                "path": "partner-program/operational-rules",
-                "icon": "list"
-              },
-              {
-                "title": "FAQ",
-                "path": "partner-program/faq",
-                "icon": "help-circle"
-              },
-              {
-                "group": "Partner Campaigns",
-                "icon": "award",
-                "pages": [
-                  {
-                    "title": "Partner Campaigns",
-                    "path": "partner-program/partner-campaigns",
-                    "icon": "megaphone"
-                  }
-                ]
-              }
-            ]
-          },
-          {
             "group": "Fees",
             "icon": "percent",
             "pages": [
@@ -272,6 +225,47 @@
                 "title": "All Updates",
                 "path": "changelog",
                 "icon": "list"
+              }
+            ]
+          },
+          {
+            "group": "Partner Program",
+            "icon": "users",
+            "pages": [
+              {
+                "title": "Overview",
+                "path": "partner-program/index",
+                "icon": "info"
+              },
+              {
+                "title": "How It Works",
+                "path": "partner-program/how-it-works",
+                "icon": "settings"
+              },
+              {
+                "title": "Commissions",
+                "path": "partner-program/commissions",
+                "icon": "dollar-sign"
+              },
+              {
+                "title": "Partner Campaigns",
+                "path": "partner-program/partner-campaigns",
+                "icon": "megaphone"
+              },
+              {
+                "title": "Compliance",
+                "path": "partner-program/compliance",
+                "icon": "check-circle"
+              },
+              {
+                "title": "Operational Rules",
+                "path": "partner-program/operational-rules",
+                "icon": "list"
+              },
+              {
+                "title": "FAQ",
+                "path": "partner-program/faq",
+                "icon": "help-circle"
               }
             ]
           }
