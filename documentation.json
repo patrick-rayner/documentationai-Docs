@@ -276,43 +276,65 @@
             "pages": [
               {
                 "title": "Platform",
-                "path": "help-center/faq/platform"
+                "path": "help-center/faq/platform",
+                "icon": "home"
               },
               {
                 "title": "Account and Security",
-                "path": "help-center/faq/account-security"
+                "path": "help-center/faq/account-security",
+                "icon": "shield"
               },
               {
                 "title": "Network and Assets",
-                "path": "help-center/faq/network-assets"
+                "path": "help-center/faq/network-assets",
+                "icon": "globe"
               },
               {
                 "title": "Deposits",
-                "path": "help-center/faq/deposits"
+                "path": "help-center/faq/deposits",
+                "icon": "download"
               },
               {
-                "title": "Buy, Sell, and Send",
-                "path": "help-center/faq/buy-sell-send"
-              },
-              {
-                "title": "Staking",
-                "path": "help-center/faq/staking"
-              },
-              {
-                "title": "Partner Program",
-                "path": "help-center/faq/ibo"
-              },
-              {
-                "title": "Coin Flip",
-                "path": "help-center/faq/coin-flip"
+                "group": "Features",
+                "icon": "box",
+                "pages": [
+                  {
+                    "title": "Buy, Sell, and Send",
+                    "path": "help-center/faq/buy-sell-send",
+                    "icon": "repeat"
+                  },
+                  {
+                    "title": "Staking",
+                    "path": "help-center/faq/staking",
+                    "icon": "trending-up"
+                  },
+                  {
+                    "title": "Partner Program",
+                    "path": "help-center/faq/ibo",
+                    "icon": "users"
+                  },
+                  {
+                    "group": "Arena",
+                    "icon": "target",
+                    "pages": [
+                      {
+                        "title": "Coin Flip",
+                        "path": "help-center/faq/coin-flip",
+                        "icon": "target"
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "title": "Fees and Limits",
-                "path": "help-center/faq/fees-limits"
+                "path": "help-center/faq/fees-limits",
+                "icon": "percent"
               },
               {
                 "title": "Support and Legal",
-                "path": "help-center/faq/support-legal"
+                "path": "help-center/faq/support-legal",
+                "icon": "life-buoy"
               }
             ]
           },
@@ -322,47 +344,70 @@
             "pages": [
               {
                 "title": "Account",
-                "path": "help-center/tutorials/account"
+                "path": "help-center/tutorials/account",
+                "icon": "user"
               },
               {
                 "title": "Network and Assets",
-                "path": "help-center/tutorials/network"
+                "path": "help-center/tutorials/network",
+                "icon": "globe"
               },
               {
                 "title": "Deposits",
-                "path": "help-center/tutorials/deposits"
+                "path": "help-center/tutorials/deposits",
+                "icon": "download"
               },
               {
-                "title": "Wallet",
-                "path": "help-center/tutorials/wallet"
-              },
-              {
-                "title": "Swap",
-                "path": "help-center/tutorials/buy-sell"
-              },
-              {
-                "title": "Withdrawals",
-                "path": "help-center/tutorials/withdrawals"
-              },
-              {
-                "title": "Account Statement",
-                "path": "help-center/tutorials/statement"
-              },
-              {
-                "title": "Staking",
-                "path": "help-center/tutorials/staking"
-              },
-              {
-                "title": "Partner Program",
-                "path": "help-center/tutorials/ibo"
-              },
-              {
-                "title": "Coin Flip",
-                "path": "help-center/tutorials/coin-flip"
+                "group": "Features",
+                "icon": "box",
+                "pages": [
+                  {
+                    "title": "Wallet",
+                    "path": "help-center/tutorials/wallet",
+                    "icon": "wallet"
+                  },
+                  {
+                    "title": "Swap",
+                    "path": "help-center/tutorials/buy-sell",
+                    "icon": "repeat"
+                  },
+                  {
+                    "title": "Withdrawals",
+                    "path": "help-center/tutorials/withdrawals",
+                    "icon": "upload"
+                  },
+                  {
+                    "title": "Account Statement",
+                    "path": "help-center/tutorials/statement",
+                    "icon": "file-text"
+                  },
+                  {
+                    "title": "Staking",
+                    "path": "help-center/tutorials/staking",
+                    "icon": "trending-up"
+                  },
+                  {
+                    "title": "Partner Program",
+                    "path": "help-center/tutorials/ibo",
+                    "icon": "users"
+                  },
+                  {
+                    "group": "Arena",
+                    "icon": "target",
+                    "pages": [
+                      {
+                        "title": "Coin Flip",
+                        "path": "help-center/tutorials/coin-flip",
+                        "icon": "target"
+                      }
+                    ]
+                  }
+                ]
               },
               {
                 "title": "Support",
-                "path": "help-center/tutorials/support"
+                "path": "help-center/tutorials/support",
+                "icon": "life-buoy"
               }
             ]
           }
@@ -378,23 +423,28 @@
             "pages": [
               {
                 "title": "Terms of Service",
-                "path": "legal/terms"
+                "path": "legal/terms",
+                "icon": "file-text"
               },
               {
                 "title": "Privacy Policy",
-                "path": "legal/privacy"
+                "path": "legal/privacy",
+                "icon": "lock"
               },
               {
                 "title": "Whitepaper",
-                "path": "legal/whitepaper"
+                "path": "legal/whitepaper",
+                "icon": "book"
               },
               {
                 "title": "Disclaimers",
-                "path": "legal/disclaimers"
+                "path": "legal/disclaimers",
+                "icon": "alert-triangle"
               },
               {
                 "title": "Contact",
-                "path": "legal/contact"
+                "path": "legal/contact",
+                "icon": "mail"
               }
             ]
           }
