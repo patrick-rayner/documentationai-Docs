@@ -15,10 +15,14 @@
   "navbar": {
     "actions": {
       "primary": {
-        "title": "Open App",
-        "link": "https://inkryptus.com"
+        "title": "Download App",
+        "link": "https://link.inkryptus.com/?c=website"
       },
       "links": [
+        {
+          "title": "Website",
+          "link": "https://inkryptus.com"
+        },
         {
           "title": "Support",
           "link": "mailto:support@inkryptus.com"
