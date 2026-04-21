@@ -89,6 +89,70 @@ The counter resets on the 1st of each month at 00:00:01 UTC. Check your current 
 
 ---
 
+## Recover INKY sent to an exchange
+
+If you sent INKY directly to Binance (or another exchange) without converting to USDT first, the tokens will not be credited automatically because INKY is not listed on that exchange. In most cases, recovery is possible by requesting a manual return from the exchange.
+
+### Step 1: Open a support ticket with the exchange
+
+For Binance, follow these steps in the app:
+
+<Steps>
+  <Step title="Open menu" icon="menu" title-type="p">
+    Tap the hamburger menu (top left corner).
+  </Step>
+  <Step title="Find support" icon="help-circle" title-type="p">
+    Tap **More Services**, scroll to **Help and Support**.
+  </Step>
+  <Step title="Select issue" icon="alert-circle" title-type="p">
+    Tap **Self-Service**, then **Crypto Deposits Not Received**.
+  </Step>
+  <Step title="Open manual ticket" icon="message-circle" title-type="p">
+    Tap **Contact Support** to open a manual ticket.
+  </Step>
+</Steps>
+
+Once the ticket is open, request the return of your INKY tokens to your Inkryptus deposit address via BEP20. Include the following information:
+
+| Information | Where to find it |
+|-------------|-----------------|
+| Transaction hash (TxID) | Inkryptus app: **Home > INKY > History** > select the withdrawal |
+| Exchange BEP20 address (origin) | The address you sent INKY to |
+| Inkryptus deposit address (destination for refund) | Inkryptus app: **Home > INKY > Receive** |
+| INKY token contract (BEP20) | `0x75a320C97205DD2e70e09085d1408c73A73D4d8f` |
+
+### Step 2: If the exchange asks whether the address is a contract
+
+Share the following message with them:
+
+<Callout kind="info">
+  The Inkryptus deposit address is a valid custodial wallet address generated on the Inkryptus platform. It is fully capable of receiving BEP20 tokens. It may be identified as a contract address due to the custodial infrastructure. This is expected and does not affect the transfer.
+</Callout>
+
+### Step 3: If the exchange requests official confirmation from Inkryptus
+
+Contact Inkryptus support. We will provide a confirmation message you can forward to the exchange.
+
+### Step 4: After the tokens are back in your Inkryptus wallet
+
+<Steps>
+  <Step title="Confirm balance" icon="check" title-type="p">
+    Go to **Wallet > Assets > INKY** and verify the returned tokens are visible.
+  </Step>
+  <Step title="Convert to USDT" icon="repeat" title-type="p">
+    Tap **Sell** to convert INKY to USDT.
+  </Step>
+  <Step title="Send USDT to the exchange" icon="arrow-right" title-type="p">
+    Send the USDT to your exchange address via BEP20. This is the recommended workflow for moving value out of Inkryptus.
+  </Step>
+</Steps>
+
+<Callout kind="warning">
+  Always convert INKY to USDT before sending to external exchanges. INKY is a utility token within the Inkryptus ecosystem and is not listed on major exchanges.
+</Callout>
+
+---
+
 <Columns cols="2">
   <Card title="Buy, Sell & Send FAQ" icon="help-circle" href="/help-center/faq/buy-sell-send">
     Common questions about transfers and AMM pricing.
