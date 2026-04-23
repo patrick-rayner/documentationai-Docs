@@ -50,14 +50,13 @@ graph LR
     BSW["BSW"] <-->|"swap"| USDT
     RDNT["RDNT"] <-->|"swap"| USDT
     SHIB["SHIB"] <-->|"swap"| USDT
-    BNX["BNX"] <-->|"swap"| USDT
 ```
 
 ## Supported assets
 
-All 8 assets trade through USDT. The USDT itself is the central pair and does not appear as a tradeable asset in the Swap screen.
+All 7 assets trade through USDT. The USDT itself is the central pair and does not appear as a tradeable asset in the Swap screen.
 
-All 8 assets support both Buy (USDT→asset) and Sell (asset→USDT).
+All 7 assets support both Buy (USDT→asset) and Sell (asset→USDT).
 
 | Asset | Symbol | Category |
 |-------|--------|----------|
@@ -68,7 +67,6 @@ All 8 assets support both Buy (USDT→asset) and Sell (asset→USDT).
 | Biswap | BSW | DeFi |
 | Radiant | RDNT | DeFi |
 | Shiba Inu | SHIB | Meme |
-| BinaryX | BNX | GameFi |
 
 All assets operate on BNB Smart Chain (BEP-20).
 
@@ -88,7 +86,7 @@ A fixed fee of **US$3** applies to every swap operation, regardless of the trade
 - The fee is the same whether the user is buying or selling, and applies per operation.
 - For multi-step routes (e.g., INKY → USDT → BTCB), the fee applies to each operation (2× US$3 in this example).
 
-See [Fees](/fees/index) for the full fee structure, including commission distribution.
+See [Fees](/introduction/fees) for the full fee structure, including commission distribution.
 
 ## Related flows
 
@@ -104,7 +102,7 @@ Swap handles only the internal asset conversion. For depositing USDT into your w
 ```mermaid
 graph LR
     DEP["🏦 Deposit\nSee: Wallet"] -->|"fiat or crypto"| USDT(["💵 USDT"])
-    USDT <-->|"Buy / Sell"| ASSETS["INKY · BTCB · ETH\nCAKE · BSW · RDNT\nSHIB · BNX"]
+    USDT <-->|"Buy / Sell"| ASSETS["INKY · BTCB · ETH\nCAKE · BSW · RDNT · SHIB"]
     USDT -->|"withdraw"| WIT["🏦 Withdrawal\nSee: Wallet"]
 ```
 

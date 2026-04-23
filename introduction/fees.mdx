@@ -1,0 +1,77 @@
+---
+title: Fees & Limits
+description: "All platform fees, withdrawal limits, and third-party costs on Inkryptus."
+---
+
+All fees are displayed before confirmation. No hidden charges.
+
+## Fee schedule
+
+| Fee | Amount | Applies to | When charged |
+| --- | --- | --- | --- |
+| **Transaction fee** | US$3/operation | Withdraw, Swap, Harvest | At execution. Converted to INKY at market rate. |
+| **Performance fee** | 25% of daily profit | Staking/farming yield | Daily, before yield is credited. No fee if profit = 0. |
+| **Partner subscription** | US$24/month | Partner Program access | After 30-day free trial. Manual renewal in USDT. |
+
+### Transaction fee
+
+A flat US$3 fee applies to each Withdraw, Swap, or Harvest operation regardless of the amount transacted. The fee is converted to INKY at the current market rate and deducted automatically from the transaction.
+
+### Performance fee
+
+The performance fee is charged on staking and farming profits only. The principal is never subject to this fee.
+
+**Example:** A staking contract generates 10 INKY in daily profit.
+
+| Item | Calculation | Amount |
+|------|-------------|--------|
+| Daily profit | | 10 INKY |
+| Performance fee | 10 x 25% | 2.5 INKY |
+| User receives (net) | 10 x 75% | **7.5 INKY** |
+
+The performance fee is separate from the Harvest fee (US$3 flat), which is charged when collecting accumulated rewards.
+
+### Partner subscription
+
+| Attribute | Details |
+| --- | --- |
+| Amount | US$24/month |
+| Payment | USDT, via Partner Program dashboard |
+| Trial | 30 days free with full access |
+| Renewal | Manual (automatic renewal planned for a future release) |
+
+Non-payment suspends partner status and commission eligibility. USDT was chosen to simplify access for new partners who may not yet hold INKY. See [Partner Program](/partner-program/) for full details.
+
+## FIAT on-ramp (Simplex)
+
+Purchasing USDT with a credit/debit card or local payment method uses a third-party provider (currently Simplex). Fees are set and charged by the provider at checkout and are not controlled by Inkryptus.
+
+<Callout kind="info">
+  Simplex fees vary by payment method and region. The total cost (including provider fee) is displayed on the payment screen before confirmation. Inkryptus does not add any additional fee on top of the provider charge.
+</Callout>
+
+## Withdrawal limits
+
+Monthly withdrawal capacity by KYC tier:
+
+| Tier | Verification | Monthly limit | Reset |
+| --- | --- | --- | --- |
+| **Bronze** | No KYC | US$500/month | 1st of month, 00:00:01 UTC |
+| **Silver** | KYC verified | US$500,000/month | 1st of month, 00:00:01 UTC |
+
+Withdrawals are cumulative within the monthly window. Exceeding the limit blocks further withdrawals until the reset date. Upgrade from Bronze to Silver by completing KYC in `Profile > Account > KYC`.
+
+## Fee distribution
+
+Platform fees fund infrastructure, development, liquidity, and the Partner Program commission pool. For details on how fees are distributed to the partner network, see [Commissions](/partner-program/commissions).
+
+---
+
+<Columns cols="2">
+  <Card title="Fees & Limits FAQ" icon="help-circle" href="/help-center/faq/fees-limits">
+    Common questions about costs and withdrawal tiers.
+  </Card>
+  <Card title="Withdrawals Tutorial" icon="book-open" href="/help-center/tutorials/withdrawals">
+    Limits, minimums, and off-ramp guide.
+  </Card>
+</Columns>

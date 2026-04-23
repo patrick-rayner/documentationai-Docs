@@ -61,6 +61,11 @@
                 "icon": "shield"
               },
               {
+                "title": "Fees & Limits",
+                "path": "introduction/fees",
+                "icon": "percent"
+              },
+              {
                 "title": "Risks",
                 "path": "introduction/risks",
                 "icon": "alert-triangle"
@@ -190,37 +195,6 @@
                 "title": "Arena",
                 "path": "features/arena",
                 "icon": "target"
-              }
-            ]
-          },
-          {
-            "group": "Fees",
-            "icon": "percent",
-            "pages": [
-              {
-                "title": "Overview",
-                "path": "fees/index",
-                "icon": "info"
-              },
-              {
-                "title": "Fee Table",
-                "path": "fees/fee-table",
-                "icon": "table"
-              },
-              {
-                "title": "Subscription",
-                "path": "fees/subscription",
-                "icon": "credit-card"
-              },
-              {
-                "title": "Transaction",
-                "path": "fees/transaction",
-                "icon": "repeat"
-              },
-              {
-                "title": "Performance",
-                "path": "fees/performance",
-                "icon": "trending-up"
               }
             ]
           },
