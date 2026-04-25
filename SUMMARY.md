@@ -9,6 +9,7 @@
 * [Platform architecture](introduction/architecture.mdx)
 * [Security & Verification](introduction/security.mdx)
 * [Risks](introduction/risks.mdx)
+* [Community & Support](introduction/community.mdx)
 
 ## INKY Token
 

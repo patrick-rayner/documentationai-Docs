@@ -69,6 +69,11 @@
                 "title": "Risks",
                 "path": "introduction/risks",
                 "icon": "alert-triangle"
+              },
+              {
+                "title": "Community & Support",
+                "path": "introduction/community",
+                "icon": "users"
               }
             ]
           },
