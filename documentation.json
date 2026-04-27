@@ -456,11 +456,6 @@
                 "icon": "shield"
               },
               {
-                "title": "Fees & Limits",
-                "path": "legal/fees",
-                "icon": "percent"
-              },
-              {
                 "title": "IBO Program Terms",
                 "path": "legal/ibo-terms",
                 "icon": "users"
@@ -469,6 +464,11 @@
                 "title": "Cookie Policy",
                 "path": "legal/cookies",
                 "icon": "cookie"
+              },
+              {
+                "title": "Fees & Limits",
+                "path": "legal/fees",
+                "icon": "percent"
               },
               {
                 "title": "Whitepaper",

@@ -87,9 +87,9 @@
 * [Privacy Policy](legal/privacy.mdx)
 * [General Risk Disclaimer](legal/disclaimers.mdx)
 * [AML Policy](legal/aml.mdx)
-* [Fees & Limits](legal/fees.mdx)
 * [IBO Program Terms](legal/ibo-terms.mdx)
 * [Cookie Policy](legal/cookies.mdx)
+* [Fees & Limits](legal/fees.mdx)
 * [Whitepaper](legal/whitepaper.mdx)
 * [Contact](legal/contact.mdx)
 
