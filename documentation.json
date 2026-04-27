@@ -413,6 +413,17 @@
                 "icon": "life-buoy"
               }
             ]
+          },
+          {
+            "group": "Reference",
+            "icon": "book",
+            "pages": [
+              {
+                "title": "Glossary",
+                "path": "help-center/glossary",
+                "icon": "book-open"
+              }
+            ]
           }
         ]
       },
@@ -424,11 +435,6 @@
             "group": "Legal",
             "icon": "file-text",
             "pages": [
-              {
-                "title": "Fees & Limits",
-                "path": "legal/fees",
-                "icon": "percent"
-              },
               {
                 "title": "Terms of Use",
                 "path": "legal/terms",
@@ -445,19 +451,24 @@
                 "icon": "alert-triangle"
               },
               {
-                "title": "Cookie Policy",
-                "path": "legal/cookies",
-                "icon": "cookie"
-              },
-              {
                 "title": "AML Policy",
                 "path": "legal/aml",
                 "icon": "shield"
               },
               {
+                "title": "Fees & Limits",
+                "path": "legal/fees",
+                "icon": "percent"
+              },
+              {
                 "title": "IBO Program Terms",
                 "path": "legal/ibo-terms",
                 "icon": "users"
+              },
+              {
+                "title": "Cookie Policy",
+                "path": "legal/cookies",
+                "icon": "cookie"
               },
               {
                 "title": "Whitepaper",

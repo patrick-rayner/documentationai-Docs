@@ -75,6 +75,7 @@
   * [Partner Program](help-center/tutorials/ibo.mdx)
   * [Coin Flip](help-center/tutorials/coin-flip.mdx)
   * [Support](help-center/tutorials/support.mdx)
+* [Glossary](help-center/glossary.mdx)
 
 ## Changelog
 
@@ -82,13 +83,14 @@
 
 ## Legal
 
+* [Terms of Use](legal/terms.mdx)
+* [Privacy Policy](legal/privacy.mdx)
+* [General Risk Disclaimer](legal/disclaimers.mdx)
+* [AML Policy](legal/aml.mdx)
 * [Fees & Limits](legal/fees.mdx)
-* [Terms of service](legal/terms.mdx)
-* [Privacy policy](legal/privacy.mdx)
-* [General risk disclaimer](legal/disclaimers.mdx)
-* [Cookie policy](legal/cookies.mdx)
-* [AML policy](legal/aml.mdx)
 * [IBO Program Terms](legal/ibo-terms.mdx)
+* [Cookie Policy](legal/cookies.mdx)
+* [Whitepaper](legal/whitepaper.mdx)
 * [Contact](legal/contact.mdx)
 
 ## Partner Program

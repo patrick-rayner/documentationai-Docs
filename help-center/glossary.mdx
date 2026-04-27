@@ -1,0 +1,243 @@
+---
+title: Glossary
+description: "Definitions of key terms used across the Inkryptus platform, documentation, and Partner Program."
+---
+
+This glossary defines the main terms used throughout the Inkryptus platform and documentation. Definitions reflect the current state of the product and are updated alongside new releases.
+
+## A
+
+**Account Statement:** A downloadable report available via `Profile > Account > Statement` that records all transactions, commissions, and balances. Can be used for tax documentation and personal record-keeping.
+
+**AMM (Automated Market Maker):** A type of decentralized exchange protocol that uses liquidity pools and mathematical formulas to determine asset prices, instead of traditional order books. PancakeSwap, where the INKY/USDT pair is listed, operates as an AMM.
+
+**AML (Anti-Money Laundering):** A set of policies and controls designed to prevent the use of financial systems for money laundering or terrorism financing. Inkryptus maintains an [AML Policy](/legal/aml) with KYC verification, transaction monitoring, and cooperation with competent authorities.
+
+**APR (Annual Percentage Rate):** The projected annualized return on a staking position, calculated from the current daily yield. APR is a projection and may vary. It does not account for compounding.
+
+**APY (Annual Percentage Yield):** Similar to APR but accounts for the effect of compounding. Inkryptus displays APR (not APY) in the staking interface to avoid overstating projected returns.
+
+**Arena:** The gaming section of the Inkryptus platform. All Arena games use INKY tokens exclusively, and outcomes are recorded on BNB Smart Chain. Currently features [Coin Flip](/features/arena), with additional games planned.
+
+## B
+
+**BEP-20:** The token standard on BNB Smart Chain, equivalent to ERC-20 on Ethereum. INKY is a BEP-20 token. All deposits and withdrawals on Inkryptus use the BEP-20 network.
+
+**Block:** A unit of data on a blockchain containing a batch of transactions. Each block is cryptographically linked to the previous one, forming an immutable chain.
+
+**Block Explorer:** A web tool for browsing blockchain data: transactions, addresses, contracts, and token balances. Inkryptus uses [BscScan](https://bscscan.com) as the reference explorer for BNB Smart Chain.
+
+**Blockchain:** A distributed, immutable ledger that records transactions across a network of computers. Each transaction is grouped into blocks and cryptographically linked to previous blocks, making the history tamper-resistant.
+
+**BNB Smart Chain (BSC):** The blockchain network where Inkryptus operates. All platform contracts, token transactions, and staking products run on BSC.
+
+**Bronze (Account Tier):** The default account tier for users who have not completed KYC verification. Bronze accounts have a withdrawal limit of US$500 per month.
+
+**BscScan:** The block explorer for BNB Smart Chain. Used to independently verify INKY token data, smart contract code, and on-chain transactions. Available at [bscscan.com](https://bscscan.com).
+
+**Burn:** The permanent removal of tokens from circulation by sending them to an inaccessible address. Burn mechanisms can contribute to deflationary pressure on a token's supply.
+
+**Buy/Sell:** The internal asset conversion feature within the Inkryptus app. All trades are paired against USDT as the central currency. There are no direct routes between non-USDT assets. See [Swap](/features/swap).
+
+## C
+
+**CAKE:** The native token of PancakeSwap. Available for staking on the Inkryptus platform via the CAKE Smart Farm.
+
+**Cap (Token Supply):** The maximum number of tokens that can ever exist. The INKY token has a fixed supply cap defined in its smart contract. See [Supply](/inky-token/supply).
+
+**CFT (Combating the Financing of Terrorism):** Regulatory measures aimed at preventing financial systems from being used to fund terrorism. Often referenced alongside AML as "AML/CFT". See [AML Policy](/legal/aml).
+
+**Coin Flip:** The first Arena game on Inkryptus. A heads-or-tails game using INKY tokens with a 1.9x multiplier on wins. Outcomes are determined by a commit-reveal mechanism and recorded on-chain.
+
+**Commit-Reveal:** A cryptographic fairness mechanism used in Arena games. The result is pre-determined and hashed before the user plays. After the game, the original value is revealed so the user can verify the hash matches.
+
+**Commission:** The share of platform fees redistributed to active IBOs through the Partner Program. Commissions follow a 30/70 split (30% Inkryptus, 70% distributed across up to 7 network levels). See [Commissions](/partner-program/commissions).
+
+**Contract Address:** The unique identifier of a smart contract on the blockchain. The INKY token contract address is [`0x75a320...`](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code).
+
+**Custodial Platform:** A platform where user assets are held and managed by the operator. On Inkryptus, each user has an individual wallet address on-chain, but private keys are managed by the platform's main multisig wallet. Users do not manage seedphrases or private keys.
+
+## D
+
+**DeFi (Decentralized Finance):** Financial services built on blockchain networks that operate without traditional intermediaries like banks. Inkryptus integrates DeFi infrastructure (staking, AMM liquidity) within a custodial interface designed for accessibility.
+
+**Deflation (Token):** A reduction in the effective circulating supply of a token over time. The INKY emission cap (10,000/day) limits supply expansion and contributes to deflationary pressure as platform activity grows.
+
+**Deposit:** The process of receiving crypto assets into an Inkryptus wallet from an external wallet or exchange. Deposits use the BEP-20 network exclusively.
+
+**Downline:** The users and IBOs positioned below a given IBO in the network structure. An IBO's downline can extend up to 7 levels deep.
+
+## E
+
+**ERC-20:** The token standard on the Ethereum network. BEP-20 (used by INKY) is the equivalent standard on BNB Smart Chain and follows a compatible interface.
+
+**Emission:** The mechanism by which new INKY tokens enter circulation through staking rewards. The daily emission is capped at 10,000 INKY. See [Emission](/inky-token/emission).
+
+## F
+
+**FIAT:** Government-issued currency (e.g., USD, BRL, EUR) that is not backed by a physical commodity. On Inkryptus, fiat currency is used to purchase USDT through the FIAT On-Ramp feature.
+
+**FIAT On-Ramp:** A separate feature in the Inkryptus app that allows users to purchase USDT using local fiat currency via the Simplex payment gateway. This is distinct from the Buy/Sell (Swap) feature.
+
+**Flexible Plan:** A staking plan with no lock-up period. The user can withdraw their staked assets at any time, subject to the standard harvest fee.
+
+## G
+
+**Gas Fee:** The transaction fee paid to blockchain validators for processing on-chain transactions. Internal Inkryptus operations (Swap, Buy/Sell) do not incur gas fees. Withdrawals to external wallets incur a network gas fee.
+
+## H
+
+**Hash:** A fixed-length string produced by a cryptographic function from input data of any size. Used in blockchain for transaction IDs, block linking, and in Inkryptus Arena games for the commit-reveal fairness mechanism.
+
+**Harvest:** The action of collecting accumulated staking rewards from a contract into the user's wallet balance. Each harvest operation incurs a flat US$3 fee.
+
+**Harvest (IBO Sub-wallet):** One of two sub-wallets in the IBO Wallet. Receives performance fee commissions from staking. Transfers to the User Wallet cost US$3 per operation.
+
+**Hy-Fi (Hybrid Finance):** The model Inkryptus pioneered since 2020, connecting the simplicity of traditional finance with blockchain infrastructure. Designed to remove crypto complexity for users who are new to digital assets.
+
+## I
+
+**IBO (Independent Business Owner):** A user enrolled in the Inkryptus Partner Program. IBOs promote the platform and earn commissions based on the real activity of their referral network. See [Partner Program](/partner-program/index).
+
+**IBO Terms:** The legal document (Schedule to the [Terms of Use](/legal/terms)) that governs participation in the Partner Program. Covers enrollment, commissions, conduct, exclusivity, and termination. See [IBO Program Terms](/legal/ibo-terms).
+
+**IBO Wallet:** A dedicated wallet within the IBO dashboard where all commissions are credited. Divided into two sub-wallets: Harvest (performance fee commissions) and Transfer (all other commissions).
+
+**Impermanent Loss:** A risk associated with providing liquidity in AMM pools. Occurs when the price ratio of paired tokens changes relative to when liquidity was deposited. Relevant to understanding the INKY/USDT pool on PancakeSwap.
+
+**INKY:** The utility token of the Inkryptus ecosystem (BEP-20, BNB Smart Chain). Used for staking, internal fee settlement, Arena games, and swap pairing with USDT. Contract: [`0x75a320...`](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code). See [Token Identity](/inky-token/overview).
+
+**INKY Pool:** The primary staking product on Inkryptus. Users deposit INKY tokens and receive daily rewards from the emission mechanism. Available in Flexible, 12-month, and 36-month lock-up plans. See [INKY Pool](/features/staking/inky-pool).
+
+## K
+
+**KYC (Know Your Customer):** Identity verification process required for upgraded account access. Inkryptus uses Sumsub for KYC. Completing KYC upgrades an account from Bronze to Silver tier.
+
+## L
+
+**Level (Network):** A position in the IBO referral structure. Level 1 is a direct referral; Level 2 is a referral made by a Level 1 user, and so on, up to Level 7. Each level receives 10% of the fee distributed to the network.
+
+**Liquidity:** The ease with which an asset can be bought or sold without significantly affecting its price. In the Inkryptus context, liquidity refers to the depth of the INKY/USDT pool on PancakeSwap. See [Liquidity](/inky-token/liquidity).
+
+**Liquidity Pool:** A pool of tokens locked in a smart contract that enables trading on an AMM. The INKY/USDT pair on PancakeSwap uses a liquidity pool. See [Liquidity](/inky-token/liquidity).
+
+**Lock-up Plan:** A staking plan where the user commits their assets for a fixed duration (12 months or 36 months) in exchange for higher reward rates. Early withdrawal is not available during the lock-up period.
+
+## M
+
+**Market Cap:** The total market value of a token's circulating supply, calculated as price per token multiplied by the number of tokens in circulation.
+
+**Multisig Wallet:** A wallet that requires multiple cryptographic signatures to authorize transactions. Inkryptus uses a multisig wallet structure to manage user funds.
+
+## N
+
+**Network (IBO):** The referral structure connected to an IBO, organized in up to 7 levels of depth. Commissions are calculated based on the real activity of users within this structure.
+
+**Non-Custodial:** A model where the user holds their own private keys and is solely responsible for their assets. Inkryptus does not operate as a non-custodial platform. See Custodial Platform.
+
+## O
+
+**On-Chain:** Any action or data that is recorded directly on the blockchain and can be independently verified. Inkryptus staking contracts, INKY token transfers, and Arena game results are on-chain.
+
+**Off-Chain:** Actions or data processed outside the blockchain. Internal Inkryptus operations like Buy/Sell execute off-chain for speed and zero gas fees, with balances tracked in the platform backend.
+
+## P
+
+**PancakeSwap:** A decentralized exchange (AMM) on BNB Smart Chain. The INKY/USDT trading pair is listed on PancakeSwap. PancakeSwap is not used as a trading route within the Inkryptus app.
+
+**Performance Fee:** A fee of 25% applied to staking profits only. The fee is calculated on daily profit, never on the principal. If there is no profit, no fee is charged. The performance fee is split across the IBO network using the standard 30/70 distribution.
+
+**Principal:** The original amount of assets deposited into a staking contract, excluding any accumulated rewards. The performance fee is never applied to the principal.
+
+**Private Key:** A cryptographic key that grants control over a blockchain wallet and the ability to sign transactions. On Inkryptus, private keys are managed by the platform's multisig structure. Users do not have direct access to private keys.
+
+**Products Vault:** The internal smart contract structure used by Inkryptus to manage USDT and CAKE staking products. Distinct from the INKY Pool, which has its own dedicated contract.
+
+## Q
+
+**Quote:** The price estimate displayed before a Buy/Sell operation is confirmed. Quotes have a short validity window. If the price moves beyond that window, the app requests a fresh quote before execution.
+
+## R
+
+**Referral Link:** A unique URL assigned to each IBO. Users who register through this link are placed at Level 1 of the IBO's network. The link is available in the IBO dashboard.
+
+**Rewards:** Tokens earned from staking activity. Rewards are generated daily and can be collected via the Harvest action. The amount depends on the staking product, plan, and current emission parameters.
+
+## S
+
+**Seedphrase (Recovery Phrase):** A sequence of words used to recover access to a non-custodial wallet. Inkryptus does not use seedphrases. User wallet keys are managed by the platform's multisig structure.
+
+**Silver (Account Tier):** The account tier for users who have completed KYC verification. Silver accounts have a withdrawal limit of US$500,000 per month.
+
+**Simplex:** A third-party payment gateway integrated into the Inkryptus FIAT On-Ramp feature. Enables users to purchase USDT using local fiat currency via credit card or other payment methods.
+
+**Slippage:** The difference between the expected price of a trade and the actual execution price. On Inkryptus, internal Buy/Sell operations execute at the quoted price, so slippage does not apply. Slippage is relevant when trading INKY/USDT on PancakeSwap.
+
+**Smart Contract:** A self-executing program deployed on a blockchain that automatically enforces the terms encoded in its logic. Inkryptus staking products, the INKY token, and Arena games all operate through smart contracts on BNB Smart Chain.
+
+**Sponsor:** The IBO whose referral link was used by a new user at registration. The sponsor's username is always visible to the referred user. Additional contact information (name, email, phone) is opt-in.
+
+**Sponsorship Line:** The chain linking each IBO to their direct sponsor and uplines. This formal structure is protected by anti-poaching rules and determines commission distribution.
+
+**Stablecoin:** A cryptocurrency designed to maintain a stable value relative to a reference asset, typically the US dollar. USDT is the primary stablecoin used on the Inkryptus platform.
+
+**Staking:** The process of depositing assets into a smart contract to generate rewards. Inkryptus offers staking products for INKY, USDT, and CAKE. See [Staking](/features/staking/index).
+
+**Subscription (IBO):** The monthly fee of US$24 (paid in USDT) required to maintain active IBO status. Includes a 30-day free trial for new IBOs. Renewal is manual.
+
+**Supported Assets:** The tokens available on the Inkryptus platform: INKY, USDT, BTCB, ETH, CAKE, BSW, RDNT, and SHIB. All are traded against USDT as the central pair.
+
+**Swap:** The internal asset conversion feature on Inkryptus. All conversions route through USDT as the central pair. Flat US$3 fee per operation. See [Swap](/features/swap).
+
+## T
+
+**Token:** A digital asset created and managed through a smart contract on a blockchain. INKY is a utility token on BNB Smart Chain. Tokens are not currencies issued by a government.
+
+**Tokenomics:** The economic design of a token: supply, emission, distribution, utility, and the mechanisms that influence its value over time. See [INKY Token](/inky-token/index).
+
+**Transaction Fee:** A flat fee of US$3 applied to Swap, Withdraw, and Harvest operations. The fee is converted to INKY at the current market rate.
+
+**Transfer (IBO Sub-wallet):** One of two sub-wallets in the IBO Wallet. Receives subscription, transaction, and Arena commissions. Transfers to the User Wallet are immediate and free.
+
+**TVL (Total Value Locked):** The total value of assets deposited in a platform's smart contracts. Used as a measure of a DeFi platform's adoption and trust.
+
+## U
+
+**Upline:** The chain of IBOs above a given IBO in the network structure. An IBO's upline consists of their sponsor (Level 1) and the sponsors above them, up to Level 7.
+
+**USDT (Tether):** A stablecoin pegged to the US dollar. USDT is the central currency for all Buy/Sell operations on Inkryptus and the payment method for IBO subscriptions.
+
+**User Wallet:** The personal wallet holding a user's assets (USDT, INKY, BTCB, ETH, CAKE, etc.). Distinct from the IBO Wallet, which holds commission earnings.
+
+**Utility Token:** A token designed to provide access to specific functions within a platform, rather than to represent ownership or investment returns. INKY is classified as a utility token.
+
+## V
+
+**Volatility:** The degree of price variation of an asset over time. Cryptocurrency markets are known for high volatility. Inkryptus documentation and IBOs must always disclose volatility risk when discussing platform products.
+
+## W
+
+**Wallet:** A digital tool for storing, sending, and receiving cryptocurrency. On Inkryptus, each user has an individual wallet address on BNB Smart Chain. See [Wallet](/features/wallet).
+
+**Wallet Address:** A unique alphanumeric string that identifies a wallet on the blockchain. Used to receive deposits. Each Inkryptus user receives their own wallet address at account creation.
+
+**Whitepaper:** A technical document describing the vision, architecture, token economics, and roadmap of a project. The Inkryptus Whitepaper is available in the [Legal](/legal/whitepaper) section.
+
+**Withdrawal:** The process of sending assets from an Inkryptus wallet to an external wallet address. Uses the BEP-20 network. Subject to withdrawal limits based on account tier (Bronze or Silver) and a flat US$3 fee plus network gas.
+
+**Withdrawal Limit:** The maximum value a user can withdraw per month, determined by account tier. Bronze: US$500/month. Silver: US$500,000/month. Limits reset on the 1st of each month at 00:00:01 UTC.
+
+---
+
+<Callout kind="info">
+  Definitions on this page reflect the current state of the Inkryptus platform. For the most up-to-date product details, refer to the specific documentation pages linked within each definition.
+</Callout>
+
+<Columns cols="2">
+  <Card title="Help Center" icon="help-circle" href="/help-center/index">
+    FAQs and tutorials for all platform features.
+  </Card>
+  <Card title="INKY Token" icon="circle" href="/inky-token/index">
+    Token identity, supply, emission, and contracts.
+  </Card>
+</Columns>
