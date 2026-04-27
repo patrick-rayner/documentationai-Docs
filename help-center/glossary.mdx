@@ -15,8 +15,6 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 **APR (Annual Percentage Rate):** The projected annualized return on a staking position, calculated from the current daily yield. APR is a projection and may vary. It does not account for compounding.
 
-**APY (Annual Percentage Yield):** Similar to APR but accounts for the effect of compounding. Inkryptus displays APR (not APY) in the staking interface to avoid overstating projected returns.
-
 **Arena:** The gaming section of the Inkryptus platform. All Arena games use INKY tokens exclusively, and outcomes are recorded on BNB Smart Chain. Currently features [Coin Flip](/features/arena), with additional games planned.
 
 ## B
@@ -35,7 +33,7 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 **BscScan:** The block explorer for BNB Smart Chain. Used to independently verify INKY token data, smart contract code, and on-chain transactions. Available at [bscscan.com](https://bscscan.com).
 
-**Burn:** The permanent removal of tokens from circulation by sending them to an inaccessible address. Burn mechanisms can contribute to deflationary pressure on a token's supply.
+**Burn:** The permanent removal of tokens from circulation. On Inkryptus, the planned burn mechanism uses the INKY contract's native `burn` and `burnFrom` functions, making each burn irreversible and verifiable on-chain. The burn is calculated as 2% of the Inkryptus fraction (30%) of each platform fee. See [Whitepaper](/legal/whitepaper).
 
 **Buy/Sell:** The internal asset conversion feature within the Inkryptus app. All trades are paired against USDT as the central currency. There are no direct routes between non-USDT assets. See [Swap](/features/swap).
 
@@ -43,15 +41,21 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 **CAKE:** The native token of PancakeSwap. Available for staking on the Inkryptus platform via the CAKE Smart Farm.
 
-**Cap (Token Supply):** The maximum number of tokens that can ever exist. The INKY token has a fixed supply cap defined in its smart contract. See [Supply](/inky-token/supply).
+**Cap (Token Supply):** See Hard Cap. The INKY token has a fixed cap of 200,000,000 units defined in its smart contract. See [Supply](/inky-token/supply).
+
+**CeFi (Centralized Finance):** Traditional financial services operated by centralized entities (banks, brokerages, centralized exchanges). Inkryptus combines CeFi usability with DeFi infrastructure through the Hy-Fi model.
+
+**Circulating Supply:** The total number of tokens currently in circulation, including wallet balances and staking positions. Distinct from total supply (all minted tokens) and the hard cap (maximum possible). Updated daily and queryable on the Inkryptus website and BscScan.
 
 **CFT (Combating the Financing of Terrorism):** Regulatory measures aimed at preventing financial systems from being used to fund terrorism. Often referenced alongside AML as "AML/CFT". See [AML Policy](/legal/aml).
 
 **Coin Flip:** The first Arena game on Inkryptus. A heads-or-tails game using INKY tokens with a 1.9x multiplier on wins. Outcomes are determined by a commit-reveal mechanism and recorded on-chain.
 
-**Commit-Reveal:** A cryptographic fairness mechanism used in Arena games. The result is pre-determined and hashed before the user plays. After the game, the original value is revealed so the user can verify the hash matches.
+**Commit-Reveal:** A cryptographic fairness mechanism used in Arena games. The result is pre-determined and hashed before the user plays. After the game, the original value is revealed so the user can verify the hash matches. See [Arena](/features/arena).
 
-**Commission:** The share of platform fees redistributed to active IBOs through the Partner Program. Commissions follow a 30/70 split (30% Inkryptus, 70% distributed across up to 7 network levels). See [Commissions](/partner-program/commissions).
+**Commission:** The share of platform fees redistributed to active IBOs through the Partner Program.
+
+**Compound:** The act of reinvesting staking rewards back into the same staking contract instead of withdrawing them. Compounding increases the staked principal and can amplify future rewards. Commissions follow a 30/70 split (30% Inkryptus, 70% distributed across up to 7 network levels). See [Commissions](/partner-program/commissions).
 
 **Contract Address:** The unique identifier of a smart contract on the blockchain. The INKY token contract address is [`0x75a320...`](https://bscscan.com/address/0x75a320c97205dd2e70e09085d1408c73a73d4d8f#code).
 
@@ -75,6 +79,8 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 ## F
 
+**Fee Sharing Model:** The mechanism by which Inkryptus distributes platform fee revenue. 30% is retained by Inkryptus for operations, infrastructure, and liquidity. 70% is distributed to the Partner Program network across up to 7 levels (10% per level). This model applies uniformly to all fee types. See [Commissions](/partner-program/commissions).
+
 **FIAT:** Government-issued currency (e.g., USD, BRL, EUR) that is not backed by a physical commodity. On Inkryptus, fiat currency is used to purchase USDT through the FIAT On-Ramp feature.
 
 **FIAT On-Ramp:** A separate feature in the Inkryptus app that allows users to purchase USDT using local fiat currency via the Simplex payment gateway. This is distinct from the Buy/Sell (Swap) feature.
@@ -85,7 +91,11 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 **Gas Fee:** The transaction fee paid to blockchain validators for processing on-chain transactions. Internal Inkryptus operations (Swap, Buy/Sell) do not incur gas fees. Withdrawals to external wallets incur a network gas fee.
 
+**Governance (Token):** The use of a token to influence decisions about a platform's parameters, upgrades, or policies. INKY is described as a technical governance token, meaning its contract parameters are verifiable on-chain and changes follow transparent processes.
+
 ## H
+
+**Hard Cap:** The absolute maximum number of INKY tokens that can ever be minted: 200,000,000 INKY. This limit is enforced by the smart contract and cannot be altered. Even when the burn mechanism reduces circulating supply, the hard cap remains unchanged. See [Supply](/inky-token/supply).
 
 **Hash:** A fixed-length string produced by a cryptographic function from input data of any size. Used in blockchain for transaction IDs, block linking, and in Inkryptus Arena games for the commit-reveal fairness mechanism.
 
@@ -109,6 +119,8 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 **INKY Pool:** The primary staking product on Inkryptus. Users deposit INKY tokens and receive daily rewards from the emission mechanism. Available in Flexible, 12-month, and 36-month lock-up plans. See [INKY Pool](/features/staking/inky-pool).
 
+**Initial Mintage Vault:** The allocation of 10,000,000 INKY (5% of the hard cap) minted at token deployment on May 11, 2023. This initial supply was allocated to liquidity provision, marketing, team operations, and product development.
+
 ## K
 
 **KYC (Know Your Customer):** Identity verification process required for upgraded account access. Inkryptus uses Sumsub for KYC. Completing KYC upgrades an account from Bronze to Silver tier.
@@ -126,6 +138,8 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 ## M
 
 **Market Cap:** The total market value of a token's circulating supply, calculated as price per token multiplied by the number of tokens in circulation.
+
+**Minter:** An authorized entity with permission to create new tokens through the Token Minter contract. Currently, the only authorized minter is the INKY Staking Pool contract. See Token Minter.
 
 **Multisig Wallet:** A wallet that requires multiple cryptographic signatures to authorize transactions. Inkryptus uses a multisig wallet structure to manage user funds.
 
@@ -191,6 +205,8 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 ## T
 
+**Token Minter:** The smart contract ([`0x68BDAb3...`](https://bscscan.com/address/0x68BDAb3dcc5332BcCcDC940D54122c155b80857a)) responsible for controlling the emission of new INKY tokens. Only authorized minters (currently the INKY Staking Pool) can trigger minting through this contract. See [Emission](/inky-token/emission).
+
 **Token:** A digital asset created and managed through a smart contract on a blockchain. INKY is a utility token on BNB Smart Chain. Tokens are not currencies issued by a government.
 
 **Tokenomics:** The economic design of a token: supply, emission, distribution, utility, and the mechanisms that influence its value over time. See [INKY Token](/inky-token/index).
@@ -199,7 +215,11 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 **Transfer (IBO Sub-wallet):** One of two sub-wallets in the IBO Wallet. Receives subscription, transaction, and Arena commissions. Transfers to the User Wallet are immediate and free.
 
+**Total Supply:** The total number of tokens that have been minted to date, including tokens in circulation, in staking, and in reserve wallets. Distinct from the hard cap (maximum possible) and circulating supply (actively available). Queryable via the INKY contract's `totalSupply` function on BscScan.
+
 **TVL (Total Value Locked):** The total value of assets deposited in a platform's smart contracts. Used as a measure of a DeFi platform's adoption and trust.
+
+**2FA (Two-Factor Authentication):** An additional security layer that requires a second verification step (e.g., a time-based code from an authenticator app) beyond the password when logging into the Inkryptus app. Strongly recommended for all users.
 
 ## U
 
@@ -213,9 +233,15 @@ This glossary defines the main terms used throughout the Inkryptus platform and 
 
 ## V
 
+**VRF (Verifiable Random Function):** A cryptographic function that produces a provably random output along with a proof that the output was correctly computed. VRF integration is under development for the Inkryptus Arena, which will enable on-chain proof of randomness for game outcomes.
+
 **Volatility:** The degree of price variation of an asset over time. Cryptocurrency markets are known for high volatility. Inkryptus documentation and IBOs must always disclose volatility risk when discussing platform products.
 
 ## W
+
+**Web2:** The current generation of internet applications characterized by centralized services, user-friendly interfaces, and account-based access (e.g., banking apps, social media). Inkryptus uses a Web2 interface layer to make blockchain products accessible.
+
+**Web3:** The next generation of internet infrastructure built on decentralized technologies, blockchain, and token-based economics. Inkryptus bridges Web2 and Web3 by providing a familiar interface with on-chain execution and verification.
 
 **Wallet:** A digital tool for storing, sending, and receiving cryptocurrency. On Inkryptus, each user has an individual wallet address on BNB Smart Chain. See [Wallet](/features/wallet).
 
