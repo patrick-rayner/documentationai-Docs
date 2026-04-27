@@ -61,11 +61,6 @@
                 "icon": "shield"
               },
               {
-                "title": "Fees & Limits",
-                "path": "introduction/fees",
-                "icon": "percent"
-              },
-              {
                 "title": "Risks",
                 "path": "introduction/risks",
                 "icon": "alert-triangle"
@@ -430,6 +425,11 @@
             "icon": "file-text",
             "pages": [
               {
+                "title": "Fees & Limits",
+                "path": "legal/fees",
+                "icon": "percent"
+              },
+              {
                 "title": "Terms of Use",
                 "path": "legal/terms",
                 "icon": "file-text"
@@ -438,6 +438,26 @@
                 "title": "Privacy Policy",
                 "path": "legal/privacy",
                 "icon": "lock"
+              },
+              {
+                "title": "General Risk Disclaimer",
+                "path": "legal/disclaimers",
+                "icon": "alert-triangle"
+              },
+              {
+                "title": "Cookie Policy",
+                "path": "legal/cookies",
+                "icon": "cookie"
+              },
+              {
+                "title": "AML Policy",
+                "path": "legal/aml",
+                "icon": "shield"
+              },
+              {
+                "title": "IBO Program Terms",
+                "path": "legal/ibo-terms",
+                "icon": "users"
               },
               {
                 "title": "Whitepaper",

@@ -82,9 +82,13 @@
 
 ## Legal
 
+* [Fees & Limits](legal/fees.mdx)
 * [Terms of service](legal/terms.mdx)
 * [Privacy policy](legal/privacy.mdx)
-* [Disclaimers](legal/disclaimers.mdx)
+* [General risk disclaimer](legal/disclaimers.mdx)
+* [Cookie policy](legal/cookies.mdx)
+* [AML policy](legal/aml.mdx)
+* [IBO Program Terms](legal/ibo-terms.mdx)
 * [Contact](legal/contact.mdx)
 
 ## Partner Program
