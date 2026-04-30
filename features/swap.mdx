@@ -46,26 +46,46 @@ graph LR
     INKY["INKY"] <-->|"swap"| USDT(["💵 USDT\ncenter pair"])
     BTCB["BTCB"] <-->|"swap"| USDT
     ETH["ETH"] <-->|"swap"| USDT
+    XRP["XRP"] <-->|"swap"| USDT
+    SOL["SOL"] <-->|"swap"| USDT
+    ADA["ADA"] <-->|"swap"| USDT
+    LTC["LTC"] <-->|"swap"| USDT
     CAKE["CAKE"] <-->|"swap"| USDT
-    BSW["BSW"] <-->|"swap"| USDT
+    LINK["LINK"] <-->|"swap"| USDT
+    UNI["UNI"] <-->|"swap"| USDT
+    AAVE["AAVE"] <-->|"swap"| USDT
     RDNT["RDNT"] <-->|"swap"| USDT
+    AVAX["AVAX"] <-->|"swap"| USDT
+    TRX["TRX"] <-->|"swap"| USDT
+    XLM["XLM"] <-->|"swap"| USDT
+    DOGE["DOGE"] <-->|"swap"| USDT
     SHIB["SHIB"] <-->|"swap"| USDT
 ```
 
 ## Supported assets
 
-All 7 assets trade through USDT. The USDT itself is the central pair and does not appear as a tradeable asset in the Swap screen.
+All assets trade through USDT. The USDT itself is the central pair and does not appear as a tradeable asset in the Swap screen.
 
-All 7 assets support both Buy (USDT→asset) and Sell (asset→USDT).
+All assets support both Buy (USDT→asset) and Sell (asset→USDT).
 
 | Asset | Symbol | Category |
 |-------|--------|----------|
 | INKY | INKY | Native token |
 | Bitcoin (BEP-20) | BTCB | Major |
 | Ethereum | ETH | Major |
+| XRP | XRP | Major |
+| Solana | SOL | Major |
+| Cardano | ADA | Major |
+| Litecoin | LTC | Major |
 | PancakeSwap | CAKE | DeFi |
-| Biswap | BSW | DeFi |
+| Chainlink | LINK | DeFi |
+| Uniswap | UNI | DeFi |
+| Aave | AAVE | DeFi |
 | Radiant | RDNT | DeFi |
+| Avalanche | AVAX | Infrastructure |
+| TRON | TRX | Infrastructure |
+| Stellar | XLM | Infrastructure |
+| Dogecoin | DOGE | Meme |
 | Shiba Inu | SHIB | Meme |
 
 All assets operate on BNB Smart Chain (BEP-20).
@@ -86,7 +106,7 @@ A fixed fee of **US$3** applies to every swap operation, regardless of the trade
 - The fee is the same whether the user is buying or selling, and applies per operation.
 - For multi-step routes (e.g., INKY → USDT → BTCB), the fee applies to each operation (2× US$3 in this example).
 
-See [Fees](/legal/fees) for the full fee structure, including commission distribution.
+See [Fees](/introduction/fees) for the full fee structure, including commission distribution.
 
 ## Related flows
 
@@ -102,7 +122,7 @@ Swap handles only the internal asset conversion. For depositing USDT into your w
 ```mermaid
 graph LR
     DEP["🏦 Deposit\nSee: Wallet"] -->|"fiat or crypto"| USDT(["💵 USDT"])
-    USDT <-->|"Buy / Sell"| ASSETS["INKY · BTCB · ETH\nCAKE · BSW · RDNT · SHIB"]
+    USDT <-->|"Buy / Sell"| ASSETS["INKY · BTCB · ETH · XRP\nSOL · ADA · LTC · CAKE\nLINK · UNI · AAVE · RDNT\nAVAX · TRX · XLM · DOGE · SHIB"]
     USDT -->|"withdraw"| WIT["🏦 Withdrawal\nSee: Wallet"]
 ```
 
