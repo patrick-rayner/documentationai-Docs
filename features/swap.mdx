@@ -55,6 +55,7 @@ graph LR
     UNI["UNI"] <-->|"swap"| USDT
     AAVE["AAVE"] <-->|"swap"| USDT
     RDNT["RDNT"] <-->|"swap"| USDT
+    BSW["BSW"] <-->|"swap"| USDT
     AVAX["AVAX"] <-->|"swap"| USDT
     TRX["TRX"] <-->|"swap"| USDT
     XLM["XLM"] <-->|"swap"| USDT
@@ -82,6 +83,7 @@ All assets support both Buy (USDT→asset) and Sell (asset→USDT).
 | Uniswap | UNI | DeFi |
 | Aave | AAVE | DeFi |
 | Radiant | RDNT | DeFi |
+| Biswap | BSW | DeFi |
 | Avalanche | AVAX | Infrastructure |
 | TRON | TRX | Infrastructure |
 | Stellar | XLM | Infrastructure |
@@ -122,7 +124,7 @@ Swap handles only the internal asset conversion. For depositing USDT into your w
 ```mermaid
 graph LR
     DEP["🏦 Deposit\nSee: Wallet"] -->|"fiat or crypto"| USDT(["💵 USDT"])
-    USDT <-->|"Buy / Sell"| ASSETS["INKY · BTCB · ETH · XRP\nSOL · ADA · LTC · CAKE\nLINK · UNI · AAVE · RDNT\nAVAX · TRX · XLM · DOGE · SHIB"]
+    USDT <-->|"Buy / Sell"| ASSETS["INKY · BTCB · ETH · XRP\nSOL · ADA · LTC · CAKE\nLINK · UNI · AAVE · RDNT · BSW\nAVAX · TRX · XLM · DOGE · SHIB"]
     USDT -->|"withdraw"| WIT["🏦 Withdrawal\nSee: Wallet"]
 ```
 
